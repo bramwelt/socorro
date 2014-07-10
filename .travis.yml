@@ -11,6 +11,7 @@ addons:
   postgresql: "9.3"
 
 install:
+  - sudo apt-get install node-less
   - make install
 
 script:
