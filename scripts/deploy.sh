@@ -179,7 +179,7 @@ if [ $? != 0 ]; then
     echo "Creating new DB, may take a few minutes"
     pushd /data/socorro/application > /dev/null
     error $? "Could not pushd /data/socorro"
-    PYTHONPATH=. /data/socorro/socorro-virtualenv/bin/python \
+    PYTHONPATH=. python \
         ./socorro/external/postgresql/setupdb_app.py \
         --database_name=breakpad --fakedata \
         --database_superusername=postgres \
@@ -191,8 +191,7 @@ else
     echo "Running database migrations with alembic"
     pushd /data/socorro/application > /dev/null
     error $? "Could not pushd /data/socorro"
-    PYTHONPATH=. ../socorro-virtualenv/bin/python \
-        ../socorro-virtualenv/bin/alembic \
+    PYTHONPATH=. alembic \
         -c config/alembic.ini upgrade head &> /var/log/socorro/alembic.log
     error $? "Could not run migrations with alembic"
     popd > /dev/null
@@ -202,7 +201,7 @@ fi
 # ensure that partitions have been created
 pushd /data/socorro/application > /dev/null
 error $? "could not pushd /data/socorro/application"
-su socorro -c "PYTHONPATH=. /data/socorro/socorro-virtualenv/bin/python \
+su socorro -c "PYTHONPATH=. python \
     socorro/cron/crontabber_app.py --job=weekly-reports-partitions --force \
     --admin.conf=/etc/socorro/crontabber.ini \
     &> /var/log/socorro/crontabber.log"
@@ -237,8 +236,7 @@ do
 done
 
 echo "Running Django syncdb"
-/data/socorro/socorro-virtualenv/bin/python \
-    /data/socorro/webapp-django/manage.py syncdb --noinput \
+python /data/socorro/webapp-django/manage.py syncdb --noinput \
     &> /var/log/socorro/django-syncdb.log
 error $? "django syncdb failed `cat /var/log/socorro/django-syncdb.log`"
 
