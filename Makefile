@@ -4,13 +4,12 @@
 
 PREFIX=/data/socorro
 ABS_PREFIX = $(shell readlink -f $(PREFIX))
-VIRTUALENV=$(CURDIR)/socorro-virtualenv
 PYTHONPATH = "."
-NOSE = $(VIRTUALENV)/bin/nosetests socorro -s --with-xunit
-SETUPDB = $(VIRTUALENV)/bin/python ./socorro/external/postgresql/setupdb_app.py
+NOSE = nosetests socorro -s --with-xunit
+SETUPDB = python ./socorro/external/postgresql/setupdb_app.py
 COVEROPTS = --with-coverage --cover-package=socorro
-COVERAGE = $(VIRTUALENV)/bin/coverage
-PYLINT = $(VIRTUALENV)/bin/pylint
+COVERAGE = coverage
+PYLINT = pylint
 JENKINS_CONF = jenkins.py.dist
 ENV = env
 
@@ -34,8 +33,8 @@ test-socorro: bootstrap
 	PYTHONPATH=$(PYTHONPATH) $(SETUPDB) --database_name=socorro_test --database_username=$(database_username) --database_hostname=$(database_hostname) --database_password=$(database_password) --database_port=$(DB_PORT) --database_superusername=$(database_superusername) --database_superuserpassword=$(database_superuserpassword) --dropdb --no_schema --logging.stderr_error_logging_level=40 --unlogged
 	cd socorro/unittest/config; for file in *.py.dist; do if [ ! -f `basename $$file .dist` ]; then cp $$file `basename $$file .dist`; fi; done
 	PYTHONPATH=$(PYTHONPATH) $(SETUPDB) --database_name=socorro_migration_test --database_username=$(database_username) --database_hostname=$(database_hostname) --database_password=$(database_password) --database_port=$(DB_PORT) --database_superusername=$(database_superusername) --database_superuserpassword=$(database_superuserpassword) --dropdb --logging.stderr_error_logging_level=40 --unlogged
-	PYTHONPATH=$(PYTHONPATH) $(VIRTUALENV)/bin/alembic -c config/alembic.ini downgrade -1
-	PYTHONPATH=$(PYTHONPATH) $(VIRTUALENV)/bin/alembic -c config/alembic.ini upgrade +1
+	PYTHONPATH=$(PYTHONPATH) alembic -c config/alembic.ini downgrade -1
+	PYTHONPATH=$(PYTHONPATH) alembic -c config/alembic.ini upgrade +1
 	# run tests with coverage
 	rm -f coverage.xml
 	$(ENV) $(PG_RESOURCES) $(RMQ_RESOURCES) $(ES_RESOURCES) PYTHONPATH=$(PYTHONPATH) $(COVERAGE) run $(NOSE)
@@ -47,10 +46,9 @@ test-webapp:
 bootstrap:
 	git submodule update --init --recursive
 	#if [[ ! "$$(type -p lessc)" ]]; then printf "\e[0;32mlessc not found! less must be installed and lessc on your path to build socorro.\e[0m\n" && exit 1; fi;
-	#[ -d $(VIRTUALENV) ] || virtualenv -p python2.6 $(VIRTUALENV)
 	# install dev + prod dependencies
-	$(VIRTUALENV)/bin/pip install tools/peep-1.2.tar.gz
-	$(VIRTUALENV)/bin/peep install --download-cache=./pip-cache -r requirements.txt
+	pip install tools/peep-1.2.tar.gz
+	peep install --download-cache=./pip-cache -r requirements.txt
 
 install: bootstrap bootstrap-webapp reinstall
 
@@ -66,7 +64,7 @@ install-socorro: bootstrap-webapp
 	mkdir -p $(PREFIX)/application
 	# copy to install directory
 	rsync -a config $(PREFIX)/application
-	rsync -a $(VIRTUALENV) $(PREFIX)
+	#rsync -a $(VIRTUALENV) $(PREFIX)
 	rsync -a socorro $(PREFIX)/application
 	rsync -a scripts $(PREFIX)/application
 	rsync -a tools $(PREFIX)/application
@@ -106,7 +104,7 @@ json_enhancements_pg_extension: bootstrap
     # This is only run manually, as it is a one-time operation
     # to be performed at system installation time, rather than
     # every time Socorro is built
-	if [ ! -f `pg_config --pkglibdir`/json_enhancements.so ]; then sudo env PATH=$$PATH $(VIRTUALENV)/bin/python -c "from pgxnclient import cli; cli.main(['install', 'json_enhancements'])"; fi
+	if [ ! -f `pg_config --pkglibdir`/json_enhancements.so ]; then sudo env PATH=$$PATH python -c "from pgxnclient import cli; cli.main(['install', 'json_enhancements'])"; fi
 
 bootstrap-webapp: bootstrap
 	cd webapp-django; ./bin/bootstrap.sh
