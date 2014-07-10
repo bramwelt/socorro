@@ -5,7 +5,7 @@ python:
 
 cache:
   directories:
-    - $HOME/pip-cache
+    - $HOME/.pip-cache
 
 addons:
   postgresql: "9.3"
