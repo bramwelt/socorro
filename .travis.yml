@@ -6,8 +6,10 @@ python:
 addons:
   postgresql: "9.3"
 
+before_install:
+  - npm install lessc
+
 install:
-  - sudo apt-get install node-less
   - make install
 
 script:
