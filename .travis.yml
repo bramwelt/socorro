@@ -7,10 +7,14 @@ addons:
   postgresql: "9.3"
 
 before_install:
-  - npm install less
+    - sudo apt-get update -qq
+    - sudo apt-get install -y node-less
 
 install:
   - make install
 
 script:
   - make test
+
+notifications:
+  email: false
