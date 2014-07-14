@@ -56,6 +56,8 @@ reinstall: install-socorro
 install-socorro: bootstrap-webapp
 	# package up the tarball in $(PREFIX)
 	# create base directories
+	echo "ENV is: $(ENV)"
+	echo "PREFIX is: $(PREFIX)"
 	mkdir -p $(PREFIX)/application
 	# copy to install directory
 	rsync -a config $(PREFIX)/application
