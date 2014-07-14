@@ -10,7 +10,7 @@ before_install:
     - npm install -g less
 
 install:
-  - make install
+  - ./scripts/build.sh
 
 script:
   - make test
