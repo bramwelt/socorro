@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-PREFIX=$(HOME)/socorro-app
+PREFIX=/home/travis/socorro-app
 ABS_PREFIX = $(shell readlink -f $(PREFIX))
 PYTHONPATH = "."
 SETUPDB = python ./socorro/external/postgresql/setupdb_app.py
