@@ -8,8 +8,6 @@ addons:
 
 before_install:
     - npm install -g less
-    - mkdir -p $HOME/socorro-install
-    - export PREFIX=$HOME/socorro-install
 
 install:
   - make install
