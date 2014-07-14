@@ -12,9 +12,14 @@ before_install:
     - cp config/alembic.ini-dist config/alembic.ini
     - sed -i "s/jenkins-pg92/localhost/" config/alembic.ini
     - sudo su postgres -c "psql template1 -c \"create user test with encrypted password 'aPassword' superuser\""
+    - wget --quiet 'https://ci.mozilla.org/job/breakpad/lastSuccessfulBuild/artifact/breakpad.tar.gz'
+    - tar -zxf breakpad.tar.gz
+    - mv breakpad stackwalk
+
 
 install:
-  - ./scripts/build.sh
+    - mkdir builds/
+    - make install PREFIX=builds/socorro
 
 script:
   - make test
