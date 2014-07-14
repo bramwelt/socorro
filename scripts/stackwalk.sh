@@ -4,5 +4,5 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # FIXME hardcoded install path
-/data/socorro/stackwalk/bin/minidump_stackwalk $* 2> >(grep -v INFO >&2)
+$PREFIX/socorro/stackwalk/bin/minidump_stackwalk $* 2> >(grep -v INFO >&2)
 
