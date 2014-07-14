@@ -6,7 +6,7 @@ PREFIX=build/socorro
 ABS_PREFIX = $(shell readlink -f $(PREFIX))
 PYTHONPATH = "."
 SETUPDB = python ./socorro/external/postgresql/setupdb_app.py
-NOSE = $(shell command -v nosetests)
+NOSE = $(VIRTUAL_ENV)/bin/nosetests
 ENV = env
 
 PG_RESOURCES = $(if $(database_hostname), resource.postgresql.database_hostname=$(database_hostname)) $(if $(database_username), secrets.postgresql.database_username=$(database_username)) $(if $(database_password), secrets.postgresql.database_password=$(database_password)) $(if $(database_port), resource.postgresql.database_port=$(database_port)) $(if $(database_name), resource.postgresql.database_name=$(database_name))
