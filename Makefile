@@ -21,7 +21,7 @@ test: test-socorro test-webapp
 test-socorro: bootstrap
 	# jenkins only settings for the pre-configman components
 	# can be removed when all tests are updated to use configman
-	if [ $(WORKSPACE) ]; then cd socorro/unittest/config; cp jenkins.py.dist commonconfig.py; fi;
+	if [ "$(WORKSPACE)" ]; then cd socorro/unittest/config; cp jenkins.py.dist commonconfig.py; fi;
 	# setup any unset test configs and databases without overwriting existing files
 	cd config; for file in *.ini-dist; do if [ ! -f `basename $$file -dist` ]; then cp $$file `basename $$file -dist`; fi; done
 	PYTHONPATH=$(PYTHONPATH) $(SETUPDB) --database_name=socorro_integration_test --database_username=$(database_username) --database_hostname=$(database_hostname) --database_password=$(database_password) --database_port=$(DB_PORT) --database_superusername=$(database_superusername) --database_superuserpassword=$(database_superuserpassword) --dropdb --logging.stderr_error_logging_level=40 --unlogged
