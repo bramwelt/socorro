@@ -6,6 +6,7 @@ PREFIX=build/socorro
 ABS_PREFIX = $(shell readlink -f $(PREFIX))
 PYTHONPATH = "."
 SETUPDB = python ./socorro/external/postgresql/setupdb_app.py
+NOSE = $(shell command -v nosetests)
 ENV = env
 
 PG_RESOURCES = $(if $(database_hostname), resource.postgresql.database_hostname=$(database_hostname)) $(if $(database_username), secrets.postgresql.database_username=$(database_username)) $(if $(database_password), secrets.postgresql.database_password=$(database_password)) $(if $(database_port), resource.postgresql.database_port=$(database_port)) $(if $(database_name), resource.postgresql.database_name=$(database_name))
@@ -32,7 +33,7 @@ test-socorro: bootstrap
 	PYTHONPATH=$(PYTHONPATH) alembic -c config/alembic.ini upgrade +1
 	# run tests with coverage
 	rm -f coverage.xml
-	$(ENV) $(PG_RESOURCES) $(RMQ_RESOURCES) $(ES_RESOURCES) PYTHONPATH=$(PYTHONPATH) coverage run nosetests socorro -s --with-xunit
+	$(ENV) $(PG_RESOURCES) $(RMQ_RESOURCES) $(ES_RESOURCES) PYTHONPATH=$(PYTHONPATH) coverage run $(NOSE) socorro -s --with-xunit
 	coverage xml
 
 test-webapp:
