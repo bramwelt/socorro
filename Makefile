@@ -56,7 +56,7 @@ reinstall: install-socorro
 install-socorro: bootstrap-webapp
 	# package up the tarball in $(PREFIX)
 	# create base directories
-	echo "ENV is: $(shell env), $$(ENV), $($ENV), $$ENV"
+	echo "ENV is: $(ENV)"
 	echo "PREFIX is: $(PREFIX)"
 	mkdir -p $(PREFIX)/application
 	# copy to install directory
