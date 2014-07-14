@@ -8,6 +8,8 @@ addons:
 
 before_install:
     - npm install -g less
+    - cp config/alembic.ini-dist config/alembic.ini
+    - sed -i "s/jenkins-pg92/localhost/" config/alembic.ini
     - sudo su postgres -c "psql template1 -c \"create user test with encrypted password 'aPassword' superuser\""
 
 install:
