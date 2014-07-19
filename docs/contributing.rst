@@ -10,6 +10,7 @@ Contributing
 
    codingconventions
    newdeveloperguide
+   writingdocs
    unittesting
    seleniumtesting
    crashreprofilteringreport

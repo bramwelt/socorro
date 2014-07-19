@@ -39,7 +39,6 @@ Contents:
    contributing
    database
    generic_app
-   writingdocs
    glossary/index
 
 
