@@ -148,3 +148,5 @@ https://github.com/jsocol/commonware/archive/b554418.zip#egg=commonware
 cef==0.5
 # sha256: -fUE8yboUH-tNZdMGuX5HUpzX7M-VWtu2PXsEGBUpHM
 https://github.com/mozilla/nuggets/archive/ce50688.zip#egg=nuggets
+# sha256: 1hLKkMlqLLNOB0uUEIYaCRvolKDc4K9JTH5qgvvGfq4
+https://github.com/jbalogh/django-multidb-router/archive/4f78662.zip#egg=django-multidb-router
