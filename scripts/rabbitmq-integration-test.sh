@@ -93,14 +93,7 @@ function fatal() {
   exit $exit_code
 }
 
-echo -n "INFO: setting up environment..."
-source ${VIRTUAL_ENV:-"socorro-virtualenv"}/bin/activate >> setup.log 2>&1
-if [ $? != 0 ]
-then
-  fatal 1 "could activate virtualenv"
-fi
 export PYTHONPATH=.
-echo " Done."
 
 echo -n "INFO: setting up database..."
 python socorro/external/postgresql/setupdb_app.py --database_username=$database_username --database_password=$database_password --database_name=breakpad --database_hostname=$database_hostname --dropdb --force --fakedata --fakedata_days=1 > setupdb.log 2>&1
