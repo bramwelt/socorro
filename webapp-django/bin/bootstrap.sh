@@ -5,8 +5,6 @@
 # by WSGI.
 set -e
 
-source ${VIRTUAL_ENV:-"../socorro-virtualenv"}/bin/activate
-
 if [ ! -f crashstats/settings/local.py ]
 then
     cp crashstats/settings/local.py-dist crashstats/settings/local.py
