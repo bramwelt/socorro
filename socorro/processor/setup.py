@@ -3,7 +3,8 @@ from setuptools import setup
 setup(
     name='socorro-processor',
     description='Processor of Crash Reports',
-    author='Mozilla'
+    version='95.0.0',
+    author='Mozilla',
     author_email='socorro-dev@mozilla.com',
     url='https://crash-stats.mozilla.com',
     packages=['processor'],
