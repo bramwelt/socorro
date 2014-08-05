@@ -1,0 +1,11 @@
+# sha256: YjGaw0shgNRQpNknhzyyYA88E7zmsgd83XcMd7Oph-E
+isodate==0.4.7
+# sha256: un_il03Cdt0bg-HEB9ZsetPuZDOPdT1PZXr8qWxJumw
+lxml==2.3.4
+# sha256: lvpN706AIAvoJ8P1EUfdez-ohzuSB-MyXUe6Rb8ppcE
+# sha256: 6QTt-5DahBKcBiUs06BfkLTuvBu1uF7pblb_bPaUONU
+mock==0.8.0
+# sha256: TmPMMyXedc-Y_61AvnL6aXU96CRpUXMXj3TANP5PUmA
+nose==1.3.0
+# sha256: wn5AqzzPN_MKn3estJFzcNk0HiWr2o6Uub1IxxJ_fUg
+raven==3.4.1
