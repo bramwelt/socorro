@@ -13,3 +13,5 @@ build
 /static/
 /sqlite.crashstats.db
 .vagrant
+*.egg-info
+/dist/
