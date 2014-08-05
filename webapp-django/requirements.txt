@@ -9,14 +9,12 @@ https://github.com/jsocol/commonware/archive/b554418.zip#egg=commonware
 cssselect==0.9.1
 # sha256: m3_LmdICiRiewPHgbR0r7TtHcuOjk_3b-wBup8P5v68
 Django==1.5.6
-# sha256: W_sDzKCODJmJWOLJs1MOyFoCyY0cqkhJZ-GwpsCICEM
-https://github.com/jezdez/django-appconf/archive/d7ff3bb.zip#egg=django-appconf
+# sha256: 53T3tTehlADKaH9I01KrdGFzKsQThd2I_a1Hie-tKcU
+django-appconf==0.6
 # sha256: 1BuH0etCTRi6Lb5zMTHp2HPnCcwR63PaJIw07sHV7W4
 django-browserid==0.10.1
-# sha256: vOWl5zvacyobs3P8ofRyh7uZ7MoYS7kPJh5VymTCBh4
-https://github.com/jezdez/django_compressor/archive/90966ed.zip#egg=django-compressor
-# sha256: Tg3rRP5GuOADbGx7MBJV1RikfCQL6zZWn7Ua6aAwDpM
-django-jingo-offline-compressor==0.0.7
+# sha256: UE5EGWeseGBKs18DABj8mm-icOam6YRx0jEf139wZ0s
+django-compressor==1.4
 # sha256: nc6AOA28EXa-GdHOg2C5QC4d5SpHNG_3WeV-3zgxHRw
 https://github.com/django-nose/django-nose/archive/10475f1.zip#egg=django-nose
 # sha256: uDA8a2lQGB1uEg_sdygAueYurQsQAD6-utf81kFmE9g
