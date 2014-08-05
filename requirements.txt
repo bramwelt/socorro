@@ -31,8 +31,6 @@ pyelasticsearch==0.6.1
 elasticutils==0.7
 # sha256: K89b7bUyilYzBFp9RnhNM5POlAyUnAkMr111ttMWNGY
 simplejson==2.5.0
-# sha256: 8EWv1t_7dVzAQRrLfOmsxN4OcSYdS1-R3i5o2apfg2c
-six==1.4.1
 # sha256: RdsWgxKmgg_XhpfHtv0BlvOvkiyOvIhUDt0Nb6_tVU0
 statsd==2.1.2
 # sha256: 1VJK5SO7ngnFe829HvriwofSBgNojqMfYCDtGApImvA
