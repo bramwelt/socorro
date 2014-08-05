@@ -1,0 +1,39 @@
+# sha256: akF58qKszaKyc7_Ybeb3AkzuIDBDzJp8BA_nswa74SA
+fancy-tag==0.2.0
+# dev requirements
+
+# sha256: M57ATSCtnNzL_p843OYYLMUEznieXQ-WR-qnUvD5UwA
+MarkupSafe==0.15
+
+# sha256: hHK_EwLbFb3yxDk6XpGAzb8ps_jtWwbAa_XGuo9DNYg
+mercurial==2.7.1
+# sha256: Yj_jJZOSGfYbQathJMV_SWDOT0hlFoRqqvfUd10qLto
+honcho==0.5.0
+# sha256: th84eGr2uNZEtTBVIBLWacdBX89YUt4yDykIANuXmD0
+gunicorn==18.0
+
+# prod requirements
+
+# sha256: jjAivJYKpdX8fUxWR4YIdpOhqZ8V4CWtkg_AqjeOHWc
+pgxnclient==1.2.1
+# sha256: x-YQyACVcEbATIAUqrjM6PC58ElcjNNJ5XwffKv0Dnk
+wsgiref==0.1.2
+# sha256: aM-CXyJ8guGsYeQjz8rZI_9zTCe1vdcXRJXRYsQsYCs
+ujson==1.33
+
+# sha256: ZrvGLZUZ-dUxsfd-aH2fL15SHLkG8f1yMfQDmX4BEMQ
+python-memcached==1.48
+# sha256: rxL5lFTolenkMMdXI8O5QZwLzNDqd4A2YtaprFb2Qls
+py-bcrypt==0.3
+# sha256: 1ugIz8yalSg5O269fnT23pd4f22syV4o9cg2d7YAdRc
+https://github.com/jbalogh/check/archive/9c314d7c16408f876ee89f06a62e40dea4c98a02.zip#egg=check
+# sha256: l2sTklJ8dzg-uCfef9RNrK8Sl6Y6oN9Sb0evMC9HnVQ
+path.py==5.1
+# sha256: FbQhMbJfN2Fl0ZX-ThewooMRGCqvkzDV61dbvtpaaYk
+# sha256: Yuh_1UU1-5MrSk2Uho21IyV6EDHIvGvTWMIBVDPmRts
+pep8==1.5.7
+# sha256: P6gKELNtUWhr93RPXcmWIs1cmM6O1kAi5imGiq_Bd2k
+# sha256: rEVxaVwQzhU2vNuhopS58tPmzJ0OoXG2fVCghkzj4EI
+pyflakes==0.8.1
+# sha256: TzJCJuHuhaxBUgV5up3nAylAEmAuU2IX_Q50VuFH2IY
+sasl==0.1.3
