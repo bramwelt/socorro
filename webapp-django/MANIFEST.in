@@ -2,4 +2,4 @@ include README.md
 include *.py
 recursive-include wsgi *.py
 recursive-include crashstats *.py
-recursive-include crashstats *.html
+recursive-include crashstats *.html *.js *.css *.less
