@@ -1,3 +1,5 @@
 include README.md
-recursive-include */*/templates *.*
-recursive-include */locale *.*
+include *.py
+recursive-include wsgi *.py
+recursive-include crashstats *.py
+recursive-include crashstats *.html
