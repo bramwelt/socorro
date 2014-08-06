@@ -53,5 +53,10 @@ setup(
         'six',
         'test-utils',
     ],
+    entry_points={
+        'console_scripts': [
+            'socorro-crashstats = bin.manage:main'
+        ],
+    },
     packages=find_packages(exclude=['tests']),
 )

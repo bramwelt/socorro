@@ -7,6 +7,8 @@ set -e
 
 source ${VIRTUAL_ENV:-"../socorro-virtualenv"}/bin/activate
 
+python setup.py install
+
 if [ ! -f crashstats/settings/local.py ]
 then
     cp crashstats/settings/local.py-dist crashstats/settings/local.py
@@ -22,8 +24,8 @@ then
     echo "COMPRESS_OFFLINE = True" >> crashstats/settings/local.py
 fi
 
-./manage.py collectstatic --noinput
+socorro-crashstats collectstatic --noinput
 # even though COMPRESS_OFFLINE=True COMPRESS becomes (!DEBUG) which
 # will become False so that's why we need to use --force here.
-./manage.py compress --force --engine=jinja2
-./manage.py syncdb --noinput
+socorro-crashstats compress --force --engine=jinja2
+socorro-crashstats syncdb --noinput
