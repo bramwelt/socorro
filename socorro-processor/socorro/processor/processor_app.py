@@ -203,6 +203,8 @@ class ProcessorApp(FetchTransformSaveApp):
         self.registrar.unregister()
         self.iterator.close()
 
+def app():
+    main(ProcessorApp)
 
 if __name__ == '__main__':
-    main(ProcessorApp)
+    app()
