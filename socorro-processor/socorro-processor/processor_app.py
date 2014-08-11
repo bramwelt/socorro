@@ -50,7 +50,7 @@ class ProcessorApp(FetchTransformSaveApp):
     required_config.processor.add_option(
       'processor_class',
       doc='the class that transforms raw crashes into processed crashes',
-      default='socorro.processor.hybrid_processor.HybridCrashProcessor',
+      default='socorro_processor.hybrid_processor.HybridCrashProcessor',
       from_string_converter=class_converter
     )
     #--------------------------------------------------------------------------
@@ -75,7 +75,7 @@ class ProcessorApp(FetchTransformSaveApp):
     required_config.registrar.add_option(
       'registrar_class',
       doc='the class that registers and tracks processors',
-      default='socorro.processor.registration_client.'
+      default='socorro_processor.registration_client.'
               'ProcessorAppNullRegistrationClient',
       from_string_converter=class_converter
     )

@@ -34,7 +34,7 @@ from socorro.lib.util import (
     emptyFilter,
     CachingIterator
 )
-from socorro.processor.breakpad_pipe_to_json import pipe_dump_to_json_dump
+from socorro_processor.breakpad_pipe_to_json import pipe_dump_to_json_dump
 
 
 #------------------------------------------------------------------------------
@@ -117,14 +117,14 @@ class HybridCrashProcessor(RequiredConfig):
     required_config.c_signature.add_option(
         'c_signature_tool_class',
         doc='the class that can generate a C signature',
-        default='socorro.processor.signature_utilities.CSignatureTool',
+        default='socorro_processor.signature_utilities.CSignatureTool',
         from_string_converter=class_converter
     )
     required_config.namespace('java_signature')
     required_config.java_signature.add_option(
         'java_signature_tool_class',
         doc='the class that can generate a Java signature',
-        default='socorro.processor.signature_utilities.JavaSignatureTool',
+        default='socorro_processor.signature_utilities.JavaSignatureTool',
         from_string_converter=class_converter
     )
     required_config.add_option(
@@ -235,7 +235,7 @@ class HybridCrashProcessor(RequiredConfig):
             self.config.logger.info(
                 'falling back to default skunk_classifier rules'
             )
-            from socorro.processor.skunk_classifiers import \
+            from socorro_processor.skunk_classifiers import \
                 default_classifier_rules
             self.rule_system.skunk_classifier.load_rules(
                 default_classifier_rules
@@ -248,7 +248,7 @@ class HybridCrashProcessor(RequiredConfig):
             self.config.logger.info(
                 'falling back to default support_classifier rules'
             )
-            from socorro.processor.support_classifiers import \
+            from socorro_processor.support_classifiers import \
                 default_support_classifier_rules
             self.rule_system.support_classifier.load_rules(
                 default_support_classifier_rules
@@ -1438,7 +1438,7 @@ def json_equal_predicate(raw_crash, processor, key, value):
     is equal to a certain value.  In a rule definition, use of this function
     could look like this:
 
-    r = TransformRule('socorro.processor.processor.json_equal_predicate',
+    r = TransformRule('socorro_processor.processor.json_equal_predicate',
                       '',
                       'key="ReleaseChannel", value="esr",
                       ...)
@@ -1465,10 +1465,10 @@ def json_reformat_action(raw_crash, processor, key, format_str):
     if the 'ReleaseChannel' value is 'esr'.  The rule to accomplish this looks
     like this:
 
-    r = TransformRule('socorro.processor.processor.json_equal_predicate',
+    r = TransformRule('socorro_processor.processor.json_equal_predicate',
                       '',
                       'key="ReleaseChannel", value="esr",  # check for 'esr'
-                      'socorro.processor.processor.json_reformat_action',
+                      'socorro_processor.processor.json_reformat_action',
                       '',
                       'key="Version", format_str="%(Version)sesr"')
 
