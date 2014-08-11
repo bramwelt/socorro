@@ -9,7 +9,7 @@ import psycopg2.extensions
 import datetime
 import threading
 
-import socorro.lib.util as util
+import socorro_lib.util as util
 
 #-----------------------------------------------------------------------------------------------------------------
 def singleValueSql (aCursor, sql, parameters=None):
@@ -46,7 +46,7 @@ def execute (aCursor, sql, parameters=None):
 class LoggingCursor(psycopg2.extensions.cursor):
   """Use as cursor_factory when getting cursor from connection:
   ...
-  cursor = connection.cursor(cursor_factory = socorro.lib.pyscopghelper.LoggingCursor)
+  cursor = connection.cursor(cursor_factory = socorro_lib.pyscopghelper.LoggingCursor)
   cursor.setLogger(someLogger)
   ...
   """

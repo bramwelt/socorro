@@ -9,12 +9,12 @@ import collections
 
 import socorro.external.filesystem.dump_storage as socorro_dumpStorage
 import socorro.external.filesystem.filesystem as socorro_fs
-import socorro.lib.util as socorro_util
-import socorro.lib.ooid as socorro_ooid
+import socorro_lib.util as socorro_util
+import socorro_lib.ooid as socorro_ooid
 
-from socorro.lib.datetimeutil import datetimeFromISOdateString
+from socorro_lib.datetimeutil import datetimeFromISOdateString
 
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 
 
 class NoSuchUuidFound(Exception):
@@ -30,7 +30,7 @@ class JsonDumpStorage(socorro_dumpStorage.DumpStorage):
      - The name branch consists of paths based on the first 8 characters of the
        crash_id file name. It holds the two data files and a relative symbolic
        link to the date branch directory associated with the particular
-       crash_id.  see socorro.lib.ooid.py for details of date and depth
+       crash_id.  see socorro_lib.ooid.py for details of date and depth
        encoding within the crash_id
        For the crash_id:  22adfb61-f75b-11dc-b6be-001322081225
         - the json file is stored as

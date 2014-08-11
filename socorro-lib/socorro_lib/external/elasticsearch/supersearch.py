@@ -18,8 +18,8 @@ from socorro.external import (
     ResourceNotFound,
 )
 from socorro.external.elasticsearch.base import ElasticSearchBase
-from socorro.lib import datetimeutil, external_common
-from socorro.lib.search_common import SearchBase
+from socorro_lib import datetimeutil, external_common
+from socorro_lib.search_common import SearchBase
 
 
 BAD_INDEX_REGEX = re.compile('\[\[(.*)\] missing\]')

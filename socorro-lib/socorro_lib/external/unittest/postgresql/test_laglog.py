@@ -9,7 +9,7 @@ from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_
 
 from socorro.external.postgresql.laglog import LagLog
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 
 from unittestbase import PostgreSQLTestCase
 

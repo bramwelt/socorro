@@ -8,7 +8,7 @@ from nose.tools import eq_, assert_raises
 
 from socorro.external import MissingArgumentError, BadArgumentError
 from socorro.external.postgresql.signature_urls import SignatureURLs
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 
 from .unittestbase import PostgreSQLTestCase
 

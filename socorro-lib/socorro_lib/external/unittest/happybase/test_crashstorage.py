@@ -5,7 +5,7 @@
 import mock
 import json
 
-from socorro.lib.util import SilentFakeLogger, DotDict
+from socorro_lib.util import SilentFakeLogger, DotDict
 from socorro.external.crashstorage_base import Redactor
 from socorro.external.happybase.crashstorage import HBaseCrashStorage, CrashIDNotFound
 from socorro.database.transaction_executor import TransactionExecutor

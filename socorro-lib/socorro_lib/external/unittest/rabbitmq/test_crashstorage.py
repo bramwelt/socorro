@@ -5,7 +5,7 @@ from nose.tools import eq_, ok_
 from socorro.external.rabbitmq.crashstorage import (
     RabbitMQCrashStorage,
 )
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 from socorro.external.crashstorage_base import Redactor
 from socorro.unittest.testbase import TestCase
 

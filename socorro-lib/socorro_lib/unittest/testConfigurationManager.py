@@ -11,8 +11,8 @@ import datetime
 ### DynamicConfig and its module should be a drop-in replacement for Config and its module
 ### The line below works, but it seemed overkill to duplicate the whole test so
 ### Just left this here as a reminder to play with it from time to time.
-#import socorro.lib.ConfigurationManager as CM
-import socorro.lib.dynamicConfigurationManager as CM
+#import socorro_lib.ConfigurationManager as CM
+import socorro_lib.dynamicConfigurationManager as CM
 from socorro.unittest.testbase import TestCase
 
 import optionfile

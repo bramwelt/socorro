@@ -7,7 +7,7 @@ from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_
 
 from socorro.external.postgresql.releases import Releases
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 
 from .unittestbase import PostgreSQLTestCase
 

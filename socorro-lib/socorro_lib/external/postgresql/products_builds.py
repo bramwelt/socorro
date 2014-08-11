@@ -8,8 +8,8 @@ from datetime import timedelta
 
 from socorro.external import InsertionError, MissingArgumentError
 from socorro.external.postgresql.base import PostgreSQLBase
-from socorro.lib import buildutil, external_common
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib import buildutil, external_common
+from socorro_lib.datetimeutil import utc_now
 
 logger = logging.getLogger("webapi")
 

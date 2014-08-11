@@ -7,7 +7,7 @@ from socorro.external import (
     MissingArgumentError,
     BadArgumentError
 )
-from socorro.lib import external_common
+from socorro_lib import external_common
 
 
 BACKFILL_PARAMETERS = {

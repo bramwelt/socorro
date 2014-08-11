@@ -8,7 +8,7 @@ import psycopg2
 from socorro.external import DatabaseError
 from socorro.external.postgresql.base import PostgreSQLBase
 from socorro.external.postgresql.products import Products
-from socorro.lib import external_common
+from socorro_lib import external_common
 
 logger = logging.getLogger("webapi")
 

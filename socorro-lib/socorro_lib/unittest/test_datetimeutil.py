@@ -5,7 +5,7 @@
 from nose.tools import eq_, ok_, raises
 import datetime
 
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 
 
 UTC = datetimeutil.UTC

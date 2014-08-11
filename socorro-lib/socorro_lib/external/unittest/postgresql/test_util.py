@@ -6,7 +6,7 @@ from .unittestbase import PostgreSQLTestCase
 from socorro.external.postgresql.util import Util
 from nose.plugins.attrib import attr
 from nose.tools import eq_
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 
 
 @attr(integration='postgres')

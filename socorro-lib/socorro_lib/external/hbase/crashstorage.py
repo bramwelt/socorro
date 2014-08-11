@@ -11,7 +11,7 @@ from socorro.external.hbase import hbase_client
 from socorro.database.transaction_executor import TransactionExecutor
 from socorro.external.hbase.connection_context import \
      HBaseConnectionContextPooled
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 from configman import Namespace, class_converter
 
 

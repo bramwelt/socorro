@@ -21,7 +21,7 @@ from socorro.external import (
 )
 from socorro.external.elasticsearch import crashstorage
 from socorro.external.elasticsearch.query import Query
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 
 from .unittestbase import ElasticSearchTestCase
 

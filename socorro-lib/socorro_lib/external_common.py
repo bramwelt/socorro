@@ -9,9 +9,9 @@ Common functions for external modules.
 import json
 
 from datetime import datetime, timedelta, date
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 
-import socorro.lib.datetimeutil as dtutil
+import socorro_lib.datetimeutil as dtutil
 
 
 def parse_arguments(filters, arguments):

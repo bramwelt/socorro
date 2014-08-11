@@ -8,12 +8,12 @@ import itertools
 import json
 import os
 
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 from socorro.external.crashstorage_base import (
     CrashStorageBase, CrashIDNotFound)
 from socorro.external.hb.connection_context import \
      HBaseConnectionContext
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 from configman import Namespace, class_converter
 
 from hbase.Hbase import Mutation

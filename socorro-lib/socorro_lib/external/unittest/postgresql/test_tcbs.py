@@ -7,7 +7,7 @@ import mock
 import socorro.external.postgresql.tcbs as tcbs
 from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
-from socorro.lib import datetimeutil, util
+from socorro_lib import datetimeutil, util
 from .unittestbase import PostgreSQLTestCase
 
 

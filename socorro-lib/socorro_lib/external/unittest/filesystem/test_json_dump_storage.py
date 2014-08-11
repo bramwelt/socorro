@@ -10,8 +10,8 @@ import json
 from nose.tools import eq_, ok_, assert_raises
 
 import socorro.external.filesystem.json_dump_storage as JDS
-import socorro.lib.util
-from socorro.lib.datetimeutil import UTC
+import socorro_lib.util
+from socorro_lib.datetimeutil import UTC
 
 import socorro.unittest.testlib.createJsonDumpStore as createJDS
 from socorro.unittest.testbase import TestCase
@@ -23,7 +23,7 @@ class TestJsonDumpStorage(TestCase):
     self.testMoveTo = os.path.join('.','TEST-MOVETO')
     self.testMoveFrom = os.path.join('.','TEST-MOVEFROM')
     self.testMoveToAlt = os.path.join('.','TEST-MOVETO-ALT')
-    fakeLogger = socorro.lib.util.SilentFakeLogger()
+    fakeLogger = socorro_lib.util.SilentFakeLogger()
     self.initKwargs =  {
       0:{'logger': fakeLogger},
       1:{'logger': fakeLogger,'dateName':'by_date','indexName':'by_name','jsonSuffix':'JS','dumpSuffix':'.DS',},

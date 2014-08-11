@@ -11,7 +11,7 @@ from socorro.external.hbase.hbase_client import (
     FatalException,
     NoConnectionException
 )
-from socorro.lib.util import SilentFakeLogger, DotDict
+from socorro_lib.util import SilentFakeLogger, DotDict
 from socorro.database.transaction_executor import TransactionExecutor
 from socorro.unittest.testbase import TestCase
 from configman import Namespace

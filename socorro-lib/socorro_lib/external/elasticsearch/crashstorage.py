@@ -12,7 +12,7 @@ from socorro.external.crashstorage_base import (
     CrashStorageBase,
     CrashIDNotFound
 )
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 
 from configman import Namespace
 from configman.converters import class_converter

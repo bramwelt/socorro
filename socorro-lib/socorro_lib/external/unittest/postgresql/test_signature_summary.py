@@ -7,7 +7,7 @@ from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
 
 from socorro.external.postgresql.signature_summary import SignatureSummary
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 from socorro.external import BadArgumentError
 
 from .unittestbase import PostgreSQLTestCase

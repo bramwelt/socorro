@@ -17,7 +17,7 @@ from socorro.external import (
 )
 from socorro.external.elasticsearch import crashstorage
 from socorro.external.elasticsearch.supersearch import SuperSearch
-from socorro.lib import datetimeutil, search_common
+from socorro_lib import datetimeutil, search_common
 from .unittestbase import ElasticSearchTestCase
 
 # Remove debugging noise during development

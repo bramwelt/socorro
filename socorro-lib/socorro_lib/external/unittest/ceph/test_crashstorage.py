@@ -7,7 +7,7 @@ import json
 
 import boto.exception
 
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 from socorro.external.crashstorage_base import Redactor
 from socorro.external.ceph.crashstorage import BotoS3CrashStorage
 from socorro.database.transaction_executor import (

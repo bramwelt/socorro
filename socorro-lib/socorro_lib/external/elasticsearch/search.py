@@ -8,7 +8,7 @@ import logging
 from socorro.external.elasticsearch.base import ElasticSearchBase
 from socorro.external.postgresql.util import Util
 
-import socorro.lib.search_common as search_common
+import socorro_lib.search_common as search_common
 
 logger = logging.getLogger("webapi")
 

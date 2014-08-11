@@ -5,10 +5,10 @@
 import datetime
 import signal
 
-import socorro.lib.ConfigurationManager as socorro_config
-from socorro.lib.ConfigurationManager import ConfigFileMissingError, ConfigFileOptionNameMissingError, NotAnOptionError, OptionError, CannotConvert, Option
-from socorro.lib.ConfigurationManager import ioConverter, dateTimeConverter, timeDeltaConverter, booleanConverter
-from socorro.lib.datetimeutil import utc_now
+import socorro_lib.ConfigurationManager as socorro_config
+from socorro_lib.ConfigurationManager import ConfigFileMissingError, ConfigFileOptionNameMissingError, NotAnOptionError, OptionError, CannotConvert, Option
+from socorro_lib.ConfigurationManager import ioConverter, dateTimeConverter, timeDeltaConverter, booleanConverter
+from socorro_lib.datetimeutil import utc_now
 
 
 def newConfiguration(**kwargs):
@@ -51,7 +51,7 @@ def createDefaultDbUpdater(cursor,tableName,configKey='configKey',configValue='c
       - an attempt is made to eval a function of the given name, to get builtins (see "Injection" below)
       - upon failure, the value reverts to text
     Injection: You may inject your own converter into the dynamicConfigurationManager module so it can be found:
-      import socorro.lib.dynamicConfigurationModule as dcm; ...; dcm.myFunction = myFunction
+      import socorro_lib.dynamicConfigurationModule as dcm; ...; dcm.myFunction = myFunction
   Usage: execUpdater = createDefaultDbUpdater(cursor,tableName[,configKey=columnName] [,configValue=columnName])
          dynamicConfigInstance.updateFunction = execUpdater
          ...

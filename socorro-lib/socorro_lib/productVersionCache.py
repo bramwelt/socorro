@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import socorro.database.database as db
-import socorro.lib.util as util
+import socorro_lib.util as util
 
 #=================================================================================================================
 class ProductVersionCache(object):

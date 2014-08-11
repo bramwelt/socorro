@@ -20,8 +20,8 @@ from socorro.external import (
 )
 from socorro.external.elasticsearch.base import ElasticSearchBase
 from socorro.external.elasticsearch.supersearch import BAD_INDEX_REGEX
-from socorro.lib import external_common
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib import external_common
+from socorro_lib.datetimeutil import utc_now
 
 
 class Query(ElasticSearchBase):

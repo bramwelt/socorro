@@ -9,8 +9,8 @@ import threading
 
 #logger = logging.getLogger("base")
 
-import socorro.lib.util as sutil
-import socorro.lib.threadlib as thr
+import socorro_lib.util as sutil
+import socorro_lib.threadlib as thr
 
 #-------------------------------------------------------------------------------
 OK = 1

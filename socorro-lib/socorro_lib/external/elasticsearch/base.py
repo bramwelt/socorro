@@ -5,8 +5,8 @@
 import datetime
 #import logging
 
-import socorro.lib.datetimeutil as dtutil
-import socorro.lib.httpclient as httpc
+import socorro_lib.datetimeutil as dtutil
+import socorro_lib.httpclient as httpc
 
 #logger = logging.getLogger("webapi")
 
@@ -121,7 +121,7 @@ class ElasticSearchBase(object):
         """
         Build and return an ES query given a list of parameters.
 
-        See socorro.lib.search_common.SearchCommon.get_parameters() for
+        See socorro_lib.search_common.SearchCommon.get_parameters() for
         parameters and default values.
 
         """

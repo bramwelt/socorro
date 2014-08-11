@@ -6,10 +6,10 @@ import time
 
 from nose.tools import ok_
 
-from  socorro.lib.threaded_task_manager import ThreadedTaskManager, \
+from  socorro_lib.threaded_task_manager import ThreadedTaskManager, \
       ThreadedTaskManagerWithConfigSetup, \
       default_task_func
-from socorro.lib.util import DotDict, SilentFakeLogger
+from socorro_lib.util import DotDict, SilentFakeLogger
 from socorro.unittest.testbase import TestCase
 
 

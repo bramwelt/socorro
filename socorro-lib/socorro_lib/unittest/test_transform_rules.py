@@ -4,7 +4,7 @@
 
 from nose.tools import eq_, ok_
 
-from socorro.lib import transform_rules
+from socorro_lib import transform_rules
 from socorro.unittest.testbase import TestCase
 
 

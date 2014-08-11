@@ -8,7 +8,7 @@ import logging
 
 from socorro.external.elasticsearch.base import ElasticSearchBase
 from socorro.services.versions_info import VersionsInfo
-from socorro.lib import datetimeutil, search_common
+from socorro_lib import datetimeutil, search_common
 
 
 logger = logging.getLogger("webapi")

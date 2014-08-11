@@ -25,7 +25,7 @@ from socorro.external.filesystem.processed_dump_storage import \
                                                 ProcessedDumpStorage
 from socorro.external.crashstorage_base import (CrashStorageBase,
                                                 CrashIDNotFound)
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 from socorro.collector.throttler import ACCEPT
 
 

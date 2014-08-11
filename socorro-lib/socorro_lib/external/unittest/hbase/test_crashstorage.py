@@ -17,7 +17,7 @@ from socorro.external.crashstorage_base import CrashIDNotFound, Redactor
 from socorro.external.hbase.crashstorage import HBaseCrashStorage
 from socorro.external.hbase.connection_context import \
      HBaseConnectionContextPooled
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 from socorro.unittest.config import commonconfig
 from socorro.database.transaction_executor import (
   TransactionExecutorWithLimitedBackoff

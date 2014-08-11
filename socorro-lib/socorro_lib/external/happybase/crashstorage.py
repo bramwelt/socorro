@@ -12,7 +12,7 @@ from socorro.external.crashstorage_base import (
     CrashStorageBase,
     CrashIDNotFound
 )
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 
 from configman import Namespace, class_converter
 

@@ -11,8 +11,8 @@ from stat import (
 )
 
 import socorro.external.filesystem.filesystem as socorro_fs
-import socorro.lib.ooid as socorro_ooid
-from socorro.lib.datetimeutil import utc_now, UTC
+import socorro_lib.ooid as socorro_ooid
+from socorro_lib.datetimeutil import utc_now, UTC
 
 
 class DumpStorage(object):

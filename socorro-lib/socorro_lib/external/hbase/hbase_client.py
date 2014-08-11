@@ -22,8 +22,8 @@ from thrift.protocol import TBinaryProtocol  # get module
 from hbase import ttypes  # get module
 from hbase.Hbase import Client, ColumnDescriptor, Mutation  # get classes
 
-import socorro.lib.util as utl
-from socorro.lib.util import DotDict
+import socorro_lib.util as utl
+from socorro_lib.util import DotDict
 
 
 class HBaseClientException(Exception):

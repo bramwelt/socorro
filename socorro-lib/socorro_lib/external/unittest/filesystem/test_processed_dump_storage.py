@@ -12,9 +12,9 @@ from nose.tools import *
 
 import socorro.unittest.testlib.createJsonDumpStore as createJDS
 
-import socorro.lib.util as socorro_util
+import socorro_lib.util as socorro_util
 import socorro.external.filesystem.processed_dump_storage as dumpStorage
-from socorro.lib.datetimeutil import utc_now, UTC
+from socorro_lib.datetimeutil import utc_now, UTC
 from socorro.unittest.testbase import TestCase
 
 

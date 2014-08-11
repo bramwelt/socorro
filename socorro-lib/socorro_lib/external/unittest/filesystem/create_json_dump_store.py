@@ -13,7 +13,7 @@ except ImportError:
   import simplejson as json
 
 import socorro.external.filesystem.json_dump_storage as JDS
-from socorro.lib.datetimeutil import utc_now, UTC
+from socorro_lib.datetimeutil import utc_now, UTC
 
 jsonFileData = {
   '0bba61c5-dfc3-43e7-dead-8afd20071025': ('2007-10-25-05-04','webhead02','0b/ba/61/c5','2007/10/25/05/00/webhead02_0'),

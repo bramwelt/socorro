@@ -19,9 +19,9 @@ except ImportError:
 from configman import Namespace
 from socorro.external.crashstorage_base import CrashStorageBase, \
                                                CrashIDNotFound
-from socorro.lib.ooid import dateFromOoid, depthFromOoid
-from socorro.lib.datetimeutil import utc_now
-from socorro.lib.util import DotDict
+from socorro_lib.ooid import dateFromOoid, depthFromOoid
+from socorro_lib.datetimeutil import utc_now
+from socorro_lib.util import DotDict
 
 @contextmanager
 def using_umask(n):

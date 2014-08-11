@@ -11,7 +11,7 @@ import time
 
 import requests
 
-from socorro.lib import external_common
+from socorro_lib import external_common
 
 
 class DownloadError(Exception):

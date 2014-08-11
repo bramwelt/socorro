@@ -7,7 +7,7 @@ from collections import defaultdict
 
 from socorro.external import BadArgumentError
 from socorro.external.postgresql.base import PostgreSQLBase
-from socorro.lib import external_common
+from socorro_lib import external_common
 
 
 class LagLog(PostgreSQLBase):

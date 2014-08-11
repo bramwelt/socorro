@@ -11,8 +11,8 @@ from nose.tools import eq_, ok_
 
 from socorro.external.elasticsearch.base import ElasticSearchBase
 
-import socorro.lib.search_common as scommon
-import socorro.lib.util as util
+import socorro_lib.search_common as scommon
+import socorro_lib.util as util
 from socorro.unittest.testbase import TestCase
 
 

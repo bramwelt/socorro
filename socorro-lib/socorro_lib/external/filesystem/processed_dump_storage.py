@@ -7,7 +7,7 @@ import logging
 import os
 import json
 import socorro.external.filesystem.dump_storage as socorro_dumpStorage
-import socorro.lib.util as socorro_util
+import socorro_lib.util as socorro_util
 
 
 class ProcessedDumpStorage(socorro_dumpStorage.DumpStorage):

@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # Deliberately use base-class's Option class just to see if things break (they better not)
-import socorro.lib.ConfigurationManager as cm
+import socorro_lib.ConfigurationManager as cm
 
 testOption0 = cm.Option()
 testOption0.doc = 'option 0'

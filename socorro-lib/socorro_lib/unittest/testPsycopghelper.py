@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import socorro.lib.psycopghelper as ppghelper
+import socorro_lib.psycopghelper as ppghelper
 import psycopg2
 import psycopg2.extensions
 import datetime as DT
@@ -14,7 +14,7 @@ from socorro.unittest.testbase import TestCase
 from createDBforTest import *
 from nose.plugins.attrib import attr
 
-import socorro.lib.ConfigurationManager as cm
+import socorro_lib.ConfigurationManager as cm
 import dbTestconfig as testConfig
 config = cm.newConfiguration(configurationModule = testConfig, applicationName='Testing Psycopghelper')
 if 'databasePort' not in config:

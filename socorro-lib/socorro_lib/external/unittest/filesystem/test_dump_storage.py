@@ -12,11 +12,11 @@ import time
 from nose.tools import *
 
 import socorro.external.filesystem.dump_storage as dumpStorage
-import socorro.lib.util as socorro_util
+import socorro_lib.util as socorro_util
 
 import socorro.unittest.external.filesystem.create_json_dump_store as createJDS
 
-from socorro.lib.datetimeutil import utc_now, UTC
+from socorro_lib.datetimeutil import utc_now, UTC
 
 class TestDumpStorage:
   def setUp(self):

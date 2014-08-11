@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import socorro.lib.iteratorWorkerFramework as siwf
-import socorro.lib.util as sutil
+import socorro_lib.iteratorWorkerFramework as siwf
+import socorro_lib.util as sutil
 
 import time
 

@@ -29,7 +29,7 @@ import sys
 import cStringIO
 import datetime
 
-from socorro.lib.datetimeutil import string_to_datetime
+from socorro_lib.datetimeutil import string_to_datetime
 
 #============================================================================================
 class ConfigFileMissingError (IOError):

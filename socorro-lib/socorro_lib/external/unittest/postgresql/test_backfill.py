@@ -10,7 +10,7 @@ import datetime
 from socorro.external.postgresql.backfill import Backfill
 from socorro.external.postgresql import fakedata
 from socorro.external import MissingArgumentError
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 
 
 #==============================================================================

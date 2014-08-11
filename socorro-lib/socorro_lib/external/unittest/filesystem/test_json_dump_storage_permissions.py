@@ -11,10 +11,10 @@ import time
 
 import socorro.external.filesystem.json_dump_storage as JDS
 import uuid as socorro_uuid
-from socorro.lib.util import SilentFakeLogger
+from socorro_lib.util import SilentFakeLogger
 import socorro.external.filesystem.filesystem as socorro_fs
 from socorro.unittest.testbase import TestCase
-from socorro.lib.datetimeutil import UTC
+from socorro_lib.datetimeutil import UTC
 
 class TestJsonDumpStoragePermissions(TestCase):
   def setUp(self):

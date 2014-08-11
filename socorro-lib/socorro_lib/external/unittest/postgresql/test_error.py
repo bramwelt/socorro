@@ -6,7 +6,7 @@ from nose.plugins.attrib import attr
 from nose.tools import eq_
 
 from socorro.external.postgresql.error import Error
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 
 from unittestbase import PostgreSQLTestCase
 

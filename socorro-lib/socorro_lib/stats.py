@@ -8,7 +8,7 @@ import math
 import threading
 import time
 
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 
 class UndefinedCounterActionException(Exception):
     pass
