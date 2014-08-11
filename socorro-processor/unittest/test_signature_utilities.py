@@ -5,12 +5,12 @@
 import mock
 from nose.tools import eq_, ok_
 
-import socorro.processor.signature_utilities as sig
+import socorro_processor.signature_utilities as sig
 import socorro.lib.util as sutil
 
 from socorro.database.transaction_executor import TransactionExecutor
 from socorro.lib.util import DotDict
-from socorro.processor.signature_utilities import JavaSignatureTool
+from socorro_processor.signature_utilities import JavaSignatureTool
 from socorro.unittest.testbase import TestCase
 
 import re
@@ -56,7 +56,7 @@ class TestCSignatureTool(BaseTestClass):
         config.logger = sutil.FakeLogger()
         config.database_class = mock.MagicMock()
         config.transaction_executor_class = TransactionExecutor
-        patch_target = 'socorro.processor.signature_utilities.' \
+        patch_target = 'socorro_processor.signature_utilities.' \
                        'execute_query_fetchall'
         with mock.patch(patch_target) as mocked_query:
             # these become the results of four successive calls to
@@ -314,7 +314,7 @@ class TestCSignatureToolDB(BaseTestClass):
             ]
         }
         with patch(
-            'socorro.processor.signature_utilities.execute_query_fetchall'
+            'socorro_processor.signature_utilities.execute_query_fetchall'
         ) as execute_query_mock:
             execute_query_mock.side_effect = query_results_mock_fn
             config = self.setup_config()

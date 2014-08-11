@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 from configman import ConfigurationManager
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.processor.registration_client import (
+from socorro_processor.registration_client import (
   ProcessorAppRegistrationClient,
   RegistrationError
 )
@@ -88,7 +88,7 @@ class TestProcessorAppRegistrationAgent(TestCase):
         with config_manager.context() as config:
             registrar = NoRegister(config)
 
-            utc_now_mock_str = 'socorro.processor.registration_client.utc_now'
+            utc_now_mock_str = 'socorro_processor.registration_client.utc_now'
             with mock.patch(utc_now_mock_str) as m_utc_now:
                 a_date = datetime(year=2012,
                                   month=5,
@@ -140,7 +140,7 @@ class TestProcessorAppRegistrationAgent(TestCase):
         with config_manager.context() as config:
             registrar = NoRegister(config)
 
-            utc_now_mock_str = 'socorro.processor.registration_client.utc_now'
+            utc_now_mock_str = 'socorro_processor.registration_client.utc_now'
             with mock.patch(utc_now_mock_str) as m_utc_now:
                 a_date = datetime(year=1999,
                                   month=1,

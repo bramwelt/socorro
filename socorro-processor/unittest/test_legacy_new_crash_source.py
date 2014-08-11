@@ -9,7 +9,7 @@ from datetime import timedelta
 from nose.tools import eq_
 from configman.dotdict import DotDict
 
-from socorro.processor.legacy_new_crash_source import (
+from socorro_processor.legacy_new_crash_source import (
   LegacyNewCrashSource,
 )
 from socorro.external.postgresql.dbapi2_util import (

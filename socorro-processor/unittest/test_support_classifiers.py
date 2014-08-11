@@ -9,13 +9,13 @@ from nose.tools import eq_, ok_
 from sys import maxint
 
 from socorro.lib.util import DotDict, SilentFakeLogger
-from socorro.processor.support_classifiers import (
+from socorro_processor.support_classifiers import (
     SupportClassificationRule,
     BitguardClassifier,
     OutOfDateClassifier,
 )
 
-from socorro.processor.signature_utilities import CSignatureTool
+from socorro_processor.signature_utilities import CSignatureTool
 from socorro.unittest.processor.test_breakpad_pipe_to_json import (
     cannonical_json_dump,
 )

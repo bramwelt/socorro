@@ -7,7 +7,7 @@ import copy
 from nose.tools import eq_, ok_
 
 from socorro.lib.util import DotDict, SilentFakeLogger
-from socorro.processor.skunk_classifiers import (
+from socorro_processor.skunk_classifiers import (
     SkunkClassificationRule,
     DontConsiderTheseFilter,
     UpdateWindowAttributes,
@@ -16,7 +16,7 @@ from socorro.processor.skunk_classifiers import (
     Bug811804,
     Bug812318,
 )
-from socorro.processor.signature_utilities import CSignatureTool
+from socorro_processor.signature_utilities import CSignatureTool
 from socorro.unittest.processor.test_breakpad_pipe_to_json import (
     cannonical_json_dump
 )

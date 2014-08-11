@@ -10,7 +10,7 @@ from datetime import datetime
 from configman.dotdict import DotDict
 from nose.tools import eq_, ok_
 
-from socorro.processor.legacy_processor import (
+from socorro_processor.legacy_processor import (
   LegacyCrashProcessor,
   create_symbol_path_str
 )
@@ -244,7 +244,7 @@ class TestLegacyProcessor(TestCase):
     def test_legacy_processor_basics(self):
         config = setup_config_with_mocks()
         mocked_transform_rules_str = \
-            'socorro.processor.legacy_processor.TransformRuleSystem'
+            'socorro_processor.legacy_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform:
             leg_proc = LegacyCrashProcessor(config, config.mock_quit_fn)
             eq_(leg_proc.quit_check, config.mock_quit_fn)
@@ -259,12 +259,12 @@ class TestLegacyProcessor(TestCase):
     def test_convert_raw_crash_to_processed_crash_basic(self):
         config = setup_config_with_mocks()
         mocked_transform_rules_str = \
-            'socorro.processor.legacy_processor.TransformRuleSystem'
+            'socorro_processor.legacy_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.legacy_processor.utc_now'
+            utc_now_str = 'socorro_processor.legacy_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -411,12 +411,12 @@ class TestLegacyProcessor(TestCase):
     def test_convert_raw_crash_to_processed_crash_unexpected_error(self):
         config = setup_config_with_mocks()
         mocked_transform_rules_str = \
-            'socorro.processor.legacy_processor.TransformRuleSystem'
+            'socorro_processor.legacy_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.legacy_processor.utc_now'
+            utc_now_str = 'socorro_processor.legacy_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -497,12 +497,12 @@ class TestLegacyProcessor(TestCase):
         config.collect_addon = False
         config.collect_crash_process = False
         mocked_transform_rules_str = \
-            'socorro.processor.legacy_processor.TransformRuleSystem'
+            'socorro_processor.legacy_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.legacy_processor.utc_now'
+            utc_now_str = 'socorro_processor.legacy_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -730,12 +730,12 @@ class TestLegacyProcessor(TestCase):
         config.collect_addon = False
         config.collect_crash_process = False
         mocked_transform_rules_str = \
-            'socorro.processor.legacy_processor.TransformRuleSystem'
+            'socorro_processor.legacy_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.legacy_processor.utc_now'
+            utc_now_str = 'socorro_processor.legacy_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -787,12 +787,12 @@ class TestLegacyProcessor(TestCase):
         config.collect_addon = False
         config.collect_crash_process = True
         mocked_transform_rules_str = \
-            'socorro.processor.legacy_processor.TransformRuleSystem'
+            'socorro_processor.legacy_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.legacy_processor.utc_now'
+            utc_now_str = 'socorro_processor.legacy_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -903,12 +903,12 @@ class TestLegacyProcessor(TestCase):
         config = setup_config_with_mocks()
         config.crashing_thread_tail_frame_threshold = 5
         mocked_transform_rules_str = \
-            'socorro.processor.legacy_processor.TransformRuleSystem'
+            'socorro_processor.legacy_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.legacy_processor.utc_now'
+            utc_now_str = 'socorro_processor.legacy_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -958,12 +958,12 @@ class TestLegacyProcessor(TestCase):
         config.collect_addon = False
         config.collect_crash_process = True
         mocked_transform_rules_str = \
-            'socorro.processor.legacy_processor.TransformRuleSystem'
+            'socorro_processor.legacy_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.legacy_processor.utc_now'
+            utc_now_str = 'socorro_processor.legacy_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)

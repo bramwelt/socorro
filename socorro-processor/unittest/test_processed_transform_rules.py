@@ -5,13 +5,13 @@
 from nose.tools import eq_, ok_
 
 from socorro.lib.util import DotDict, SilentFakeLogger
-from socorro.processor.processed_transform_rules import (
+from socorro_processor.processed_transform_rules import (
     ProcessedTransformRule,
     OOMSignature,
     SigTrunc,
 )
 
-from socorro.processor.signature_utilities import CSignatureTool
+from socorro_processor.signature_utilities import CSignatureTool
 from socorro.unittest.testbase import TestCase
 
 csig_config = DotDict()

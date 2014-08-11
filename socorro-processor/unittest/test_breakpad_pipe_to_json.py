@@ -4,7 +4,7 @@
 
 from nose.tools import eq_, ok_
 
-import socorro.processor.breakpad_pipe_to_json as bpj
+import socorro_processor.breakpad_pipe_to_json as bpj
 
 from socorro.lib.util import DotDict
 from socorro.unittest.testbase import TestCase

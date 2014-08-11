@@ -11,7 +11,7 @@ from datetime import datetime
 
 from configman.dotdict import DotDict
 
-from socorro.processor.hybrid_processor import (
+from socorro_processor.hybrid_processor import (
   HybridCrashProcessor,
   create_symbol_path_str
 )
@@ -245,7 +245,7 @@ class TestHybridProcessor(TestCase):
     def test_hybrid_processor_basics(self):
         config = setup_config_with_mocks()
         mocked_transform_rules_str = \
-            'socorro.processor.hybrid_processor.TransformRuleSystem'
+            'socorro_processor.hybrid_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform:
             leg_proc = HybridCrashProcessor(config, config.mock_quit_fn)
             eq_(leg_proc.quit_check, config.mock_quit_fn)
@@ -260,12 +260,12 @@ class TestHybridProcessor(TestCase):
     def test_convert_raw_crash_to_processed_crash_basic(self):
         config = setup_config_with_mocks()
         mocked_transform_rules_str = \
-            'socorro.processor.hybrid_processor.TransformRuleSystem'
+            'socorro_processor.hybrid_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.hybrid_processor.utc_now'
+            utc_now_str = 'socorro_processor.hybrid_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -406,12 +406,12 @@ class TestHybridProcessor(TestCase):
     def test_convert_raw_crash_to_processed_crash_unexpected_error(self):
         config = setup_config_with_mocks()
         mocked_transform_rules_str = \
-            'socorro.processor.hybrid_processor.TransformRuleSystem'
+            'socorro_processor.hybrid_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.hybrid_processor.utc_now'
+            utc_now_str = 'socorro_processor.hybrid_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -492,12 +492,12 @@ class TestHybridProcessor(TestCase):
         config.collect_addon = False
         config.collect_crash_process = False
         mocked_transform_rules_str = \
-            'socorro.processor.hybrid_processor.TransformRuleSystem'
+            'socorro_processor.hybrid_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.hybrid_processor.utc_now'
+            utc_now_str = 'socorro_processor.hybrid_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -725,12 +725,12 @@ class TestHybridProcessor(TestCase):
         config.collect_addon = False
         config.collect_crash_process = False
         mocked_transform_rules_str = \
-            'socorro.processor.hybrid_processor.TransformRuleSystem'
+            'socorro_processor.hybrid_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.hybrid_processor.utc_now'
+            utc_now_str = 'socorro_processor.hybrid_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -782,12 +782,12 @@ class TestHybridProcessor(TestCase):
         config.collect_addon = False
         config.collect_crash_process = True
         mocked_transform_rules_str = \
-            'socorro.processor.hybrid_processor.TransformRuleSystem'
+            'socorro_processor.hybrid_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.hybrid_processor.utc_now'
+            utc_now_str = 'socorro_processor.hybrid_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -902,12 +902,12 @@ class TestHybridProcessor(TestCase):
         config = setup_config_with_mocks()
         config.crashing_thread_tail_frame_threshold = 5
         mocked_transform_rules_str = \
-            'socorro.processor.hybrid_processor.TransformRuleSystem'
+            'socorro_processor.hybrid_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.hybrid_processor.utc_now'
+            utc_now_str = 'socorro_processor.hybrid_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -965,12 +965,12 @@ class TestHybridProcessor(TestCase):
         config.c_signature.c_signature_tool_class.return_value.generate \
             .return_value = ('sig01 | sig02', [])
         mocked_transform_rules_str = \
-            'socorro.processor.hybrid_processor.TransformRuleSystem'
+            'socorro_processor.hybrid_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.hybrid_processor.utc_now'
+            utc_now_str = 'socorro_processor.hybrid_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -1112,12 +1112,12 @@ class TestHybridProcessor(TestCase):
         config.collect_addon = False
         config.collect_crash_process = True
         mocked_transform_rules_str = \
-            'socorro.processor.hybrid_processor.TransformRuleSystem'
+            'socorro_processor.hybrid_processor.TransformRuleSystem'
         with mock.patch(mocked_transform_rules_str) as m_transform_class:
             m_transform = mock.Mock()
             m_transform_class.return_value = m_transform
             m_transform.attach_mock(mock.Mock(), 'apply_all_rules')
-            utc_now_str = 'socorro.processor.hybrid_processor.utc_now'
+            utc_now_str = 'socorro_processor.hybrid_processor.utc_now'
             with mock.patch(utc_now_str) as m_utc_now:
                 m_utc_now.return_value = datetime(2012, 5, 4, 15, 11,
                                                   tzinfo=UTC)
@@ -1247,7 +1247,7 @@ class TestHybridProcessor(TestCase):
         config = setup_config_with_mocks()
         processor = HybridCrashProcessor(config)
         with mock.patch(
-            'socorro.processor.hybrid_processor.os.unlink'
+            'socorro_processor.hybrid_processor.os.unlink'
         ) as mocked_unlink:
             with processor._temp_file_context('foo.TEMPORARY.txt'):
                 pass
@@ -1278,7 +1278,7 @@ class TestHybridProcessor(TestCase):
         config = setup_config_with_mocks()
         processor = HybridCrashProcessor(config)
         with mock.patch(
-            'socorro.processor.hybrid_processor.os.unlink'
+            'socorro_processor.hybrid_processor.os.unlink'
         ) as mocked_unlink:
             with processor._temp_raw_crash_json_file(
                 {'fake': 'raw_crash'},
