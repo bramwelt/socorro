@@ -4,7 +4,7 @@
 
 from nose.tools import eq_, ok_
 
-from socorro.external.rabbitmq.rmq_new_crash_source import (
+from socorro_lib.external.rabbitmq.rmq_new_crash_source import (
     RMQNewCrashSource
 )
 from socorro_lib.util import DotDict

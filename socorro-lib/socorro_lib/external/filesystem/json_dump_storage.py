@@ -7,8 +7,8 @@ import os
 import json
 import collections
 
-import socorro.external.filesystem.dump_storage as socorro_dumpStorage
-import socorro.external.filesystem.filesystem as socorro_fs
+import socorro_lib.external.filesystem.dump_storage as socorro_dumpStorage
+import socorro_lib.external.filesystem.filesystem as socorro_fs
 import socorro_lib.util as socorro_util
 import socorro_lib.ooid as socorro_ooid
 

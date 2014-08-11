@@ -9,7 +9,7 @@ import mock
 from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_
 
-from socorro.external.elasticsearch.base import ElasticSearchBase
+from socorro_lib.external.elasticsearch.base import ElasticSearchBase
 
 import socorro_lib.search_common as scommon
 import socorro_lib.util as util
@@ -44,7 +44,7 @@ class IntegrationTestElasticSearchBase(TestCase):
 
         eq_(indexes, indexes_exp)
 
-    @mock.patch('socorro.external.elasticsearch.base.httpc')
+    @mock.patch('socorro_lib.external.elasticsearch.base.httpc')
     def test_query(self, mock_http):
         config = self._get_default_config()
         es = ElasticSearchBase(config=config)

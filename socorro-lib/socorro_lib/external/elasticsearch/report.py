@@ -6,7 +6,7 @@ import datetime
 import json
 import logging
 
-from socorro.external.elasticsearch.base import ElasticSearchBase
+from socorro_lib.external.elasticsearch.base import ElasticSearchBase
 from socorro.services.versions_info import VersionsInfo
 from socorro_lib import datetimeutil, search_common
 

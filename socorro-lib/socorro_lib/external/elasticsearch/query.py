@@ -12,14 +12,14 @@ from pyelasticsearch.exceptions import (
     InvalidJsonResponseError,
 )
 
-from socorro.external import (
+from socorro_lib.external import (
     BadArgumentError,
     DatabaseError,
     MissingArgumentError,
     ResourceNotFound,
 )
-from socorro.external.elasticsearch.base import ElasticSearchBase
-from socorro.external.elasticsearch.supersearch import BAD_INDEX_REGEX
+from socorro_lib.external.elasticsearch.base import ElasticSearchBase
+from socorro_lib.external.elasticsearch.supersearch import BAD_INDEX_REGEX
 from socorro_lib import external_common
 from socorro_lib.datetimeutil import utc_now
 

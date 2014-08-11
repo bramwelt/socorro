@@ -12,7 +12,7 @@ try:
 except ImportError:
   import simplejson as json
 
-import socorro.external.filesystem.json_dump_storage as JDS
+import socorro_lib.external.filesystem.json_dump_storage as JDS
 from socorro_lib.datetimeutil import utc_now, UTC
 
 jsonFileData = {

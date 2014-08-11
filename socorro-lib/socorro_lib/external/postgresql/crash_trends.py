@@ -4,7 +4,7 @@
 
 import logging
 
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import datetimeutil, external_common
 
 logger = logging.getLogger("webapi")
@@ -23,7 +23,7 @@ class CrashTrends(PostgreSQLBase):
         params = external_common.parse_arguments(filters, kwargs)
 
         sql = """
-        /* socorro.external.postgresql.crash_trends.CrashTrends.get */
+        /* socorro_lib.external.postgresql.crash_trends.CrashTrends.get */
         SELECT product_name,
                version_string,
                product_version_id,

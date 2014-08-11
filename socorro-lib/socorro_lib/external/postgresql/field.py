@@ -5,8 +5,8 @@
 import json
 import logging
 
-from socorro.external import MissingArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import MissingArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import external_common
 
 
@@ -26,7 +26,7 @@ class Field(PostgreSQLBase):
         if not params.name:
             raise MissingArgumentError("name")
 
-        sql = '''/* socorro.external.postgresql.field.Field.get */
+        sql = '''/* socorro_lib.external.postgresql.field.Field.get */
             SELECT
                 raw_field,
                 transforms,

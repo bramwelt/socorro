@@ -12,10 +12,10 @@ from configman import (
     Namespace,
     class_converter
 )
-from socorro.external.rabbitmq.connection_context import (
+from socorro_lib.external.rabbitmq.connection_context import (
     ConnectionContextPooled
 )
-from socorro.external.crashstorage_base import (
+from socorro_lib.external.crashstorage_base import (
     CrashStorageBase,
 )
 

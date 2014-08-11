@@ -6,9 +6,9 @@ import datetime
 from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
 
-from socorro.external import MissingArgumentError
+from socorro_lib.external import MissingArgumentError
 
-from socorro.external.postgresql.gccrashes import GCCrashes
+from socorro_lib.external.postgresql.gccrashes import GCCrashes
 from socorro_lib import datetimeutil, util
 from socorro.unittest.testbase import TestCase
 
@@ -17,7 +17,7 @@ from unittestbase import PostgreSQLTestCase
 
 #==============================================================================
 class TestGCCrashes(TestCase):
-    """Test socorro.external.postgresql.gccrashes.GCCrashes class. """
+    """Test socorro_lib.external.postgresql.gccrashes.GCCrashes class. """
 
     #--------------------------------------------------------------------------
     def get_dummy_context(self):
@@ -36,7 +36,7 @@ class TestGCCrashes(TestCase):
 #==============================================================================
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestCrashes(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.crashes.Crashes class. """
+    """Test socorro_lib.external.postgresql.crashes.Crashes class. """
 
     #--------------------------------------------------------------------------
     def setUp(self):

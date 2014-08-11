@@ -4,7 +4,7 @@
 
 import datetime
 import mock
-import socorro.external.postgresql.tcbs as tcbs
+import socorro_lib.external.postgresql.tcbs as tcbs
 from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
 from socorro_lib import datetimeutil, util

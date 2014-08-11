@@ -4,7 +4,7 @@
 
 import datetime
 
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import datetimeutil, external_common
 
 
@@ -40,7 +40,7 @@ class Errors(PostgreSQLBase):
             'count': 'count(crash_id) as total'
         }
 
-        sql = '''/* socorro.external.postgresql.error.Error.get */
+        sql = '''/* socorro_lib.external.postgresql.error.Error.get */
             SELECT %s
             FROM bixie.crashes
             WHERE success IS NOT NULL

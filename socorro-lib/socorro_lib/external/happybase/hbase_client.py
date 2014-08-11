@@ -3,7 +3,7 @@ from socorro.app import generic_app
 from configman import Namespace, RequiredConfig, ConfigurationManager
 from configman.converters import class_converter
 
-from socorro.external.happybase.crashstorage import (
+from socorro_lib.external.happybase.crashstorage import (
     HBaseCrashStorage, \
     crash_id_to_row_id,
     row_id_to_crash_id

@@ -7,7 +7,7 @@ import datetime
 from nose.tools import eq_, ok_, assert_raises
 from configman import ConfigurationManager, Namespace
 
-from socorro.external import BadArgumentError
+from socorro_lib.external import BadArgumentError
 from socorro_lib import datetimeutil
 from socorro_lib.search_common import (
     SearchBase, SearchParam, convert_to_type, get_parameters, restrict_fields

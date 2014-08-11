@@ -5,8 +5,8 @@
 import json
 import logging
 
-from socorro.external.elasticsearch.base import ElasticSearchBase
-from socorro.external.postgresql.util import Util
+from socorro_lib.external.elasticsearch.base import ElasticSearchBase
+from socorro_lib.external.postgresql.util import Util
 
 import socorro_lib.search_common as search_common
 

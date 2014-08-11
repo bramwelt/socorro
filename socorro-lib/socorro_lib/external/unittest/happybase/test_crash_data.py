@@ -9,10 +9,10 @@ from configman import ConfigurationManager, Namespace
 from mock import Mock, patch
 from nose.plugins.attrib import attr
 
-from socorro.external import MissingArgumentError, ResourceNotFound, \
+from socorro_lib.external import MissingArgumentError, ResourceNotFound, \
                              ResourceUnavailable
-from socorro.external.happybase import crash_data, crashstorage
-from socorro.external.happybase.connection_context import (
+from socorro_lib.external.happybase import crash_data, crashstorage
+from socorro_lib.external.happybase.connection_context import (
     HappyBaseConnectionContext
 )
 from socorro.unittest.testbase import TestCase

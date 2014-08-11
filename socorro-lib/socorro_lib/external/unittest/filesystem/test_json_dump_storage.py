@@ -9,7 +9,7 @@ import json
 
 from nose.tools import eq_, ok_, assert_raises
 
-import socorro.external.filesystem.json_dump_storage as JDS
+import socorro_lib.external.filesystem.json_dump_storage as JDS
 import socorro_lib.util
 from socorro_lib.datetimeutil import UTC
 

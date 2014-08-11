@@ -4,8 +4,8 @@
 
 import logging
 
-from socorro.external import BadArgumentError
-from socorro.external.postgresql.base import add_param_to_dict, PostgreSQLBase
+from socorro_lib.external import BadArgumentError
+from socorro_lib.external.postgresql.base import add_param_to_dict, PostgreSQLBase
 from socorro_lib import datetimeutil, external_common
 
 logger = logging.getLogger("webapi")
@@ -31,7 +31,7 @@ class Products(PostgreSQLBase):
 
         if params.type == "desktop":
             sql = """
-                /* socorro.external.postgresql.products.Products.get */
+                /* socorro_lib.external.postgresql.products.Products.get */
                 SELECT
                     product_name,
                     version_string,
@@ -46,7 +46,7 @@ class Products(PostgreSQLBase):
             """
         elif params.type == "webapp":
             sql = """
-                /* socorro.external.postgresql.products.Products.get */
+                /* socorro_lib.external.postgresql.products.Products.get */
                 SELECT
                     product_name,
                     version,
@@ -148,7 +148,7 @@ class Products(PostgreSQLBase):
             sql_query = sql_select
 
         sql_query = """
-            /* socorro.external.postgresql.Products.get_versions */
+            /* socorro_lib.external.postgresql.Products.get_versions */
             %s
         """ % sql_query
 
@@ -187,7 +187,7 @@ class Products(PostgreSQLBase):
         params = external_common.parse_arguments(filters, kwargs)
 
         sql = """
-            /* socorro.external.postgresql.products.get_default_version */
+            /* socorro_lib.external.postgresql.products.get_default_version */
             SELECT product_name, version_string
             FROM default_versions
         """

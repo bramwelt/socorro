@@ -9,9 +9,9 @@ from configman import ConfigurationManager, Namespace
 from mock import Mock
 from nose.plugins.attrib import attr
 
-from socorro.external import MissingArgumentError, ResourceNotFound, \
+from socorro_lib.external import MissingArgumentError, ResourceNotFound, \
                              ResourceUnavailable
-from socorro.external.hb import crash_data, crashstorage, hbase_client
+from socorro_lib.external.hb import crash_data, crashstorage, hbase_client
 from socorro.unittest.testbase import TestCase
 
 

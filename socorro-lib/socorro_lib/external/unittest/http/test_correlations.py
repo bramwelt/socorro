@@ -10,7 +10,7 @@ import tempfile
 import mock
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.external.http import correlations
+from socorro_lib.external.http import correlations
 from socorro_lib.util import DotDict
 from socorro.unittest.testbase import TestCase
 

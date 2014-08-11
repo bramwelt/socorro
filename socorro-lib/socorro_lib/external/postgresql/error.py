@@ -2,8 +2,8 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-from socorro.external import MissingArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import MissingArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import datetimeutil, external_common
 
 
@@ -22,7 +22,7 @@ class Error(PostgreSQLBase):
 
         crash_date = datetimeutil.uuid_to_date(params.uuid)
 
-        sql = """/* socorro.external.postgresql.error.Error.get */
+        sql = """/* socorro_lib.external.postgresql.error.Error.get */
             SELECT
                 bixie.crashes.signature,
                 bixie.crashes.product,

@@ -6,8 +6,8 @@ import json
 
 import psycopg2
 
-from socorro.external import MissingArgumentError, BadArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import MissingArgumentError, BadArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import external_common
 
 

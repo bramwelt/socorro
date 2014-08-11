@@ -4,7 +4,7 @@
 
 import logging
 
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 
 import socorro_lib.external_common as external_common
 
@@ -94,7 +94,7 @@ class Util(PostgreSQLBase):
             """ % {'i': i})
 
         sql = """
-            /* socorro.external.postgresql.util.Util.versions_info */
+            /* socorro_lib.external.postgresql.util.Util.versions_info */
             WITH infos AS (
                 SELECT
                     pv.product_version_id,

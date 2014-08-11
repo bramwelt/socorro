@@ -10,7 +10,7 @@ from stat import (
     S_IRGRP, S_IXGRP, S_IWGRP, S_IRUSR, S_IXUSR, S_IWUSR, S_IROTH
 )
 
-import socorro.external.filesystem.filesystem as socorro_fs
+import socorro_lib.external.filesystem.filesystem as socorro_fs
 import socorro_lib.ooid as socorro_ooid
 from socorro_lib.datetimeutil import utc_now, UTC
 

@@ -5,8 +5,8 @@
 from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.external import DatabaseError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import DatabaseError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import search_common, util
 from socorro.unittest.testbase import TestCase
 

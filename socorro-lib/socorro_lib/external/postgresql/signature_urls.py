@@ -4,8 +4,8 @@
 
 import logging
 
-from socorro.external import MissingArgumentError, BadArgumentError
-from socorro.external.postgresql.base import add_param_to_dict, PostgreSQLBase
+from socorro_lib.external import MissingArgumentError, BadArgumentError
+from socorro_lib.external.postgresql.base import add_param_to_dict, PostgreSQLBase
 from socorro_lib import external_common
 
 logger = logging.getLogger("webapi")
@@ -40,7 +40,7 @@ class SignatureURLs(PostgreSQLBase):
             raise MissingArgumentError(", ".join(missingParams))
 
         all_products_versions_sql = """
-        /* socorro.external.postgresql.signature_urls.SignatureURLs.get */
+        /* socorro_lib.external.postgresql.signature_urls.SignatureURLs.get */
             SELECT url, count(*) as crash_count FROM reports_clean
             JOIN reports_user_info USING ( UUID )
             JOIN signatures USING ( signature_id )
@@ -53,7 +53,7 @@ class SignatureURLs(PostgreSQLBase):
         """
 
         sql = """
-        /* socorro.external.postgresql.signature_urls.SignatureURLs.get */
+        /* socorro_lib.external.postgresql.signature_urls.SignatureURLs.get */
             SELECT url, count(*) as crash_count FROM reports_clean
             JOIN reports_user_info USING ( UUID )
             JOIN signatures USING ( signature_id )

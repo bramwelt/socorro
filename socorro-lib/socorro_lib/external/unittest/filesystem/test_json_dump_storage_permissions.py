@@ -9,10 +9,10 @@ import shutil
 import stat
 import time
 
-import socorro.external.filesystem.json_dump_storage as JDS
+import socorro_lib.external.filesystem.json_dump_storage as JDS
 import uuid as socorro_uuid
 from socorro_lib.util import SilentFakeLogger
-import socorro.external.filesystem.filesystem as socorro_fs
+import socorro_lib.external.filesystem.filesystem as socorro_fs
 from socorro.unittest.testbase import TestCase
 from socorro_lib.datetimeutil import UTC
 

@@ -9,8 +9,8 @@ from nose.tools import eq_, ok_
 
 from .unittestbase import ElasticSearchTestCase
 
-from socorro.external.elasticsearch import crashstorage
-from socorro.external.elasticsearch.search import Search
+from socorro_lib.external.elasticsearch import crashstorage
+from socorro_lib.external.elasticsearch.search import Search
 from socorro_lib import util, datetimeutil
 from socorro.unittest.testbase import TestCase
 
@@ -301,7 +301,7 @@ class IntegrationElasticsearchSearch(ElasticSearchTestCase):
         config = self.get_config_context()
         self.storage.es.delete_index(config.webapi.elasticsearch_index)
 
-    @mock.patch('socorro.external.elasticsearch.search.Util')
+    @mock.patch('socorro_lib.external.elasticsearch.search.Util')
     def test_search_single_filters(self, mock_psql_util):
         # verify results show expected numbers
         # test no filter, get all results
@@ -411,7 +411,7 @@ class IntegrationElasticsearchSearch(ElasticSearchTestCase):
         eq_(res['total'], 1)
         eq_(res['hits'][0]['count'], 1)
 
-    @mock.patch('socorro.external.elasticsearch.search.Util')
+    @mock.patch('socorro_lib.external.elasticsearch.search.Util')
     def test_search_combined_filters(self, mock_psql_util):
         # get the first, default crash report
         params = {
@@ -461,7 +461,7 @@ class IntegrationElasticsearchSearch(ElasticSearchTestCase):
         eq_(res['hits'][0]['is_windows'], 0)
         eq_(res['hits'][0]['is_mac'], 0)
 
-    @mock.patch('socorro.external.elasticsearch.search.Util')
+    @mock.patch('socorro_lib.external.elasticsearch.search.Util')
     def test_search_no_results(self, mock_psql_util):
         # unexisting signature
         params = {
@@ -477,7 +477,7 @@ class IntegrationElasticsearchSearch(ElasticSearchTestCase):
         res = self.api.get(**params)
         eq_(res['total'], 0)
 
-    @mock.patch('socorro.external.elasticsearch.search.Util')
+    @mock.patch('socorro_lib.external.elasticsearch.search.Util')
     def test_search_plugin_terms(self, mock_psql_util):
         base_params = {
             'products': 'PluginSoft',
@@ -616,7 +616,7 @@ class IntegrationElasticsearchSearch(ElasticSearchTestCase):
         eq_(hit['pluginfilename'], 'carly.dll')
         eq_(hit['pluginversion'], '1.2')
 
-    @mock.patch('socorro.external.elasticsearch.search.Util')
+    @mock.patch('socorro_lib.external.elasticsearch.search.Util')
     def test_search_versions(self, mock_psql_util):
         mock_psql_util.return_value.versions_info.return_value = {
             'EarlyOwl:11.0b1': {

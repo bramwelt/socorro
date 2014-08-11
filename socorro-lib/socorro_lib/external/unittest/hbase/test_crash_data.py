@@ -9,9 +9,9 @@ from mock import Mock, patch
 from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
 
-from socorro.external import MissingArgumentError, ResourceNotFound, \
+from socorro_lib.external import MissingArgumentError, ResourceNotFound, \
                              ResourceUnavailable
-from socorro.external.hbase import crash_data, crashstorage, hbase_client
+from socorro_lib.external.hbase import crash_data, crashstorage, hbase_client
 from socorro.unittest.testbase import TestCase
 
 
@@ -104,7 +104,7 @@ class TestIntegrationHBaseCrashData(TestCase):
         )
         return config_manager
 
-    @patch('socorro.external.rabbitmq.priorityjobs.Priorityjobs')
+    @patch('socorro_lib.external.rabbitmq.priorityjobs.Priorityjobs')
     def test_get(self, priorityjobs_mock):
         with self.config_manager.context() as config:
 

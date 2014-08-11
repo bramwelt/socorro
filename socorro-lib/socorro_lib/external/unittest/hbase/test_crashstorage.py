@@ -11,11 +11,11 @@ import mock
 from nose.tools import eq_, ok_, assert_raises
 from configman import ConfigurationManager
 
-from socorro.external.hbase import hbase_client
+from socorro_lib.external.hbase import hbase_client
 
-from socorro.external.crashstorage_base import CrashIDNotFound, Redactor
-from socorro.external.hbase.crashstorage import HBaseCrashStorage
-from socorro.external.hbase.connection_context import \
+from socorro_lib.external.crashstorage_base import CrashIDNotFound, Redactor
+from socorro_lib.external.hbase.crashstorage import HBaseCrashStorage
+from socorro_lib.external.hbase.connection_context import \
      HBaseConnectionContextPooled
 from socorro_lib.util import DotDict
 from socorro.unittest.config import commonconfig
@@ -44,7 +44,7 @@ else:
         If you ever get this::
             Traceback (most recent call last):
             ...
-            socorro.external.hbase.hbase_client.FatalException: the connection
+            socorro_lib.external.hbase.hbase_client.FatalException: the connection
             is not viable.  retries fail:
 
         Then try the following:
@@ -187,7 +187,7 @@ class TestHBaseCrashStorage(TestCase):
         with config_manager.context() as config:
             config.executor_identity = lambda: 'dwight'  # bogus thread id
 
-            hbaseclient_ = 'socorro.external.hbase.crashstorage.hbase_client'
+            hbaseclient_ = 'socorro_lib.external.hbase.crashstorage.hbase_client'
             with mock.patch(hbaseclient_) as hclient:
 
                 klass = hclient.HBaseConnectionForCrashReports
@@ -210,9 +210,9 @@ class TestHBaseCrashStorage(TestCase):
                 #eq_(instance.put_json_dump.call_count, 3)
 
     def test_hbase_crashstorage_error_after_retries(self):
-        cshbaseclient_ = 'socorro.external.hbase.crashstorage.hbase_client'
+        cshbaseclient_ = 'socorro_lib.external.hbase.crashstorage.hbase_client'
         cchbaseclient_ = \
-            'socorro.external.hbase.connection_context.hbase_client'
+            'socorro_lib.external.hbase.connection_context.hbase_client'
         with nested(mock.patch(cshbaseclient_),
                     mock.patch(cchbaseclient_)) as (cshclient, cchclient):
 
@@ -256,9 +256,9 @@ class TestHBaseCrashStorage(TestCase):
             eq_(fake_put_json_method.call_count, 3)
 
     def test_hbase_crashstorage_success_after_retries(self):
-        cshbaseclient_ = 'socorro.external.hbase.crashstorage.hbase_client'
+        cshbaseclient_ = 'socorro_lib.external.hbase.crashstorage.hbase_client'
         cchbaseclient_ = \
-            'socorro.external.hbase.connection_context.hbase_client'
+            'socorro_lib.external.hbase.connection_context.hbase_client'
         with nested(mock.patch(cshbaseclient_),
                     mock.patch(cchbaseclient_)) as (cshclient, cchclient):
 
@@ -327,7 +327,7 @@ class TestHBaseCrashStorage(TestCase):
         with config_manager.context() as config:
             config.executor_identity = lambda: 'dwight'  # bogus thread id
 
-            hbaseclient_ = 'socorro.external.hbase.crashstorage.hbase_client'
+            hbaseclient_ = 'socorro_lib.external.hbase.crashstorage.hbase_client'
             with mock.patch(hbaseclient_) as hclient:
 
                 # test save_raw_crash

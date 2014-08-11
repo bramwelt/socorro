@@ -5,7 +5,7 @@
 import logging
 import os
 
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import datetimeutil, external_common
 
 logger = logging.getLogger("webapi")
@@ -24,7 +24,7 @@ class ServerStatus(PostgreSQLBase):
 
         # Find the recent server status
         sql = """
-            /* socorro.external.postgresql.server_status.ServerStatus.get */
+            /* socorro_lib.external.postgresql.server_status.ServerStatus.get */
             SELECT
                 id,
                 date_recently_completed,
@@ -68,7 +68,7 @@ class ServerStatus(PostgreSQLBase):
 
         # Find the current database version
         sql = """
-            /* socorro.external.postgresql.server_status.ServerStatus.get */
+            /* socorro_lib.external.postgresql.server_status.ServerStatus.get */
             SELECT
                 version_num
             FROM alembic_version

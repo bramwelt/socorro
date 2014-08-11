@@ -19,11 +19,11 @@ import datetime
 
 from configman import Namespace
 
-from socorro.external.filesystem.json_dump_storage import (JsonDumpStorage,
+from socorro_lib.external.filesystem.json_dump_storage import (JsonDumpStorage,
                                                            NoSuchUuidFound)
-from socorro.external.filesystem.processed_dump_storage import \
+from socorro_lib.external.filesystem.processed_dump_storage import \
                                                 ProcessedDumpStorage
-from socorro.external.crashstorage_base import (CrashStorageBase,
+from socorro_lib.external.crashstorage_base import (CrashStorageBase,
                                                 CrashIDNotFound)
 from socorro_lib.util import DotDict
 from socorro.collector.throttler import ACCEPT

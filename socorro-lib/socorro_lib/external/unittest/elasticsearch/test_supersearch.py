@@ -9,14 +9,14 @@ import pyelasticsearch
 from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.external import (
+from socorro_lib.external import (
     BadArgumentError,
     InsertionError,
     MissingArgumentError,
     ResourceNotFound,
 )
-from socorro.external.elasticsearch import crashstorage
-from socorro.external.elasticsearch.supersearch import SuperSearch
+from socorro_lib.external.elasticsearch import crashstorage
+from socorro_lib.external.elasticsearch.supersearch import SuperSearch
 from socorro_lib import datetimeutil, search_common
 from .unittestbase import ElasticSearchTestCase
 
@@ -1519,7 +1519,7 @@ class IntegrationTestSuperSearch(ElasticSearchTestCase):
         eq_(res['total'], 0)
 
     @mock.patch(
-        'socorro.external.elasticsearch.supersearch.SuperSearch.get_indexes'
+        'socorro_lib.external.elasticsearch.supersearch.SuperSearch.get_indexes'
     )
     def test_list_of_indices(self, mocked_get_indexes):
         """Test that unexisting indices are handled correctly. """

@@ -7,8 +7,8 @@ import json
 from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
 
-from socorro.external import MissingArgumentError
-from socorro.external.postgresql.graphics_devices import GraphicsDevices
+from socorro_lib.external import MissingArgumentError
+from socorro_lib.external.postgresql.graphics_devices import GraphicsDevices
 
 from .unittestbase import PostgreSQLTestCase
 

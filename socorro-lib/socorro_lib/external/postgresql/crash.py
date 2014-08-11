@@ -4,8 +4,8 @@
 
 import logging
 
-from socorro.external import MissingArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import MissingArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import datetimeutil, external_common
 
 logger = logging.getLogger("webapi")
@@ -29,7 +29,7 @@ class Crash(PostgreSQLBase):
         logger.debug("Looking for crash %s during day %s" % (params.uuid,
                                                              crash_date))
 
-        sql = """/* socorro.external.postgresql.crash.Crash.get */
+        sql = """/* socorro_lib.external.postgresql.crash.Crash.get */
             SELECT
                 reports.signature,
                 reports.email,

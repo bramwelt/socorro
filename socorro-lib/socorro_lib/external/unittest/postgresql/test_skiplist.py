@@ -5,8 +5,8 @@
 from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.external import MissingArgumentError, DatabaseError
-from socorro.external.postgresql.skiplist import SkipList
+from socorro_lib.external import MissingArgumentError, DatabaseError
+from socorro_lib.external.postgresql.skiplist import SkipList
 
 from unittestbase import PostgreSQLTestCase
 
@@ -14,7 +14,7 @@ from unittestbase import PostgreSQLTestCase
 #==============================================================================
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestSkipList(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.crashes.Crashes class. """
+    """Test socorro_lib.external.postgresql.crashes.Crashes class. """
 
     #--------------------------------------------------------------------------
     def setUp(self):

@@ -4,9 +4,9 @@
 
 import logging
 
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import datetimeutil, external_common
-from socorro.external import BadArgumentError
+from socorro_lib.external import BadArgumentError
 
 
 class Correlations(PostgreSQLBase):
@@ -49,7 +49,7 @@ class Correlations(PostgreSQLBase):
 
     def interesting_addons(self, params): 
         sql = """
-        /* socorro.external.postgresql.correlations.Correlations.get(addons)*/
+        /* socorro_lib.external.postgresql.correlations.Correlations.get(addons)*/
         WITH total_for_sig AS (
             SELECT
                 sum(total)
@@ -142,7 +142,7 @@ class Correlations(PostgreSQLBase):
 
     def interesting_modules(self, params):
         sql = """
-        /* socorro.external.postgresql.correlations.Correlations.get(modules)*/
+        /* socorro_lib.external.postgresql.correlations.Correlations.get(modules)*/
         WITH total_for_sig AS (
             SELECT
                 sum(total)
@@ -236,7 +236,7 @@ class Correlations(PostgreSQLBase):
 
     def interesting_addons_with_version(self, params):
         sql = """
-        /* socorro.external.postgresql.correlations.Correlations.get(addons-version)*/
+        /* socorro_lib.external.postgresql.correlations.Correlations.get(addons-version)*/
         WITH total_for_sig AS (
             SELECT
                 sum(total)
@@ -334,7 +334,7 @@ class Correlations(PostgreSQLBase):
 
     def interesting_modules_with_version(self, params):
         sql = """
-        /* socorro.external.postgresql.correlations.Correlations.get(modules-version)*/
+        /* socorro_lib.external.postgresql.correlations.Correlations.get(modules-version)*/
         WITH total_for_sig AS (
             SELECT
                 sum(total)
@@ -430,7 +430,7 @@ class Correlations(PostgreSQLBase):
 
     def core_counts(self, params):
         sql = """
-        /* socorro.external.postgresql.correlations.Correlations.get(cores)*/
+        /* socorro_lib.external.postgresql.correlations.Correlations.get(cores)*/
         WITH total_for_sig AS (
             SELECT
                 sum(total)

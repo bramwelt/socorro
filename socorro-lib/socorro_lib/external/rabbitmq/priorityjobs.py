@@ -5,7 +5,7 @@
 import pika
 from pika.exceptions import ChannelClosed
 
-from socorro.external import MissingArgumentError
+from socorro_lib.external import MissingArgumentError
 from socorro_lib import external_common
 
 

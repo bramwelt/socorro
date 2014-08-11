@@ -5,11 +5,11 @@
 import datetime
 import os
 
-from socorro.external.crashstorage_base import (
+from socorro_lib.external.crashstorage_base import (
     CrashStorageBase, CrashIDNotFound)
-from socorro.external.hbase import hbase_client
+from socorro_lib.external.hbase import hbase_client
 from socorro.database.transaction_executor import TransactionExecutor
-from socorro.external.hbase.connection_context import \
+from socorro_lib.external.hbase.connection_context import \
      HBaseConnectionContextPooled
 from socorro_lib.util import DotDict
 from configman import Namespace, class_converter

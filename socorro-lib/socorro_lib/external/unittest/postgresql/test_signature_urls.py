@@ -6,8 +6,8 @@ import datetime
 from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
 
-from socorro.external import MissingArgumentError, BadArgumentError
-from socorro.external.postgresql.signature_urls import SignatureURLs
+from socorro_lib.external import MissingArgumentError, BadArgumentError
+from socorro_lib.external.postgresql.signature_urls import SignatureURLs
 from socorro_lib import datetimeutil
 
 from .unittestbase import PostgreSQLTestCase
@@ -16,7 +16,7 @@ from .unittestbase import PostgreSQLTestCase
 #==============================================================================
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestSignatureURLs(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.signature_urls.SignatureURLs class. """
+    """Test socorro_lib.external.postgresql.signature_urls.SignatureURLs class. """
 
     #--------------------------------------------------------------------------
     def setUp(self):

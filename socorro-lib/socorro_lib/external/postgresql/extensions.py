@@ -4,7 +4,7 @@
 
 import logging
 
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import datetimeutil, external_common
 
 logger = logging.getLogger("webapi")
@@ -21,7 +21,7 @@ class Extensions(PostgreSQLBase):
         ]
         params = external_common.parse_arguments(filters, kwargs)
 
-        sql = """/* socorro.external.postgresql.extensions.Extensions.get */
+        sql = """/* socorro_lib.external.postgresql.extensions.Extensions.get */
             SELECT extensions.*
             FROM extensions
             INNER JOIN reports ON extensions.report_id = reports.id

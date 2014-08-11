@@ -5,14 +5,14 @@
 from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
 
-from socorro.external import MissingArgumentError
-from socorro.external.postgresql.field import Field
+from socorro_lib.external import MissingArgumentError
+from socorro_lib.external.postgresql.field import Field
 from .unittestbase import PostgreSQLTestCase
 
 
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestField(PostgreSQLTestCase):
-    '''Test socorro.external.postgresql.field.Field class. '''
+    '''Test socorro_lib.external.postgresql.field.Field class. '''
 
     def setUp(self):
         super(IntegrationTestField, self).setUp()

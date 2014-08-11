@@ -7,7 +7,7 @@ import os
 
 from configman import ConfigurationManager
 
-from socorro.external.elasticsearch import crashstorage
+from socorro_lib.external.elasticsearch import crashstorage
 from socorro.middleware.middleware_app import MiddlewareApp
 from socorro.unittest.testbase import TestCase
 

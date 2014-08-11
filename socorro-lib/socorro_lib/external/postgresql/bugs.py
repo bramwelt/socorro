@@ -4,8 +4,8 @@
 
 import logging
 
-from socorro.external import MissingArgumentError, BadArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import MissingArgumentError, BadArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import external_common
 
 logger = logging.getLogger("webapi")
@@ -37,7 +37,7 @@ class Bugs(PostgreSQLBase):
         if params['signatures']:
             sql_params.append(tuple(params.signatures))
 
-            sql = """/* socorro.external.postgresql.bugs.Bugs.get */
+            sql = """/* socorro_lib.external.postgresql.bugs.Bugs.get */
                 SELECT ba.signature, bugs.id
                 FROM bugs
                     JOIN bug_associations AS ba ON bugs.id = ba.bug_id
@@ -50,7 +50,7 @@ class Bugs(PostgreSQLBase):
         elif params['bug_ids']:
             sql_params.append(tuple(params.bug_ids))
 
-            sql = """/* socorro.external.postgresql.bugs.Bugs.get */
+            sql = """/* socorro_lib.external.postgresql.bugs.Bugs.get */
                 SELECT ba.signature, bugs.id
                 FROM bugs
                     JOIN bug_associations AS ba ON bugs.id = ba.bug_id

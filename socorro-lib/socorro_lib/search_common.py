@@ -10,7 +10,7 @@ import datetime
 import json
 
 import socorro_lib.external_common as extern
-from socorro.external import BadArgumentError, MissingArgumentError
+from socorro_lib.external import BadArgumentError, MissingArgumentError
 from socorro_lib import datetimeutil
 
 

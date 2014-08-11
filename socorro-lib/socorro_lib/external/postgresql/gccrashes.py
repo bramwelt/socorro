@@ -3,8 +3,8 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import datetime
-from socorro.external.postgresql.base import PostgreSQLBase
-from socorro.external import MissingArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import MissingArgumentError
 from socorro_lib import datetimeutil, external_common
 
 
@@ -30,7 +30,7 @@ class GCCrashes(PostgreSQLBase):
         params = external_common.parse_arguments(filters, kwargs)
 
         result = self.query("""
-            /* socorro.external.postgresql.gccrashes.GCCrashes.get */
+            /* socorro_lib.external.postgresql.gccrashes.GCCrashes.get */
             SELECT
                 build::text,
                 sum(gc_count_madu)

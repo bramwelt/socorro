@@ -11,7 +11,7 @@ import socket
 import datetime
 import contextlib
 
-from socorro.external.crashstorage_base import (
+from socorro_lib.external.crashstorage_base import (
     CrashStorageBase,
     CrashIDNotFound
 )

@@ -3,7 +3,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/
 from configman import Namespace, class_converter
-from socorro.external.crashstorage_base import CrashStorageBase
+from socorro_lib.external.crashstorage_base import CrashStorageBase
 
 import urllib2
 import poster

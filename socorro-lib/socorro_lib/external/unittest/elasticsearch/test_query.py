@@ -13,14 +13,14 @@ from pyelasticsearch.exceptions import (
     InvalidJsonResponseError,
 )
 
-from socorro.external import (
+from socorro_lib.external import (
     BadArgumentError,
     DatabaseError,
     MissingArgumentError,
     ResourceNotFound,
 )
-from socorro.external.elasticsearch import crashstorage
-from socorro.external.elasticsearch.query import Query
+from socorro_lib.external.elasticsearch import crashstorage
+from socorro_lib.external.elasticsearch.query import Query
 from socorro_lib import datetimeutil
 
 from .unittestbase import ElasticSearchTestCase
@@ -122,7 +122,7 @@ class IntegrationTestQuery(ElasticSearchTestCase):
         ok_('hits' in res)
         eq_(res['hits']['total'], 1)
 
-    @mock.patch('socorro.external.elasticsearch.query.pyelasticsearch')
+    @mock.patch('socorro_lib.external.elasticsearch.query.pyelasticsearch')
     def test_get_with_errors(self, mocked_es):
         # Test missing argument.
         assert_raises(
@@ -166,7 +166,7 @@ class IntegrationTestQuery(ElasticSearchTestCase):
             query='{}',
         )
 
-    @mock.patch('socorro.external.elasticsearch.query.pyelasticsearch')
+    @mock.patch('socorro_lib.external.elasticsearch.query.pyelasticsearch')
     def test_get_with_indices(self, mocked_es):
         mocked_connection = mock.Mock()
         mocked_es.ElasticSearch.return_value = mocked_connection

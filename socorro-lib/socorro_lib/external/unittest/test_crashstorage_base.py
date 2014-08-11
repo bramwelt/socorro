@@ -5,7 +5,7 @@
 import mock
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.external.crashstorage_base import (
+from socorro_lib.external.crashstorage_base import (
     CrashStorageBase,
     PolyStorageError,
     PolyCrashStorage,

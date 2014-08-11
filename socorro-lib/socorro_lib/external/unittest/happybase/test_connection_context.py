@@ -6,8 +6,8 @@ import mock
 
 import happybase
 
-from socorro.external.happybase import connection_context
-from socorro.external.happybase.connection_context import (
+from socorro_lib.external.happybase import connection_context
+from socorro_lib.external.happybase.connection_context import (
     HappyBaseConnectionContext,
     HappyBasePooledConnectionContext,
 )

@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import logging
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 
 logger = logging.getLogger("webapi")
 
@@ -13,7 +13,7 @@ class Platforms(PostgreSQLBase):
 
     def get(self, **kwargs):
         """Return data about all platforms. """
-        sql = """/* socorro.external.postgresql.platforms.Platforms.get */
+        sql = """/* socorro_lib.external.postgresql.platforms.Platforms.get */
             SELECT *
             FROM os_names
         """

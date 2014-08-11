@@ -11,13 +11,13 @@ from pyelasticsearch.exceptions import (
     ElasticHttpNotFoundError,
 )
 
-from socorro.external import (
+from socorro_lib.external import (
     BadArgumentError,
     InsertionError,
     MissingArgumentError,
     ResourceNotFound,
 )
-from socorro.external.elasticsearch.base import ElasticSearchBase
+from socorro_lib.external.elasticsearch.base import ElasticSearchBase
 from socorro_lib import datetimeutil, external_common
 from socorro_lib.search_common import SearchBase
 

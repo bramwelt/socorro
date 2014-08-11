@@ -5,14 +5,14 @@
 from nose.plugins.attrib import attr
 from nose.tools import eq_
 
-from socorro.external.postgresql.crontabber_state import CrontabberState
+from socorro_lib.external.postgresql.crontabber_state import CrontabberState
 
 from unittestbase import PostgreSQLTestCase
 
 
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestCrontabberStatus(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.crontabbers_state.CrontabberState
+    """Test socorro_lib.external.postgresql.crontabbers_state.CrontabberState
     class """
 
     def tearDown(self):

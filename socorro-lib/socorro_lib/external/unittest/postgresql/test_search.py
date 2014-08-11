@@ -6,7 +6,7 @@ import datetime
 from nose.plugins.attrib import attr
 from nose.tools import eq_
 
-from socorro.external.postgresql.search import Search
+from socorro_lib.external.postgresql.search import Search
 from socorro_lib import datetimeutil
 
 from unittestbase import PostgreSQLTestCase
@@ -14,7 +14,7 @@ from unittestbase import PostgreSQLTestCase
 
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestSearch(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.search.Search class. """
+    """Test socorro_lib.external.postgresql.search.Search class. """
 
     def setUp(self):
         """Set up this test class by populating the reports table with fake

@@ -10,7 +10,7 @@ from .unittestbase import PostgreSQLTestCase
 from nose.plugins.attrib import attr
 from nose.plugins.skip import SkipTest
 from nose.tools import ok_
-from socorro.external.postgresql import setupdb_app
+from socorro_lib.external.postgresql import setupdb_app
 from configman import ConfigurationManager
 
 

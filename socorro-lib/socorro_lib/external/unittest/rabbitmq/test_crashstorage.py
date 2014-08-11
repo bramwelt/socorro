@@ -2,11 +2,11 @@ from mock import Mock, MagicMock
 
 from nose.tools import eq_, ok_
 
-from socorro.external.rabbitmq.crashstorage import (
+from socorro_lib.external.rabbitmq.crashstorage import (
     RabbitMQCrashStorage,
 )
 from socorro_lib.util import DotDict
-from socorro.external.crashstorage_base import Redactor
+from socorro_lib.external.crashstorage_base import Redactor
 from socorro.unittest.testbase import TestCase
 
 

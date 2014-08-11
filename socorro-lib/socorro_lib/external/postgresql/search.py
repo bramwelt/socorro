@@ -5,9 +5,9 @@
 import logging
 import psycopg2
 
-from socorro.external import DatabaseError
-from socorro.external.postgresql.base import PostgreSQLBase
-from socorro.external.postgresql.util import Util
+from socorro_lib.external import DatabaseError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.util import Util
 from socorro_lib import search_common
 
 logger = logging.getLogger("webapi")
@@ -124,7 +124,7 @@ class Search(PostgreSQLBase):
 
         # Query for counting the results
         sql_count_query = " ".join((
-                "/* socorro.external.postgresql.search.Search search.count */",
+                "/* socorro_lib.external.postgresql.search.Search search.count */",
                 "SELECT count(DISTINCT r.signature)", sql_from, sql_where))
 
         # Querying the database

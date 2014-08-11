@@ -5,13 +5,13 @@
 import datetime
 import logging
 
-from socorro.external import (
+from socorro_lib.external import (
     MissingArgumentError,
     BadArgumentError
 )
-from socorro.external.postgresql import tcbs
-from socorro.external.postgresql.base import PostgreSQLBase
-from socorro.external.postgresql.util import Util
+from socorro_lib.external.postgresql import tcbs
+from socorro_lib.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.util import Util
 from socorro_lib import datetimeutil, external_common, search_common
 
 logger = logging.getLogger("webapi")
@@ -202,7 +202,7 @@ class Crashes(PostgreSQLBase):
                           "crash_hadu")
 
             sql = """
-                /* socorro.external.postgresql.crashes.Crashes.get_daily */
+                /* socorro_lib.external.postgresql.crashes.Crashes.get_daily */
                 SELECT %(db_fields)s
                 FROM %(table_to_use)s
                 WHERE product_name=%%(product)s
@@ -258,7 +258,7 @@ class Crashes(PostgreSQLBase):
                 sql_where = ''
 
             sql = """
-                /* socorro.external.postgresql.crashes.Crashes.get_daily */
+                /* socorro_lib.external.postgresql.crashes.Crashes.get_daily */
                 SELECT %(db_fields)s
                 FROM (
                     SELECT
@@ -473,7 +473,7 @@ class Crashes(PostgreSQLBase):
             )
 
         sql = """
-            /* socorro.external.postgresql.crashes.Crashes.get_paireduuid */
+            /* socorro_lib.external.postgresql.crashes.Crashes.get_paireduuid */
             SELECT uuid
             FROM reports r
             WHERE r.uuid != %(uuid)s

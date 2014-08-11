@@ -5,9 +5,9 @@
 import logging
 import psycopg2
 
-from socorro.external import DatabaseError
-from socorro.external.postgresql.base import PostgreSQLBase
-from socorro.external.postgresql.products import Products
+from socorro_lib.external import DatabaseError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.products import Products
 from socorro_lib import external_common
 
 logger = logging.getLogger("webapi")
@@ -74,7 +74,7 @@ class Releases(PostgreSQLBase):
         if len(releases) == 0:
             return False
 
-        sql = """/* socorro.external.postgresql.releases.update_featured */
+        sql = """/* socorro_lib.external.postgresql.releases.update_featured */
             SELECT edit_featured_versions(%%s, %s)
         """
         error_message = "Failed updating featured versions in PostgreSQL"

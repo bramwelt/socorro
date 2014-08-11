@@ -7,9 +7,9 @@ from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
 import datetime
 
-from socorro.external.postgresql.backfill import Backfill
-from socorro.external.postgresql import fakedata
-from socorro.external import MissingArgumentError
+from socorro_lib.external.postgresql.backfill import Backfill
+from socorro_lib.external.postgresql import fakedata
+from socorro_lib.external import MissingArgumentError
 from socorro_lib import datetimeutil
 
 

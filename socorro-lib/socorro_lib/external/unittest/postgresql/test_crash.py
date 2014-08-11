@@ -5,7 +5,7 @@
 from nose.plugins.attrib import attr
 from nose.tools import eq_
 
-from socorro.external.postgresql.crash import Crash
+from socorro_lib.external.postgresql.crash import Crash
 from socorro_lib import datetimeutil
 
 from unittestbase import PostgreSQLTestCase
@@ -14,7 +14,7 @@ from unittestbase import PostgreSQLTestCase
 #==============================================================================
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestCrash(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.crash.Crash class. """
+    """Test socorro_lib.external.postgresql.crash.Crash class. """
 
     #--------------------------------------------------------------------------
     def setUp(self):

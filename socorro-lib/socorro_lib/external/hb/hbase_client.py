@@ -5,7 +5,7 @@ from socorro.app import generic_app
 from configman import Namespace, RequiredConfig, ConfigurationManager
 from configman.converters import class_converter
 
-from socorro.external.hb.crashstorage import (
+from socorro_lib.external.hb.crashstorage import (
     HBaseCrashStorage,
     row_id_to_crash_id
 )

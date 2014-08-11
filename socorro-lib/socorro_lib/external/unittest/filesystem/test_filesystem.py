@@ -7,7 +7,7 @@ import shutil
 import types
 
 from nose.tools import *
-import socorro.external.filesystem.filesystem as f
+import socorro_lib.external.filesystem.filesystem as f
 from socorro.unittest.testbase import TestCase
 
 # Describes the directory/file structure we will look at:

@@ -12,8 +12,8 @@ from nose.tools import eq_, ok_, assert_raises
 from configman import ConfigurationManager
 from mock import Mock
 
-from socorro.external.crashstorage_base import CrashIDNotFound
-from socorro.external.filesystem.crashstorage import (
+from socorro_lib.external.crashstorage_base import CrashIDNotFound
+from socorro_lib.external.filesystem.crashstorage import (
   FileSystemRawCrashStorage,
   FileSystemThrottledCrashStorage,
   FileSystemCrashStorage)

@@ -5,7 +5,7 @@
 import json
 import logging
 
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import datetimeutil
 
 logger = logging.getLogger("webapi")
@@ -18,7 +18,7 @@ class CrontabberState(PostgreSQLBase):
         """Return the current state of all Crontabber jobs"""
 
         sql = """
-        /* socorro.external.postgresql.crontabber_state.CrontabberState.get */
+        /* socorro_lib.external.postgresql.crontabber_state.CrontabberState.get */
             SELECT
                 app_name,
                 next_run,

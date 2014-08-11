@@ -5,7 +5,7 @@
 from nose.plugins.attrib import attr
 from nose.tools import eq_
 
-from socorro.external.postgresql.error import Error
+from socorro_lib.external.postgresql.error import Error
 from socorro_lib import datetimeutil
 
 from unittestbase import PostgreSQLTestCase
@@ -14,7 +14,7 @@ from unittestbase import PostgreSQLTestCase
 #==============================================================================
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestError(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.error.Error class. """
+    """Test socorro_lib.external.postgresql.error.Error class. """
 
     #--------------------------------------------------------------------------
     def setUp(self):

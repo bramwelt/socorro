@@ -6,7 +6,7 @@ import gzip
 import logging
 import os
 import json
-import socorro.external.filesystem.dump_storage as socorro_dumpStorage
+import socorro_lib.external.filesystem.dump_storage as socorro_dumpStorage
 import socorro_lib.util as socorro_util
 
 

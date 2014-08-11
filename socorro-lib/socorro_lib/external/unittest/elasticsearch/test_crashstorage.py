@@ -9,7 +9,7 @@ from nose.tools import eq_, ok_, assert_raises
 
 from configman import ConfigurationManager
 
-from socorro.external.elasticsearch.crashstorage import (
+from socorro_lib.external.elasticsearch.crashstorage import (
     ElasticSearchCrashStorage
 )
 from socorro.database.transaction_executor import (
@@ -72,7 +72,7 @@ a_raw_crash = {
 
 class TestElasticsearchCrashStorage(TestCase):
 
-    @mock.patch('socorro.external.elasticsearch.crashstorage.pyelasticsearch')
+    @mock.patch('socorro_lib.external.elasticsearch.crashstorage.pyelasticsearch')
     def test_indexing(self, pyes_mock):
         mock_logging = mock.Mock()
         mock_es = mock.Mock()
@@ -131,7 +131,7 @@ class TestElasticsearchCrashStorage(TestCase):
                 not in call_args
             )
 
-    @mock.patch('socorro.external.elasticsearch.crashstorage.pyelasticsearch')
+    @mock.patch('socorro_lib.external.elasticsearch.crashstorage.pyelasticsearch')
     def test_success(self, pyes_mock):
         mock_logging = mock.Mock()
         mock_es = mock.Mock()
@@ -183,7 +183,7 @@ class TestElasticsearchCrashStorage(TestCase):
                 **expected_request_kwargs
             )
 
-    @mock.patch('socorro.external.elasticsearch.crashstorage.pyelasticsearch')
+    @mock.patch('socorro_lib.external.elasticsearch.crashstorage.pyelasticsearch')
     def test_failure_no_retry(self, pyes_mock):
         mock_logging = mock.Mock()
         mock_es = mock.Mock()
@@ -241,7 +241,7 @@ class TestElasticsearchCrashStorage(TestCase):
                 **expected_request_kwargs
             )
 
-    @mock.patch('socorro.external.elasticsearch.crashstorage.pyelasticsearch')
+    @mock.patch('socorro_lib.external.elasticsearch.crashstorage.pyelasticsearch')
     def test_failure_limited_retry(self, pyes_mock):
         mock_logging = mock.Mock()
         mock_es = mock.Mock()
@@ -303,7 +303,7 @@ class TestElasticsearchCrashStorage(TestCase):
                 **expected_request_kwargs
             )
 
-    @mock.patch('socorro.external.elasticsearch.crashstorage.pyelasticsearch')
+    @mock.patch('socorro_lib.external.elasticsearch.crashstorage.pyelasticsearch')
     def test_success_after_limited_retry(self, pyes_mock):
         mock_logging = mock.Mock()
         mock_es = mock.Mock()

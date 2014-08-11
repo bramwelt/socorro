@@ -5,8 +5,8 @@
 import logging
 import psycopg2
 
-from socorro.external import DatabaseError, MissingArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import DatabaseError, MissingArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import external_common
 
 logger = logging.getLogger("webapi")
@@ -23,7 +23,7 @@ class SkipList(PostgreSQLBase):
         params = external_common.parse_arguments(self.filters, kwargs)
         sql_params = []
         sql = """
-            /* socorro.external.postgresql.skiplist.SkipList.get */
+            /* socorro_lib.external.postgresql.skiplist.SkipList.get */
             SELECT category,
                    rule
             FROM skiplist
@@ -56,7 +56,7 @@ class SkipList(PostgreSQLBase):
             raise MissingArgumentError('rule')
 
         sql = """
-            /* socorro.external.postgresql.skiplist.SkipList.post */
+            /* socorro_lib.external.postgresql.skiplist.SkipList.post */
             INSERT INTO skiplist (category, rule)
             VALUES (%s, %s);
         """
@@ -86,12 +86,12 @@ class SkipList(PostgreSQLBase):
 
         sql_params = [params.category, params.rule]
         count_sql = """
-            /* socorro.external.postgresql.skiplist.SkipList.delete */
+            /* socorro_lib.external.postgresql.skiplist.SkipList.delete */
             SELECT COUNT(*) FROM skiplist
             WHERE category=%s AND rule=%s
         """
         sql = """
-            /* socorro.external.postgresql.skiplist.SkipList.delete */
+            /* socorro_lib.external.postgresql.skiplist.SkipList.delete */
             DELETE FROM skiplist
             WHERE category=%s AND rule=%s
         """

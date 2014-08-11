@@ -5,7 +5,7 @@
 from nose.plugins.attrib import attr
 from nose.tools import eq_, assert_raises
 
-from socorro.external.postgresql import job
+from socorro_lib.external.postgresql import job
 
 from unittestbase import PostgreSQLTestCase
 
@@ -13,7 +13,7 @@ from unittestbase import PostgreSQLTestCase
 #==============================================================================
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestJob(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.Job.Job class. """
+    """Test socorro_lib.external.postgresql.Job.Job class. """
 
     #--------------------------------------------------------------------------
     def setUp(self):

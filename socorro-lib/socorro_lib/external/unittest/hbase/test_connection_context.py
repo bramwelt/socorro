@@ -5,9 +5,9 @@
 import mock
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.external.hbase.connection_context import \
+from socorro_lib.external.hbase.connection_context import \
      HBaseConnectionContextPooled
-from socorro.external.hbase.hbase_client import (
+from socorro_lib.external.hbase.hbase_client import (
     FatalException,
     NoConnectionException
 )
@@ -40,7 +40,7 @@ class FakeHB_Connection(object):
 
 class TestConnectionContext(TestCase):
 
-    @mock.patch('socorro.external.hbase.connection_context.hbase_client')
+    @mock.patch('socorro_lib.external.hbase.connection_context.hbase_client')
     def test_basic_hbase_usage(self, mocked_hbcl):
         local_config = DotDict({
           'hbase_host': 'host',
@@ -117,7 +117,7 @@ class TestConnectionContext(TestCase):
             3
         )
 
-    @mock.patch('socorro.external.hbase.connection_context.hbase_client')
+    @mock.patch('socorro_lib.external.hbase.connection_context.hbase_client')
     def test_hbase_usage_with_transaction(self, mocked_hbcl):
         local_config = DotDict({
           'hbase_host': 'host',

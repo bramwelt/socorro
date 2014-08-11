@@ -6,7 +6,7 @@ import datetime
 from nose.plugins.attrib import attr
 from nose.tools import eq_
 
-from socorro.external.postgresql.extensions import Extensions
+from socorro_lib.external.postgresql.extensions import Extensions
 from socorro_lib import datetimeutil
 
 from .unittestbase import PostgreSQLTestCase
@@ -15,7 +15,7 @@ from .unittestbase import PostgreSQLTestCase
 #==============================================================================
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestExtensions(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.extensions.Extensions class. """
+    """Test socorro_lib.external.postgresql.extensions.Extensions class. """
 
     #--------------------------------------------------------------------------
     def setUp(self):

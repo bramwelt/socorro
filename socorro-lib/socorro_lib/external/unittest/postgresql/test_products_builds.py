@@ -7,7 +7,7 @@ from nose.tools import eq_, assert_raises
 import psycopg2
 import psycopg2.extras
 
-from socorro.external.postgresql import products_builds
+from socorro_lib.external.postgresql import products_builds
 import socorro.database.database as db
 
 from unittestbase import PostgreSQLTestCase
@@ -21,7 +21,7 @@ from decimal import Decimal
 #==============================================================================
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestProductsBuilds(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.products_builds.ProductsBuilds class.
+    """Test socorro_lib.external.postgresql.products_builds.ProductsBuilds class.
     """
 
     #--------------------------------------------------------------------------

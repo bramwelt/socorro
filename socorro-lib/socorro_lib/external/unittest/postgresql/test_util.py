@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from .unittestbase import PostgreSQLTestCase
-from socorro.external.postgresql.util import Util
+from socorro_lib.external.postgresql.util import Util
 from nose.plugins.attrib import attr
 from nose.tools import eq_
 from socorro_lib import datetimeutil

@@ -5,7 +5,7 @@
 import threading
 import contextlib
 
-from socorro.external.hbase import hbase_client
+from socorro_lib.external.hbase import hbase_client
 from configman.config_manager import RequiredConfig
 from configman import Namespace
 

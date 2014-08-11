@@ -5,8 +5,8 @@
 import calendar
 from collections import defaultdict
 
-from socorro.external import BadArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import BadArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import external_common
 
 
@@ -23,7 +23,7 @@ class LagLog(PostgreSQLBase):
             raise BadArgumentError('Max limit is 1000')
 
         sql = """
-            /* socorro.external.postgresql.laglog.LagLog.get */
+            /* socorro_lib.external.postgresql.laglog.LagLog.get */
             SELECT
                 replica_name,
                 lag,

@@ -4,8 +4,8 @@ from mock import Mock
 from configman import ConfigurationManager
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.external.fs.crashstorage import FSRadixTreeStorage
-from socorro.external.crashstorage_base import CrashIDNotFound
+from socorro_lib.external.fs.crashstorage import FSRadixTreeStorage
+from socorro_lib.external.crashstorage_base import CrashIDNotFound
 from socorro.unittest.testbase import TestCase
 
 

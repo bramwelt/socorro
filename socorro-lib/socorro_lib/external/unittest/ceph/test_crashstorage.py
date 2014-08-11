@@ -8,13 +8,13 @@ import json
 import boto.exception
 
 from socorro_lib.util import DotDict
-from socorro.external.crashstorage_base import Redactor
-from socorro.external.ceph.crashstorage import BotoS3CrashStorage
+from socorro_lib.external.crashstorage_base import Redactor
+from socorro_lib.external.ceph.crashstorage import BotoS3CrashStorage
 from socorro.database.transaction_executor import (
     TransactionExecutor,
     TransactionExecutorWithLimitedBackoff,
 )
-from socorro.external.crashstorage_base import CrashIDNotFound
+from socorro_lib.external.crashstorage_base import CrashIDNotFound
 import socorro.unittest.testbase
 
 a_raw_crash = {

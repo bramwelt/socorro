@@ -6,9 +6,9 @@ import datetime
 import json
 import os
 
-from socorro.external.happybase.connection_context import \
+from socorro_lib.external.happybase.connection_context import \
     HappyBaseConnectionContext
-from socorro.external.crashstorage_base import (
+from socorro_lib.external.crashstorage_base import (
     CrashStorageBase,
     CrashIDNotFound
 )

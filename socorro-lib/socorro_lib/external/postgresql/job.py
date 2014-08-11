@@ -5,8 +5,8 @@
 import datetime
 import logging
 
-from socorro.external import MissingArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import MissingArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import datetimeutil, external_common
 
 logger = logging.getLogger("webapi")
@@ -38,7 +38,7 @@ class Job(PostgreSQLBase):
             "message"
         ]
         sql = """
-            /* socorro.external.postgresql.job.Job.get */
+            /* socorro_lib.external.postgresql.job.Job.get */
             SELECT %s FROM jobs WHERE uuid=%%(uuid)s
         """ % ", ".join(fields)
 

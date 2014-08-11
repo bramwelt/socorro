@@ -4,11 +4,11 @@
 
 import logging
 
-from socorro.external.postgresql.base import PostgreSQLBase
-from socorro.external.postgresql.util import Util
+from socorro_lib.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.util import Util
 import socorro.database.database as db
 from socorro_lib import external_common
-from socorro.external import BadArgumentError
+from socorro_lib.external import BadArgumentError
 
 
 logger = logging.getLogger("webapi")

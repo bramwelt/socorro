@@ -6,8 +6,8 @@ import logging
 import psycopg2
 from datetime import timedelta
 
-from socorro.external import InsertionError, MissingArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external import InsertionError, MissingArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
 from socorro_lib import buildutil, external_common
 from socorro_lib.datetimeutil import utc_now
 
@@ -90,7 +90,7 @@ class ProductsBuilds(PostgreSQLBase):
 
         params["from_date"] = params["from_date"].date()
 
-        sql = ["""/* socorro.external.postgresql.builds.Builds.builds */
+        sql = ["""/* socorro_lib.external.postgresql.builds.Builds.builds */
             SELECT  version,
                     platform,
                     build_id as buildid,

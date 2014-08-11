@@ -8,7 +8,7 @@ import random
 from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_
 
-from socorro.external.postgresql.laglog import LagLog
+from socorro_lib.external.postgresql.laglog import LagLog
 from socorro_lib.util import DotDict
 
 from unittestbase import PostgreSQLTestCase

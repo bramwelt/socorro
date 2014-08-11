@@ -17,7 +17,7 @@ except ImportError:
     from StringIO import StringIO
 
 from configman import Namespace
-from socorro.external.crashstorage_base import CrashStorageBase, \
+from socorro_lib.external.crashstorage_base import CrashStorageBase, \
                                                CrashIDNotFound
 from socorro_lib.ooid import dateFromOoid, depthFromOoid
 from socorro_lib.datetimeutil import utc_now

@@ -5,7 +5,7 @@
 import datetime
 import json
 
-from socorro.external.crashstorage_base import (
+from socorro_lib.external.crashstorage_base import (
     CrashStorageBase,
     CrashIDNotFound
 )
@@ -13,9 +13,9 @@ from configman import (
     Namespace,
     class_converter
 )
-from socorro.external.postgresql.connection_context import ConnectionContext
+from socorro_lib.external.postgresql.connection_context import ConnectionContext
 from socorro_lib.datetimeutil import uuid_to_date, JsonDTEncoder
-from socorro.external.postgresql.dbapi2_util import (
+from socorro_lib.external.postgresql.dbapi2_util import (
     SQLDidNotReturnSingleValue,
     single_value_sql,
     execute_no_results

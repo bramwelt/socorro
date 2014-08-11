@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-import socorro.external.hbase.hbase_client as hbc
+import socorro_lib.external.hbase.hbase_client as hbc
 import socorro.unittest.testlib.expectations as exp
 
 import re

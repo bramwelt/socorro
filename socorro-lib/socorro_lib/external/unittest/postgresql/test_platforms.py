@@ -5,7 +5,7 @@
 from nose.plugins.attrib import attr
 from nose.tools import eq_
 
-from socorro.external.postgresql.platforms import Platforms
+from socorro_lib.external.postgresql.platforms import Platforms
 
 from .unittestbase import PostgreSQLTestCase
 
@@ -13,7 +13,7 @@ from .unittestbase import PostgreSQLTestCase
 #==============================================================================
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestPlatforms(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.platforms.Platforms class. """
+    """Test socorro_lib.external.postgresql.platforms.Platforms class. """
 
     #--------------------------------------------------------------------------
     def setUp(self):

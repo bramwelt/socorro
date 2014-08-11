@@ -6,8 +6,8 @@ import time
 from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_
 
-from socorro.external.elasticsearch import crashstorage
-from socorro.external.elasticsearch.supersearch import SuperSearch
+from socorro_lib.external.elasticsearch import crashstorage
+from socorro_lib.external.elasticsearch.supersearch import SuperSearch
 from socorro_lib.datetimeutil import utc_now
 from .unittestbase import ElasticSearchTestCase
 from .test_supersearch import (

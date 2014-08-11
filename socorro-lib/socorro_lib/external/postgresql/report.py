@@ -5,9 +5,9 @@
 import json
 import logging
 
-from socorro.external import MissingArgumentError, BadArgumentError
-from socorro.external.postgresql.base import PostgreSQLBase
-from socorro.external.postgresql.util import Util
+from socorro_lib.external import MissingArgumentError, BadArgumentError
+from socorro_lib.external.postgresql.base import PostgreSQLBase
+from socorro_lib.external.postgresql.util import Util
 from socorro_lib import datetimeutil, search_common
 
 logger = logging.getLogger("webapi")
@@ -225,18 +225,18 @@ class Report(PostgreSQLBase):
         # Assembling the query
         if include_raw_crash:
             sql_query = "\n".join((
-                "/* socorro.external.postgresql.report.Report.list */",
+                "/* socorro_lib.external.postgresql.report.Report.list */",
                 sql_select, sql_from, sql_where, sql_order, sql_limit)
             )
         else:
             sql_query = "\n".join((
-                "/* socorro.external.postgresql.report.Report.list */",
+                "/* socorro_lib.external.postgresql.report.Report.list */",
                 sql_select, sql_from, sql_where, sql_order, sql_limit)
             )
 
         # Query for counting the results
         sql_count_query = "\n".join((
-            "/* socorro.external.postgresql.report.Report.list */",
+            "/* socorro_lib.external.postgresql.report.Report.list */",
             "SELECT count(*)", sql_from, sql_where)
         )
 

@@ -6,8 +6,8 @@ import datetime
 from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.external import MissingArgumentError
-from socorro.external.postgresql.crashes import Crashes
+from socorro_lib.external import MissingArgumentError
+from socorro_lib.external.postgresql.crashes import Crashes
 from socorro_lib import datetimeutil
 
 from .unittestbase import PostgreSQLTestCase
@@ -15,7 +15,7 @@ from .unittestbase import PostgreSQLTestCase
 
 @attr(integration='postgres')  # for nosetests
 class IntegrationTestCrashesSignatures(PostgreSQLTestCase):
-    """Test socorro.external.postgresql.crashes.Crashes.get_signatures method.
+    """Test socorro_lib.external.postgresql.crashes.Crashes.get_signatures method.
 
     Although it tests a method of the Crashes class, this test is not in
     test_crashes.py. This is because it has a lot of lines of code and thus is
