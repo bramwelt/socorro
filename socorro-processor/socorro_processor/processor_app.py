@@ -8,9 +8,9 @@
 from configman import Namespace
 from configman.converters import class_converter
 
-from socorro.app.fetch_transform_save_app import FetchTransformSaveApp, main
-from socorro.external.filesystem.crashstorage import FileSystemRawCrashStorage
-from socorro.external.crashstorage_base import (
+from socorro_lib.app.fetch_transform_save_app import FetchTransformSaveApp, main
+from socorro_lib.external.filesystem.crashstorage import FileSystemRawCrashStorage
+from socorro_lib.external.crashstorage_base import (
   PolyCrashStorage,
   CrashIDNotFound,
 )
@@ -62,7 +62,7 @@ class ProcessorApp(FetchTransformSaveApp):
     required_config.new_crash_source.add_option(
       'new_crash_source_class',
       doc='an iterable that will stream crash_ids needing processing',
-      default='socorro.external.rabbitmq.rmq_new_crash_source'
+      default='socorro_lib.external.rabbitmq.rmq_new_crash_source'
               '.RMQNewCrashSource',
       from_string_converter=class_converter
     )

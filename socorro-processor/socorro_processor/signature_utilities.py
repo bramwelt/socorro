@@ -7,7 +7,7 @@ import re
 from configman import Namespace, RequiredConfig
 from configman.converters import class_converter
 
-from socorro.external.postgresql.dbapi2_util import execute_query_fetchall
+from socorro_lib.external.postgresql.dbapi2_util import execute_query_fetchall
 
 
 #==============================================================================
@@ -450,7 +450,7 @@ class CSignatureToolDB(CSignatureToolBase):
     required_config.add_option(
         'database_class',
         doc="the class of the database",
-        default='socorro.external.postgresql.connection_context.'
+        default='socorro_lib.external.postgresql.connection_context.'
                 'ConnectionContext',
         from_string_converter=class_converter
     )

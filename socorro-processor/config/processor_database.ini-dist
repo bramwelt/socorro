@@ -31,7 +31,7 @@
 # name: database_class
 # doc: None
 # converter: configman.converters.class_converter
-#database_class='socorro.external.postgresql.connection_context.ConnectionContext'
+#database_class='socorro_lib.external.postgresql.connection_context.ConnectionContext'
 
 # name: backoff_delays
 # doc: delays in seconds between retries

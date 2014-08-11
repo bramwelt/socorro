@@ -12,7 +12,7 @@ from configman.dotdict import DotDict
 from socorro_processor.legacy_new_crash_source import (
   LegacyNewCrashSource,
 )
-from socorro.external.postgresql.dbapi2_util import (
+from socorro_lib.external.postgresql.dbapi2_util import (
     execute_no_results,
     execute_query_fetchall,
 )

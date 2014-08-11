@@ -8,19 +8,19 @@ application='ProcessorApp'
     # name: crashstorage_class
     # doc: the destination storage class
     # converter: configman.converters.class_converter
-    crashstorage_class='socorro.external.crashstorage_base.PolyCrashStorage'
+    crashstorage_class='socorro_lib.external.crashstorage_base.PolyCrashStorage'
 
     # name: storage_classes
     # doc: a comma delimited list of storage classes
     # converter: configman.converters.class_list_converter
-    storage_classes='socorro.external.fs.crashstorage.FSLegacyRadixTreeStorage, socorro.external.postgresql.crashstorage.PostgreSQLCrashStorage'
+    storage_classes='socorro_lib.external.fs.crashstorage.FSLegacyRadixTreeStorage, socorro_lib.external.postgresql.crashstorage.PostgreSQLCrashStorage'
 
     [[storage0]]
 
         # name: crashstorage_class
         # doc: None
         # converter: configman.converters.class_converter
-        crashstorage_class='socorro.external.fs.crashstorage.FSLegacyRadixTreeStorage'
+        crashstorage_class='socorro_lib.external.fs.crashstorage.FSLegacyRadixTreeStorage'
 
         # name: dump_field
         # doc: the default dump field
@@ -34,12 +34,12 @@ application='ProcessorApp'
 
         # name: forbidden_keys
         # doc: a comma delimited list of keys to not allowed in the processed crash
-        # converter: socorro.external.fs.crashstorage.<lambda>
+        # converter: socorro_lib.external.fs.crashstorage.<lambda>
         forbidden_keys='url, email, user_id, exploitability'
 
         # name: fs_root
         # doc: a path to a file system
-        # converter: socorro.external.fs.crashstorage.<lambda>
+        # converter: socorro_lib.external.fs.crashstorage.<lambda>
         fs_root='./crashes'
 
         # name: json_file_suffix
@@ -67,12 +67,12 @@ application='ProcessorApp'
         # name: crashstorage_class
         # doc: None
         # converter: configman.converters.class_converter
-        crashstorage_class='socorro.external.postgresql.crashstorage.PostgreSQLCrashStorage'
+        crashstorage_class='socorro_lib.external.postgresql.crashstorage.PostgreSQLCrashStorage'
 
         # name: database_class
         # doc: the class responsible for connecting toPostgres
         # converter: configman.converters.class_converter
-        database_class='socorro.external.postgresql.connection_context.ConnectionContext'
+        database_class='socorro_lib.external.postgresql.connection_context.ConnectionContext'
 
         # name: database_host
         # doc: the hostname of the database
@@ -151,7 +151,7 @@ application='ProcessorApp'
     # name: crashstorage_class
     # doc: the source storage class
     # converter: configman.converters.class_converter
-    crashstorage_class='socorro.external.rabbitmq.crashstorage.RabbitMQCrashStorage'
+    crashstorage_class='socorro_lib.external.rabbitmq.crashstorage.RabbitMQCrashStorage'
 
     # name: host
     # doc: the hostname of the RabbitMQ server
@@ -161,7 +161,7 @@ application='ProcessorApp'
     # name: new_crash_source_class
     # doc: an iterable that will stream crash_ids needing processing
     # converter: configman.converters.class_converter
-    new_crash_source_class='socorro.external.rabbitmq.rmq_new_crash_source.RMQNewCrashSource'
+    new_crash_source_class='socorro_lib.external.rabbitmq.rmq_new_crash_source.RMQNewCrashSource'
 
     # name: port
     # doc: the port for the RabbitMQ server
@@ -171,7 +171,7 @@ application='ProcessorApp'
     # name: rabbitmq_class
     # doc: the class responsible for connecting toRabbitMQ
     # converter: configman.converters.class_converter
-    rabbitmq_class='socorro.external.rabbitmq.connection_context.ConnectionContextPooled'
+    rabbitmq_class='socorro_lib.external.rabbitmq.connection_context.ConnectionContextPooled'
 
     # name: rabbitmq_password
     # doc: the user's RabbitMQ password
@@ -223,7 +223,7 @@ application='ProcessorApp'
     # name: database_class
     # doc: the class of the database
     # converter: configman.converters.class_converter
-    database_class='socorro.external.postgresql.connection_context.ConnectionContext'
+    database_class='socorro_lib.external.postgresql.connection_context.ConnectionContext'
 
     # name: database_host
     # doc: the hostname of the database
@@ -393,7 +393,7 @@ application='ProcessorApp'
     # name: database_class
     # doc: the class of the registrar's database
     # converter: configman.converters.class_converter
-    database_class='socorro.external.postgresql.connection_context.ConnectionContext'
+    database_class='socorro_lib.external.postgresql.connection_context.ConnectionContext'
 
     # name: database_host
     # doc: the hostname of the database
@@ -440,7 +440,7 @@ application='ProcessorApp'
     # name: crashstorage_class
     # doc: the source storage class
     # converter: configman.converters.class_converter
-    crashstorage_class='socorro.external.fs.crashstorage.FSLegacyRadixTreeStorage'
+    crashstorage_class='socorro_lib.external.fs.crashstorage.FSLegacyRadixTreeStorage'
 
     # name: dump_field
     # doc: the default dump field
@@ -454,12 +454,12 @@ application='ProcessorApp'
 
     # name: forbidden_keys
     # doc: a comma delimited list of keys to not allowed in the processed crash
-    # converter: socorro.external.fs.crashstorage.<lambda>
+    # converter: socorro_lib.external.fs.crashstorage.<lambda>
     forbidden_keys='url, email, user_id, exploitability'
 
     # name: fs_root
     # doc: a path to a file system
-    # converter: socorro.external.fs.crashstorage.<lambda>
+    # converter: socorro_lib.external.fs.crashstorage.<lambda>
     fs_root='./crashes'
 
     # name: json_file_suffix

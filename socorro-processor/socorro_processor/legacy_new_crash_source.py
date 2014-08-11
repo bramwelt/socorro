@@ -5,13 +5,13 @@
 from configman import Namespace, RequiredConfig
 from configman.converters import class_converter, timedelta_converter
 
-from socorro.external.postgresql.dbapi2_util import (
+from socorro_lib.external.postgresql.dbapi2_util import (
     execute_no_results,
     execute_query_fetchall,
     single_value_sql
 )
-from socorro.external.postgresql.connection_context import ConnectionContext
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.external.postgresql.connection_context import ConnectionContext
+from socorro_lib.datetimeutil import utc_now
 
 
 #==============================================================================

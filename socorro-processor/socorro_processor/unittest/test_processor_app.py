@@ -8,7 +8,7 @@ from nose.tools import eq_
 from configman.dotdict import DotDict
 
 from socorro_processor.processor_app import ProcessorApp
-from socorro.external.crashstorage_base import CrashIDNotFound
+from socorro_lib.external.crashstorage_base import CrashIDNotFound
 from socorro.unittest.testbase import TestCase
 
 

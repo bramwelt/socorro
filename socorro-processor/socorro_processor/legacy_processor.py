@@ -16,16 +16,16 @@ from contextlib import closing, contextmanager
 from configman import Namespace, RequiredConfig
 from configman.converters import class_converter
 
-from socorro.lib.datetimeutil import utc_now
-from socorro.external.postgresql.dbapi2_util import (
+from socorro_lib.datetimeutil import utc_now
+from socorro_lib.external.postgresql.dbapi2_util import (
     execute_no_results,
     execute_query_fetchall,
 )
-from socorro.external.postgresql.connection_context import ConnectionContext
-from socorro.lib.transform_rules import TransformRuleSystem
-from socorro.lib.datetimeutil import datetimeFromISOdateString, UTC
-from socorro.lib.ooid import dateFromOoid
-from socorro.lib.util import (
+from socorro_lib.external.postgresql.connection_context import ConnectionContext
+from socorro_lib.transform_rules import TransformRuleSystem
+from socorro_lib.datetimeutil import datetimeFromISOdateString, UTC
+from socorro_lib.ooid import dateFromOoid
+from socorro_lib.util import (
     DotDict,
     emptyFilter,
     StrCachingIterator

@@ -13,7 +13,7 @@ from socorro_processor.registration_client import (
   ProcessorAppRegistrationClient,
   RegistrationError
 )
-from socorro.external.postgresql.dbapi2_util import SQLDidNotReturnSingleValue
+from socorro_lib.external.postgresql.dbapi2_util import SQLDidNotReturnSingleValue
 from socorro.lib.datetimeutil import UTC
 from socorro.unittest.testbase import TestCase
 

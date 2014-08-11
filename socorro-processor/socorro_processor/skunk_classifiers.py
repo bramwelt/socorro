@@ -52,7 +52,7 @@ added to the processed crash:
 
 import datetime
 
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 
 
 #==============================================================================
