@@ -8,11 +8,11 @@ import psycopg2 as pg
 import datetime as dt
 import threading
 
-import socorro.lib.prioritize as socorro_pri
-import socorro.lib.psycopghelper as socorro_psy
+import socorro_lib.prioritize as socorro_pri
+import socorro_lib.psycopghelper as socorro_psy
 import socorro.database.postgresql as socorro_pg
 
-import socorro.lib.util as socorro_util
+import socorro_lib.util as socorro_util
 """
 Schema.py contains several utility functions and the code which describes most of the database tables used by socorro.
 However, large portions of Schema.py are out of date and the file is slated for replacement by different code.

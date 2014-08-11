@@ -18,7 +18,7 @@ import psycopg2
 
 import dbTestconfig as testConfig
 from   socorro.unittest.testlib.testDB import TestDB
-import socorro.lib.ConfigurationManager as configurationManager
+import socorro_lib.ConfigurationManager as configurationManager
 
 class Me: # Class 'Me' is just a way to say 'global' once per method
   pass

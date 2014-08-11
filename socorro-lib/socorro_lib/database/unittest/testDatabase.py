@@ -12,9 +12,9 @@ import threading
 
 from socorro.unittest.testlib.loggerForTest import TestingLogger
 from createDBforTest import *
-import socorro.lib.util as util
+import socorro_lib.util as util
 from socorro.unittest.testbase import TestCase
-import socorro.lib.ConfigurationManager as cm
+import socorro_lib.ConfigurationManager as cm
 import dbTestconfig as testConfig
 config = cm.newConfiguration(configurationModule = testConfig, applicationName='Testing Psycopghelper')
 

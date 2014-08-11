@@ -5,7 +5,7 @@
 # XXX Set to be deprecated in favor of socorro/external/postgresql/models.py
 
 ## Test config file for database utilities
-import socorro.lib.ConfigurationManager as cm
+import socorro_lib.ConfigurationManager as cm
 import datetime
 
 from socorro.unittest.config.commonconfig \

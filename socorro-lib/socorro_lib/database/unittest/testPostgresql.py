@@ -10,7 +10,7 @@ import os
 
 import psycopg2
 
-import socorro.lib.ConfigurationManager as configurationManager
+import socorro_lib.ConfigurationManager as configurationManager
 import socorro.database.postgresql as postg
 import socorro.database.schema as schema
 

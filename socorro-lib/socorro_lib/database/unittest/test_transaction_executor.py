@@ -8,7 +8,7 @@ from configman import Namespace, ConfigurationManager, class_converter
 import socorro.database.transaction_executor
 from socorro.database.transaction_executor import (
   TransactionExecutor, TransactionExecutorWithInfiniteBackoff)
-from socorro.external.postgresql.connection_context import ConnectionContext
+from socorro_lib.external.postgresql.connection_context import ConnectionContext
 from socorro.unittest.testbase import TestCase
 
 class SomeError(Exception):

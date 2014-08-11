@@ -10,7 +10,7 @@ import re
 import sys
 import time
 
-import socorro.lib.ConfigurationManager as cm
+import socorro_lib.ConfigurationManager as cm
 
 from config.commonconfig import databaseHost
 from config.commonconfig import databaseName
@@ -21,12 +21,12 @@ import config.commonconfig as config
 
 import psycopg2
 
-import socorro.lib.util as lib_util
+import socorro_lib.util as lib_util
 import socorro.database.postgresql as db_pgsql
 
 
 
-import socorro.lib.ConfigurationManager as configurationManager
+import socorro_lib.ConfigurationManager as configurationManager
 
 all_tables_sql = """
   SELECT table_name FROM information_schema.tables
