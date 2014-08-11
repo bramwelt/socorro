@@ -123,7 +123,8 @@ fi
 echo " Done."
 
 echo -n "INFO: configuring backend jobs..."
-for p in collector processor middleware
+cp socorro-processor/config/processor.ini-dist config/processor.ini
+for p in collector middleware
 do
   cp config/${p}.ini-dist config/${p}.ini
   if [ $? != 0 ]
@@ -137,7 +138,7 @@ echo " Done."
 
 echo -n "INFO: starting up collector, processor and middleware..."
 python socorro/collector/collector_app.py --admin.conf=./config/collector.ini --storage.storage1.host=$rmq_host --storage.storage1.rabbitmq_user=$rmq_user --storage.storage1.rabbitmq_password=$rmq_password --storage.storage1.virtual_host=$rmq_virtual_host --storage.storage1.transaction_executor_class=socorro.database.transaction_executor.TransactionExecutor --web_server.wsgi_server_class=socorro.webapi.servers.CherryPy > collector.log 2>&1 &
-python socorro/processor/processor_app.py --admin.conf=./config/processor.ini --processor.database_hostname=$database_hostname --new_crash_source.host=$rmq_host --new_crash_source.rabbitmq_user=$rmq_user --new_crash_source.rabbitmq_password=$rmq_password --new_crash_source.virtual_host=$rmq_virtual_host --destination.storage1.database_hostname=$database_hostname --registrar.database_hostname=$database_hostname > processor.log 2>&1 &
+socorro-processor --admin.conf=./config/processor.ini --processor.database_hostname=$database_hostname --new_crash_source.host=$rmq_host --new_crash_source.rabbitmq_user=$rmq_user --new_crash_source.rabbitmq_password=$rmq_password --new_crash_source.virtual_host=$rmq_virtual_host --destination.storage1.database_hostname=$database_hostname --registrar.database_hostname=$database_hostname > processor.log 2>&1 &
 sleep 1
 python socorro/middleware/middleware_app.py --admin.conf=./config/middleware.ini --database.database_hostname=$database_hostname --database.database_username=$database_username --database.database_password=$database_password --rabbitmq.host=$rmq_host --rabbitmq.rabbitmq_user=$rmq_user --rabbitmq.rabbitmq_password=$rmq_password --rabbitmq.virtual_host=$rmq_virtual_host --web_server.wsgi_server_class=socorro.webapi.servers.CherryPy > middleware.log 2>&1 &
 echo " Done."

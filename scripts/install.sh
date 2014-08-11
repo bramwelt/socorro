@@ -8,6 +8,7 @@ mkdir -p $PREFIX/application
 
 # copy to install directory
 rsync -a config $PREFIX/application
+rsync -a socorro-processor/config $PREFIX/application
 rsync -a ${VIRTUAL_ENV} $PREFIX
 rsync -a socorro $PREFIX/application
 rsync -a scripts $PREFIX/application

@@ -17,7 +17,7 @@ progname=socorro-processor
 # Source socorro overrides
 config=/etc/socorro/processor.ini
 
-script=socorro/processor/processor_app.py
+script=socorro-processor
 prefix=/data/socorro
 appdir=${prefix}/application
 python=${prefix}/socorro-virtualenv/bin/python
