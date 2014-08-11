@@ -24,7 +24,7 @@ from sqlalchemy.ext.compiler import compiles
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.schema import CreateTable
 
-from socorro.app.generic_app import App, main as configman_main
+from socorro_lib.app.generic_app import App, main as configman_main
 from socorro_lib.external.postgresql import fakedata
 from socorro_lib.external.postgresql.models import *
 

@@ -11,7 +11,7 @@ from nose.tools import eq_, assert_raises
 from configman import Namespace
 from configman.config_file_future_proxy import ConfigFileFutureProxy
 
-from socorro.app.generic_app import App, main
+from socorro_lib.app.generic_app import App, main
 from socorro_lib.unittest.testbase import TestCase
 
 class MyApp(App):
@@ -60,7 +60,7 @@ class TestGenericAppConfigPathLoading(TestCase):
         if os.path.isdir(self.tempdir):
             shutil.rmtree(self.tempdir)
 
-    @mock.patch('socorro.app.generic_app.logging')
+    @mock.patch('socorro_lib.app.generic_app.logging')
     def test_overriding_config_path(self, logging):
         vsl = (ConfigFileFutureProxy,)
         exit_code = main(MyApp, values_source_list=vsl)
@@ -84,7 +84,7 @@ class TestGenericAppConfigPathLoading(TestCase):
 
         logging.getLogger().error.assert_called_with(' - MainThread - color')
 
-    @mock.patch('socorro.app.generic_app.logging')
+    @mock.patch('socorro_lib.app.generic_app.logging')
     def test_exit_codes(self, logging):
         vsl = (ConfigFileFutureProxy, {'exit_code': 123})
         exit_code = main(ExitingApp, values_source_list=vsl)

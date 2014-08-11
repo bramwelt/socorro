@@ -12,7 +12,7 @@
 
 import datetime
 
-from socorro.app.generic_app import App, main
+from socorro_lib.app.generic_app import App, main
 
 from configman import Namespace
 

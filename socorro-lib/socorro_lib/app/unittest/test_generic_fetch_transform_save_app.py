@@ -4,7 +4,7 @@
 
 from nose.tools import eq_, ok_, assert_raises
 
-from socorro.app.fetch_transform_save_app import FetchTransformSaveApp
+from socorro_lib.app.fetch_transform_save_app import FetchTransformSaveApp
 from socorro_lib.threaded_task_manager import ThreadedTaskManager
 from socorro_lib.util import DotDict, SilentFakeLogger
 from socorro_lib.unittest.testbase import TestCase
