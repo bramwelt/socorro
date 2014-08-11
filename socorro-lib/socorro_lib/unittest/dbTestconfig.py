@@ -6,10 +6,10 @@
 import socorro_lib.ConfigurationManager as cm
 import datetime
 
-from socorro.unittest.config.commonconfig import databaseHost
-from socorro.unittest.config.commonconfig import databaseName
-from socorro.unittest.config.commonconfig import databaseUserName
-from socorro.unittest.config.commonconfig import databasePassword
+from socorro_lib.unittest.config.commonconfig import databaseHost
+from socorro_lib.unittest.config.commonconfig import databaseName
+from socorro_lib.unittest.config.commonconfig import databaseUserName
+from socorro_lib.unittest.config.commonconfig import databasePassword
 
 logFilePathname = cm.Option()
 logFilePathname.doc = 'full pathname for the log file'

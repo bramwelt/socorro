@@ -13,7 +13,7 @@ import datetime
 ### Just left this here as a reminder to play with it from time to time.
 #import socorro_lib.ConfigurationManager as CM
 import socorro_lib.dynamicConfigurationManager as CM
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 import optionfile
 

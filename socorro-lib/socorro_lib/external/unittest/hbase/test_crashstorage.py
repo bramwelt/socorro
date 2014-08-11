@@ -18,11 +18,11 @@ from socorro_lib.external.hbase.crashstorage import HBaseCrashStorage
 from socorro_lib.external.hbase.connection_context import \
      HBaseConnectionContextPooled
 from socorro_lib.util import DotDict
-from socorro.unittest.config import commonconfig
+from socorro_lib.unittest.config import commonconfig
 from socorro.database.transaction_executor import (
   TransactionExecutorWithLimitedBackoff
 )
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 class SomeThriftError(Exception):

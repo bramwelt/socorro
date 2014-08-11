@@ -7,7 +7,7 @@ import socorro_lib.ooid as oo
 import datetime as dt
 
 from socorro_lib.datetimeutil import utc_now, UTC
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 class TestOoid(TestCase):
   def setUp(self):

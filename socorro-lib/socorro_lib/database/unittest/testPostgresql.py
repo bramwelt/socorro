@@ -14,8 +14,8 @@ import socorro_lib.ConfigurationManager as configurationManager
 import socorro.database.postgresql as postg
 import socorro.database.schema as schema
 
-from   socorro.unittest.testlib.loggerForTest import TestingLogger
-from   socorro.unittest.testlib.testDB import TestDB
+from   socorro_lib.unittest.testlib.loggerForTest import TestingLogger
+from   socorro_lib.unittest.testlib.testDB import TestDB
 
 from nose.tools import *
 

@@ -6,7 +6,7 @@ from mock import Mock
 from nose.tools import eq_, assert_raises
 
 from socorro_lib.external.postgresql import dbapi2_util
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 class TestDBAPI2Helper(TestCase):

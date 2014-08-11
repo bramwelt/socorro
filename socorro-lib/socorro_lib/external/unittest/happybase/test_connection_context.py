@@ -14,7 +14,7 @@ from socorro_lib.external.happybase.connection_context import (
 
 from socorro_lib.util import SilentFakeLogger, DotDict
 from socorro.database.transaction_executor import TransactionExecutor
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 from configman import Namespace
 
 from socket import timeout, error

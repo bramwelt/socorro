@@ -12,7 +12,7 @@ from nose.tools import eq_, ok_, assert_raises
 
 from socorro_lib.external.http import correlations
 from socorro_lib.util import DotDict
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 SAMPLE_CORE_COUNTS = open(
     os.path.join(os.path.dirname(__file__),

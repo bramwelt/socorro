@@ -17,7 +17,7 @@ from nose.plugins.skip import SkipTest
 import psycopg2
 
 import dbTestconfig as testConfig
-from   socorro.unittest.testlib.testDB import TestDB
+from   socorro_lib.unittest.testlib.testDB import TestDB
 import socorro_lib.ConfigurationManager as configurationManager
 
 class Me: # Class 'Me' is just a way to say 'global' once per method

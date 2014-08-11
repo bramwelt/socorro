@@ -8,7 +8,7 @@ from socorro_lib.external.rabbitmq.rmq_new_crash_source import (
     RMQNewCrashSource
 )
 from socorro_lib.util import DotDict
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 #==============================================================================

@@ -12,7 +12,7 @@ from socorro_lib import datetimeutil
 from socorro_lib.search_common import (
     SearchBase, SearchParam, convert_to_type, get_parameters, restrict_fields
 )
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 SUPERSEARCH_FIELDS_MOCKED_RESULTS = {

@@ -15,7 +15,7 @@ from socorro.database.transaction_executor import (
     TransactionExecutorWithLimitedBackoff,
 )
 from socorro_lib.external.crashstorage_base import CrashIDNotFound
-import socorro.unittest.testbase
+import socorro_lib.unittest.testbase
 
 a_raw_crash = {
     "submitted_timestamp": "2013-01-09T22:21:18.646733+00:00"
@@ -29,7 +29,7 @@ class ABadDeal(Exception):
 BotoS3CrashStorage.operational_exceptions = (ABadDeal, )
 
 
-class TestCase(socorro.unittest.testbase.TestCase):
+class TestCase(socorro_lib.unittest.testbase.TestCase):
 
     def _fake_processed_crash(self):
         d = DotDict()

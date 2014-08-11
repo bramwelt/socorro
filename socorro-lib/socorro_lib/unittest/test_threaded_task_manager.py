@@ -10,7 +10,7 @@ from  socorro_lib.threaded_task_manager import ThreadedTaskManager, \
       ThreadedTaskManagerWithConfigSetup, \
       default_task_func
 from socorro_lib.util import DotDict, SilentFakeLogger
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 class TestFileSystemRawCrashStorage(TestCase):

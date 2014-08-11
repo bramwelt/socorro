@@ -13,7 +13,7 @@ from nose.tools import eq_, assert_raises
 from socorro_lib.external import MissingArgumentError, ResourceNotFound, \
                              ResourceUnavailable
 from socorro_lib.external.fs import crash_data, crashstorage
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 @attr(integration='filesystem')  # for nosetests

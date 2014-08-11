@@ -16,7 +16,7 @@ from socorro_lib.external.rabbitmq.connection_context import (
     ConnectionContextPooled
 )
 from socorro_lib.util import DotDict
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 #==============================================================================

@@ -12,7 +12,7 @@ from nose.plugins.attrib import attr
 from socorro_lib.external import MissingArgumentError, ResourceNotFound, \
                              ResourceUnavailable
 from socorro_lib.external.hb import crash_data, crashstorage, hbase_client
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 _run_integration_tests = os.environ.get('RUN_HBASE_INTEGRATION_TESTS', False)

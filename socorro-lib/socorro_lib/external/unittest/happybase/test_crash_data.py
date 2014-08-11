@@ -15,7 +15,7 @@ from socorro_lib.external.happybase import crash_data, crashstorage
 from socorro_lib.external.happybase.connection_context import (
     HappyBaseConnectionContext
 )
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 _run_integration_tests = os.environ.get('RUN_HBASE_INTEGRATION_TESTS', False)

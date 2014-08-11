@@ -8,7 +8,7 @@ import types
 
 from nose.tools import *
 import socorro_lib.external.filesystem.filesystem as f
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 # Describes the directory/file structure we will look at:
 # key is a name

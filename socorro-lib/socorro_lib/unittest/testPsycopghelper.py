@@ -9,8 +9,8 @@ import datetime as DT
 import logging
 import threading
 
-from socorro.unittest.testlib.loggerForTest import TestingLogger
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testlib.loggerForTest import TestingLogger
+from socorro_lib.unittest.testbase import TestCase
 from createDBforTest import *
 from nose.plugins.attrib import attr
 

@@ -10,10 +10,10 @@ import psycopg2.extensions
 import logging
 import threading
 
-from socorro.unittest.testlib.loggerForTest import TestingLogger
+from socorro_lib.unittest.testlib.loggerForTest import TestingLogger
 from createDBforTest import *
 import socorro_lib.util as util
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 import socorro_lib.ConfigurationManager as cm
 import dbTestconfig as testConfig
 config = cm.newConfiguration(configurationModule = testConfig, applicationName='Testing Psycopghelper')

@@ -6,7 +6,7 @@ from nose.tools import eq_, ok_
 import psycopg2
 
 from socorro_lib.external.postgresql.connection_context import ConnectionContext
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 from configman import Namespace
 
 

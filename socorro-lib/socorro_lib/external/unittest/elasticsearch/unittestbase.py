@@ -9,7 +9,7 @@ from configman import ConfigurationManager
 
 from socorro_lib.external.elasticsearch import crashstorage
 from socorro.middleware.middleware_app import MiddlewareApp
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 class ElasticSearchTestCase(TestCase):

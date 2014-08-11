@@ -13,7 +13,7 @@ import socorro_lib.external.filesystem.json_dump_storage as JDS
 import uuid as socorro_uuid
 from socorro_lib.util import SilentFakeLogger
 import socorro_lib.external.filesystem.filesystem as socorro_fs
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 from socorro_lib.datetimeutil import UTC
 
 class TestJsonDumpStoragePermissions(TestCase):

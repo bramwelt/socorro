@@ -12,7 +12,7 @@ from .unittestbase import ElasticSearchTestCase
 from socorro_lib.external.elasticsearch import crashstorage
 from socorro_lib.external.elasticsearch.search import Search
 from socorro_lib import util, datetimeutil
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 # Remove debugging noise during development
 # import logging

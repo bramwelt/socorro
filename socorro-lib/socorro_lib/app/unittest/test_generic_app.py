@@ -12,7 +12,7 @@ from configman import Namespace
 from configman.config_file_future_proxy import ConfigFileFutureProxy
 
 from socorro.app.generic_app import App, main
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 class MyApp(App):
     app_name = 'myapp'

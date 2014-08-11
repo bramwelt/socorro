@@ -9,7 +9,7 @@ from socorro_lib.external.fs.crashstorage import (
     FSTemporaryStorage
 )
 from socorro_lib.external.crashstorage_base import CrashIDNotFound
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 class TestFSLegacyDatedRadixTreeStorage(TestCase):

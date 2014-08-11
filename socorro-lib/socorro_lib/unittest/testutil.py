@@ -10,8 +10,8 @@ from nose.tools import *
 
 import socorro_lib.util as util
 
-from socorro.unittest.testlib.loggerForTest import TestingLogger
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testlib.loggerForTest import TestingLogger
+from socorro_lib.unittest.testbase import TestCase
 
 class TestingException(exceptions.Exception):
   pass

@@ -13,8 +13,8 @@ import socorro_lib.external.filesystem.json_dump_storage as JDS
 import socorro_lib.util
 from socorro_lib.datetimeutil import UTC
 
-import socorro.unittest.testlib.createJsonDumpStore as createJDS
-from socorro.unittest.testbase import TestCase
+import socorro_lib.unittest.testlib.createJsonDumpStore as createJDS
+from socorro_lib.unittest.testbase import TestCase
 
 
 class TestJsonDumpStorage(TestCase):

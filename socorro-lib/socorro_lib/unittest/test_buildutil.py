@@ -4,7 +4,7 @@
 
 from nose.tools import ok_
 
-from socorro.unittest.external.postgresql.unittestbase import \
+from socorro_lib.unittest.external.postgresql.unittestbase import \
     PostgreSQLTestCase
 from socorro_lib import buildutil
 

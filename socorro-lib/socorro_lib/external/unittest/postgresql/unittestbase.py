@@ -5,7 +5,7 @@
 import socorro.database.database as db
 from configman import ConfigurationManager, Namespace
 from configman.converters import list_converter
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 class PostgreSQLTestCase(TestCase):

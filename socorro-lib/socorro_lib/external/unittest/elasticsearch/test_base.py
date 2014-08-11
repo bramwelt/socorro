@@ -13,7 +13,7 @@ from socorro_lib.external.elasticsearch.base import ElasticSearchBase
 
 import socorro_lib.search_common as scommon
 import socorro_lib.util as util
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 #==============================================================================

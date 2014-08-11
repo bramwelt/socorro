@@ -11,7 +11,7 @@ Just set up the database and exit. Assume we can get config details from the tes
 import logging
 import sys
 import socorro_lib.ConfigurationManager as configurationManager
-from socorro.unittest.testlib.testDB import TestDB
+from socorro_lib.unittest.testlib.testDB import TestDB
 import dbTestconfig as testConfig
 
 def help():

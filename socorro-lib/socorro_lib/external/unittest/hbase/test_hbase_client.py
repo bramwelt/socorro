@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import socorro_lib.external.hbase.hbase_client as hbc
-import socorro.unittest.testlib.expectations as exp
+import socorro_lib.unittest.testlib.expectations as exp
 
 import re
 

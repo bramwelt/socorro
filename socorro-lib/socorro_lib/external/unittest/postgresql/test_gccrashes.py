@@ -10,7 +10,7 @@ from socorro_lib.external import MissingArgumentError
 
 from socorro_lib.external.postgresql.gccrashes import GCCrashes
 from socorro_lib import datetimeutil, util
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 from unittestbase import PostgreSQLTestCase
 

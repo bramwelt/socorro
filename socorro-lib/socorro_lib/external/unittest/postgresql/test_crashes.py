@@ -13,7 +13,7 @@ from socorro_lib.external import (
 )
 from socorro_lib.external.postgresql.crashes import Crashes
 from socorro_lib import datetimeutil, util
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 from unittestbase import PostgreSQLTestCase
 

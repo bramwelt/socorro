@@ -15,7 +15,7 @@ from socorro_lib.external.elasticsearch.crashstorage import (
 from socorro.database.transaction_executor import (
     TransactionExecutorWithLimitedBackoff
 )
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 a_processed_crash = {

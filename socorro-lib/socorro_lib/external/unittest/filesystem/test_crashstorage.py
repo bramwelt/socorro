@@ -17,7 +17,7 @@ from socorro_lib.external.filesystem.crashstorage import (
   FileSystemRawCrashStorage,
   FileSystemThrottledCrashStorage,
   FileSystemCrashStorage)
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 from socorro_lib.util import DotDict
 
 

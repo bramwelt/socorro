@@ -16,7 +16,7 @@ from socorro.database.transaction_executor import (
     TransactionExecutorWithLimitedBackoff
 )
 from socorro_lib.external.postgresql.crashstorage import PostgreSQLCrashStorage
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 empty_tuple = ()
 
