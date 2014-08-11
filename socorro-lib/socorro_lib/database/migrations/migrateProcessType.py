@@ -22,7 +22,7 @@ import config.commonconfig as config
 import psycopg2
 
 import socorro_lib.util as lib_util
-import socorro.database.postgresql as db_pgsql
+import socorro_lib.database.postgresql as db_pgsql
 
 
 

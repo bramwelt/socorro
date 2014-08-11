@@ -10,7 +10,7 @@ import threading
 
 import socorro_lib.prioritize as socorro_pri
 import socorro_lib.psycopghelper as socorro_psy
-import socorro.database.postgresql as socorro_pg
+import socorro_lib.database.postgresql as socorro_pg
 
 import socorro_lib.util as socorro_util
 """

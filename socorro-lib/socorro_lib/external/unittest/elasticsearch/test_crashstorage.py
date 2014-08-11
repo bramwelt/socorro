@@ -12,7 +12,7 @@ from configman import ConfigurationManager
 from socorro_lib.external.elasticsearch.crashstorage import (
     ElasticSearchCrashStorage
 )
-from socorro.database.transaction_executor import (
+from socorro_lib.database.transaction_executor import (
     TransactionExecutorWithLimitedBackoff
 )
 from socorro_lib.unittest.testbase import TestCase

@@ -10,7 +10,7 @@ import boto.exception
 from socorro_lib.util import DotDict
 from socorro_lib.external.crashstorage_base import Redactor
 from socorro_lib.external.ceph.crashstorage import BotoS3CrashStorage
-from socorro.database.transaction_executor import (
+from socorro_lib.database.transaction_executor import (
     TransactionExecutor,
     TransactionExecutorWithLimitedBackoff,
 )

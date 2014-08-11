@@ -34,7 +34,7 @@ class PostgreSQLCrashStorage(CrashStorageBase):
 
     required_config.add_option(
         'transaction_executor_class',
-        default="socorro.database.transaction_executor."
+        default="socorro_lib.database.transaction_executor."
         "TransactionExecutorWithInfiniteBackoff",
         doc='a class that will manage transactions',
         from_string_converter=class_converter,

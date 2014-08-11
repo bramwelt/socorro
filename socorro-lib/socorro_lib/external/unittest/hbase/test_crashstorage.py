@@ -19,7 +19,7 @@ from socorro_lib.external.hbase.connection_context import \
      HBaseConnectionContextPooled
 from socorro_lib.util import DotDict
 from socorro_lib.unittest.config import commonconfig
-from socorro.database.transaction_executor import (
+from socorro_lib.database.transaction_executor import (
   TransactionExecutorWithLimitedBackoff
 )
 from socorro_lib.unittest.testbase import TestCase

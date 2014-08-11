@@ -11,8 +11,8 @@ import os
 import psycopg2
 
 import socorro_lib.ConfigurationManager as configurationManager
-import socorro.database.postgresql as postg
-import socorro.database.schema as schema
+import socorro_lib.database.postgresql as postg
+import socorro_lib.database.schema as schema
 
 from   socorro_lib.unittest.testlib.loggerForTest import TestingLogger
 from   socorro_lib.unittest.testlib.testDB import TestDB

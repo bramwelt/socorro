@@ -7,7 +7,7 @@ from nose.tools import eq_, ok_, assert_raises
 
 from socorro_lib.external.hb import connection_context
 from socorro_lib.util import SilentFakeLogger, DotDict
-from socorro.database.transaction_executor import TransactionExecutor
+from socorro_lib.database.transaction_executor import TransactionExecutor
 from socorro_lib.unittest.testbase import TestCase
 
 from socket import error

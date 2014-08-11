@@ -12,7 +12,7 @@ from socorro_lib.external.hbase.hbase_client import (
     NoConnectionException
 )
 from socorro_lib.util import SilentFakeLogger, DotDict
-from socorro.database.transaction_executor import TransactionExecutor
+from socorro_lib.database.transaction_executor import TransactionExecutor
 from socorro_lib.unittest.testbase import TestCase
 from configman import Namespace
 

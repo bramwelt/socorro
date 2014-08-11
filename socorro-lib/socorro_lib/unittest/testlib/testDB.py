@@ -5,8 +5,8 @@
 # XXX Set to be deprecated in favor of socorro/external/postgresql/models.py
 
 import psycopg2
-import socorro.database.schema as db_schema
-import socorro.database.postgresql as db_postgresql
+import socorro_lib.database.schema as db_schema
+import socorro_lib.database.postgresql as db_postgresql
 import sys
 
 class TestDB:

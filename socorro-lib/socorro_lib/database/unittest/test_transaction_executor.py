@@ -5,8 +5,8 @@
 from nose.tools import eq_, ok_, assert_raises
 import psycopg2
 from configman import Namespace, ConfigurationManager, class_converter
-import socorro.database.transaction_executor
-from socorro.database.transaction_executor import (
+import socorro_lib.database.transaction_executor
+from socorro_lib.database.transaction_executor import (
   TransactionExecutor, TransactionExecutorWithInfiniteBackoff)
 from socorro_lib.external.postgresql.connection_context import ConnectionContext
 from socorro_lib.unittest.testbase import TestCase
@@ -237,8 +237,8 @@ class TestTransactionExecutor(TestCase):
                 _sleep_count.append(n)
 
             # monkey patch the sleep function from inside transaction_executor
-            _orig_sleep = socorro.database.transaction_executor.time.sleep
-            socorro.database.transaction_executor.time.sleep = mock_sleep
+            _orig_sleep = socorro_lib.database.transaction_executor.time.sleep
+            socorro_lib.database.transaction_executor.time.sleep = mock_sleep
 
             try:
                 executor(mock_function)
@@ -249,7 +249,7 @@ class TestTransactionExecutor(TestCase):
                 eq_(len(mock_logging.criticals), 5)
                 ok_(len(_sleep_count) > 10)
             finally:
-                socorro.database.transaction_executor.time.sleep = _orig_sleep
+                socorro_lib.database.transaction_executor.time.sleep = _orig_sleep
 
     def test_operation_error_with_postgres_with_backoff_with_rollback(self):
         required_config = Namespace()
@@ -300,8 +300,8 @@ class TestTransactionExecutor(TestCase):
                 _sleep_count.append(n)
 
             # monkey patch the sleep function from inside transaction_executor
-            _orig_sleep = socorro.database.transaction_executor.time.sleep
-            socorro.database.transaction_executor.time.sleep = mock_sleep
+            _orig_sleep = socorro_lib.database.transaction_executor.time.sleep
+            socorro_lib.database.transaction_executor.time.sleep = mock_sleep
 
             try:
                 executor(mock_function)
@@ -312,7 +312,7 @@ class TestTransactionExecutor(TestCase):
                 eq_(len(mock_logging.criticals), 5)
                 ok_(len(_sleep_count) > 10)
             finally:
-                socorro.database.transaction_executor.time.sleep = _orig_sleep
+                socorro_lib.database.transaction_executor.time.sleep = _orig_sleep
 
     def test_programming_error_with_postgres_with_backoff_with_rollback(self):
         required_config = Namespace()
@@ -364,8 +364,8 @@ class TestTransactionExecutor(TestCase):
                 _sleep_count.append(n)
 
             # monkey patch the sleep function from inside transaction_executor
-            _orig_sleep = socorro.database.transaction_executor.time.sleep
-            socorro.database.transaction_executor.time.sleep = mock_sleep
+            _orig_sleep = socorro_lib.database.transaction_executor.time.sleep
+            socorro_lib.database.transaction_executor.time.sleep = mock_sleep
 
             try:
                 executor(mock_function_struggling)
@@ -376,7 +376,7 @@ class TestTransactionExecutor(TestCase):
                 eq_(len(mock_logging.criticals), 5)
                 ok_(len(_sleep_count) > 10)
             finally:
-                socorro.database.transaction_executor.time.sleep = _orig_sleep
+                socorro_lib.database.transaction_executor.time.sleep = _orig_sleep
 
         # this time, simulate an actual code bug where a callable function
         # raises a ProgrammingError() exception by, for example, a syntax error

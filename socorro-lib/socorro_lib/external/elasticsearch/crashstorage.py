@@ -31,7 +31,7 @@ class ElasticSearchCrashStorage(CrashStorageBase):
     required_config = Namespace()
     required_config.add_option(
         'transaction_executor_class',
-        default="socorro.database.transaction_executor."
+        default="socorro_lib.database.transaction_executor."
         "TransactionExecutorWithLimitedBackoff",
         doc='a class that will manage transactions',
         from_string_converter=class_converter,

@@ -8,7 +8,7 @@ import os
 from socorro_lib.external.crashstorage_base import (
     CrashStorageBase, CrashIDNotFound)
 from socorro_lib.external.hbase import hbase_client
-from socorro.database.transaction_executor import TransactionExecutor
+from socorro_lib.database.transaction_executor import TransactionExecutor
 from socorro_lib.external.hbase.connection_context import \
      HBaseConnectionContextPooled
 from socorro_lib.util import DotDict

@@ -12,7 +12,7 @@ from psycopg2.extensions import TRANSACTION_STATUS_IDLE
 
 from configman import ConfigurationManager
 
-from socorro.database.transaction_executor import (
+from socorro_lib.database.transaction_executor import (
     TransactionExecutorWithLimitedBackoff
 )
 from socorro_lib.external.postgresql.crashstorage import PostgreSQLCrashStorage

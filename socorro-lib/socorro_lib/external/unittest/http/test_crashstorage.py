@@ -10,7 +10,7 @@ from nose.tools import eq_, assert_raises
 from socorro_lib.util import DotDict
 
 from socorro_lib.external.http.crashstorage import HTTPPOSTCrashStorage
-from socorro.database.transaction_executor import (
+from socorro_lib.database.transaction_executor import (
     TransactionExecutor,
     TransactionExecutorWithLimitedBackoff
 )

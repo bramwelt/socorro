@@ -7,9 +7,9 @@ import socorro.unittest.testlib.dbtestutil as dbtu
 
 import socorro.lib.psycopghelper as psycopghelper
 import socorro.lib.ConfigurationManager as configurationManager
-import socorro.database.postgresql as db_postgresql
-import socorro.database.schema as db_schema
-import socorro.database.database as sdatabase
+import socorro_lib.database.postgresql as db_postgresql
+import socorro_lib.database.schema as db_schema
+import socorro_lib.database.database as sdatabase
 
 from socorro.lib.datetimeutil import UTC, utc_now
 

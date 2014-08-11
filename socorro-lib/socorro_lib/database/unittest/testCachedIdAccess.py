@@ -4,7 +4,7 @@
 
 # XXX Set to be deprecated in favor of socorro/external/postgresql/models.py
 
-import socorro.database.cachedIdAccess as cia
+import socorro_lib.database.cachedIdAccess as cia
 
 import errno
 import logging

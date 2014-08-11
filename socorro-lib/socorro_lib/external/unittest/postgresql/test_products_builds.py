@@ -8,7 +8,7 @@ import psycopg2
 import psycopg2.extras
 
 from socorro_lib.external.postgresql import products_builds
-import socorro.database.database as db
+import socorro_lib.database.database as db
 
 from unittestbase import PostgreSQLTestCase
 

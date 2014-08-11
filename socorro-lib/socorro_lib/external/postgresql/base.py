@@ -7,7 +7,7 @@ import logging
 
 import psycopg2
 
-import socorro.database.database as db
+import socorro_lib.database.database as db
 from socorro_lib.external import DatabaseError
 
 from .dbapi2_util import execute_query_fetchall, single_value_sql

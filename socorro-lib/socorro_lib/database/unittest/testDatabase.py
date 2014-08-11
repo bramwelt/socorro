@@ -4,7 +4,7 @@
 
 # XXX Set to be deprecated in favor of socorro/external/postgresql/models.py
 
-import socorro.database.database as db
+import socorro_lib.database.database as db
 import psycopg2
 import psycopg2.extensions
 import logging

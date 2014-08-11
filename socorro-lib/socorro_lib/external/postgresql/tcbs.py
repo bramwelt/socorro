@@ -5,7 +5,7 @@
 import logging
 logger = logging.getLogger("webapi")
 
-import socorro.database.database as db
+import socorro_lib.database.database as db
 from socorro_lib import datetimeutil, util
 
 import datetime
