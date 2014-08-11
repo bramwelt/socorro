@@ -9,6 +9,7 @@ setup(
     version="0.1.0",
     url="http://github.com/mozilla/socorro",
     packages=['socorro_processor'],
+    test_suite='nose.collector',
     entry_points={
         'console_scripts': ['socorro-processor=socorro_processor.processor_app:app']
         }
