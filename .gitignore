@@ -13,6 +13,9 @@ socorro-virtualenv
 socorro-vagrant-virtualenv
 socorro/unittest/database/logs/
 socorro/unittest/testlib/logs/
+**/dist
+**/build
+**.egg-info
 stackwalk/
 exploitable/
 docs/_build/
