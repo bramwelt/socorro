@@ -5,18 +5,18 @@
 import socorro.lib.ConfigurationManager as cm
 import datetime
 
-from socorro.unittest.config.commonconfig \
+from socorro_lib.unittest.config.commonconfig \
     import databaseHost as database_hostname
 try:
-  from socorro.unittest.config.commonconfig \
+  from socorro_lib.unittest.config.commonconfig \
     import databasePort as database_port
 except:
   database_port = 5432
-from socorro.unittest.config.commonconfig \
+from socorro_lib.unittest.config.commonconfig \
     import oldDatabaseName as database_name
-from socorro.unittest.config.commonconfig \
+from socorro_lib.unittest.config.commonconfig \
     import databaseUserName as database_username
-from socorro.unittest.config.commonconfig \
+from socorro_lib.unittest.config.commonconfig \
     import databasePassword as database_password
 
 logFilePathname = cm.Option()

@@ -10,7 +10,7 @@
 #---------------------------------------------------------------------------
 # Relational Database Section
 
-import socorro.lib.ConfigurationManager as cm
+import socorro_lib.ConfigurationManager as cm
 databaseHost = cm.Option()
 databaseHost.doc = 'the hostname of the database servers'
 databaseHost.default = 'jenkins-pg92'

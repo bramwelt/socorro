@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import os
-import socorro.unittest.testlib.dbtestutil as dbtu
+import socorro_lib.unittest.testlib.dbtestutil as dbtu
 
 import socorro.lib.psycopghelper as psycopghelper
 import socorro.lib.ConfigurationManager as configurationManager
@@ -14,9 +14,9 @@ import socorro_lib.database.database as sdatabase
 from socorro.lib.datetimeutil import UTC, utc_now
 
 from nose.tools import *
-from socorro.unittest.testlib.testDB import TestDB
+from socorro_lib.unittest.testlib.testDB import TestDB
 import libTestconfig as testConfig
-import socorro.unittest.testlib.createJsonDumpStore as createJDS
+import socorro_lib.unittest.testlib.createJsonDumpStore as createJDS
 
 import psycopg2
 

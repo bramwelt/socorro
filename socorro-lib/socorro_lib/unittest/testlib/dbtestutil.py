@@ -10,7 +10,7 @@ import logging
 import os
 import time
 import psycopg2
-import socorro.unittest.testlib.createJsonDumpStore as createJDS
+import socorro_lib.unittest.testlib.createJsonDumpStore as createJDS
 
 from socorro.lib.datetimeutil import utc_now
 

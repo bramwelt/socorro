@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-from socorro.unittest.testlib.loggerForTest import TestingLogger
+from socorro_lib.unittest.testlib.loggerForTest import TestingLogger
 
 import logging
 
