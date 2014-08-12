@@ -15,9 +15,9 @@ from socorro_processor.hybrid_processor import (
   HybridCrashProcessor,
   create_symbol_path_str
 )
-from socorro.lib.datetimeutil import datetimeFromISOdateString, UTC
-from socorro.lib.util import CachingIterator
-from socorro.unittest.testbase import TestCase
+from socorro_lib.datetimeutil import datetimeFromISOdateString, UTC
+from socorro_lib.util import CachingIterator
+from socorro_lib.unittest.testbase import TestCase
 
 
 def setup_config_with_mocks():

@@ -16,7 +16,7 @@ from socorro_lib.external.postgresql.dbapi2_util import (
     execute_no_results,
     execute_query_fetchall,
 )
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 def sequencer(*args):

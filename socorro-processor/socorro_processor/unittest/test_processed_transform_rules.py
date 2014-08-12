@@ -4,7 +4,7 @@
 
 from nose.tools import eq_, ok_
 
-from socorro.lib.util import DotDict, SilentFakeLogger
+from socorro_lib.util import DotDict, SilentFakeLogger
 from socorro_processor.processed_transform_rules import (
     ProcessedTransformRule,
     OOMSignature,
@@ -12,7 +12,7 @@ from socorro_processor.processed_transform_rules import (
 )
 
 from socorro_processor.signature_utilities import CSignatureTool
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 csig_config = DotDict()
 csig_config.irrelevant_signature_re = ''

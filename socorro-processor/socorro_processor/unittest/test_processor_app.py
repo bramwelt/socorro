@@ -9,7 +9,7 @@ from configman.dotdict import DotDict
 
 from socorro_processor.processor_app import ProcessorApp
 from socorro_lib.external.crashstorage_base import CrashIDNotFound
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 
 def sequencer(*args):

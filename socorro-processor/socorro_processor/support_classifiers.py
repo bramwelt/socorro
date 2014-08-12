@@ -19,8 +19,8 @@ the support classifcation rules live here.
 }
 """
 
-from socorro.lib.ver_tools import normalize
-from socorro.lib.util import DotDict
+from socorro_lib.ver_tools import normalize
+from socorro_lib.util import DotDict
 
 from sys import maxint
 

@@ -14,8 +14,8 @@ from socorro_processor.registration_client import (
   RegistrationError
 )
 from socorro_lib.external.postgresql.dbapi2_util import SQLDidNotReturnSingleValue
-from socorro.lib.datetimeutil import UTC
-from socorro.unittest.testbase import TestCase
+from socorro_lib.datetimeutil import UTC
+from socorro_lib.unittest.testbase import TestCase
 
 def sequencer(*args):
     active_iter = iter(args)

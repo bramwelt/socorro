@@ -6,12 +6,12 @@ import mock
 from nose.tools import eq_, ok_
 
 import socorro_processor.signature_utilities as sig
-import socorro.lib.util as sutil
+import socorro_lib.util as sutil
 
 from socorro.database.transaction_executor import TransactionExecutor
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 from socorro_processor.signature_utilities import JavaSignatureTool
-from socorro.unittest.testbase import TestCase
+from socorro_lib.unittest.testbase import TestCase
 
 import re
 
