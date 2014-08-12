@@ -10,7 +10,7 @@ import json
 
 import socorro.storage.crashstorage as cstore
 import socorro.unittest.testlib.expectations as exp
-import socorro.lib.util as util
+import socorro_lib.util as util
 
 import socorro.unittest.testlib.loggerForTest as loggerForTest
 

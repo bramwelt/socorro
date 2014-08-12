@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 ## Test config file for testMtbf
-import socorro.lib.ConfigurationManager as cm
+import socorro_lib.ConfigurationManager as cm
 import datetime
 
 from socorro.unittest.config.commonconfig import databaseHost

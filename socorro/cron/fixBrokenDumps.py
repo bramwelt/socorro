@@ -13,13 +13,13 @@ import cPickle
 import psycopg2
 import psycopg2.extras
 
-import socorro.lib.util
+import socorro_lib.util
 import socorro.external.hbase.hbase_client as hbaseClient
 
 from datetime import datetime, timedelta
 
-from socorro.lib.datetimeutil import utc_now
-from socorro.lib.datetimeutil import date_to_string
+from socorro_lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import date_to_string
 
 def fetchOoids(configContext, logger, query):
   try:
@@ -27,7 +27,7 @@ def fetchOoids(configContext, logger, query):
     conn = psycopg2.connect(databaseDSN)
     cur = conn.cursor()
   except:
-    socorro.lib.util.reportExceptionAndAbort(logger)
+    socorro_lib.util.reportExceptionAndAbort(logger)
 
   last_date_processed = get_last_run_date(configContext)
 
@@ -39,7 +39,7 @@ def fetchOoids(configContext, logger, query):
     rows = cur.fetchall()
     conn.commit()
   except:
-    socorro.lib.util.reportExceptionAndAbort(logger)
+    socorro_lib.util.reportExceptionAndAbort(logger)
 
   return rows, last_date_processed
 
@@ -65,7 +65,7 @@ def fix(configContext, logger, query, fixer):
       os.unlink(fname)
       logger.debug('removed dump file: %s' % fname)
     except:
-      socorro.lib.util.reportExceptionAndContinue(logger)
+      socorro_lib.util.reportExceptionAndContinue(logger)
 
   return last_date_processed
 

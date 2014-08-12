@@ -13,7 +13,7 @@ from configman import Namespace
 from configman.converters import class_converter, timedelta_converter
 
 from socorro.app.generic_app import App, main
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 
 from socorro.external.postgresql.dbapi2_util import (
   single_value_sql,

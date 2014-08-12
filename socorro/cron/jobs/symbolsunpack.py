@@ -9,7 +9,7 @@ from configman import Namespace
 from crontabber.base import BaseCronApp
 from crontabber.mixins import with_subprocess
 
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 
 
 @with_subprocess

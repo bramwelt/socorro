@@ -5,10 +5,10 @@
 import web
 import time
 
-from socorro.lib.ooid import createNewOoid
-from socorro.lib.util import DotDict
+from socorro_lib.ooid import createNewOoid
+from socorro_lib.util import DotDict
 from socorro.collector.throttler import DISCARD, IGNORE
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 
 from configman import RequiredConfig, Namespace
 

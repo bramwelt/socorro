@@ -42,7 +42,7 @@
 
 #import socorro.database.postgresql as soc_pg
 #import socorro.database.database as sdatabase
-#import socorro.lib.ConfigurationManager as configurationManager
+#import socorro_lib.ConfigurationManager as configurationManager
 #import socorro.monitor.monitor as monitor
 
 #import socorro.unittest.testlib.createJsonDumpStore as createJDS
@@ -51,7 +51,7 @@
 #from   socorro.unittest.testlib.util import runInOtherProcess
 #import socorro.unittest.testlib.util as tutil
 
-#from socorro.lib.datetimeutil import utc_now
+#from socorro_lib.datetimeutil import utc_now
 
 #import monitorTestconfig as testConfig
 #import socorro.database.schema as schema

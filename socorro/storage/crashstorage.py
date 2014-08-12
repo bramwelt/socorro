@@ -8,7 +8,7 @@ import re
 import random
 import threading
 
-import socorro.lib.ver_tools as vtl
+import socorro_lib.ver_tools as vtl
 
 from socorro.external.crashstorage_base import (
     FallbackCrashStorage,

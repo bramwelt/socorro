@@ -9,7 +9,7 @@ from nose.plugins.attrib import attr
 from nose.tools import eq_
 
 from crontabber.app import CronTabber
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 from socorro.unittest.cron.jobs.base import IntegrationTestBase
 
 from socorro.unittest.cron.setup_configman import (

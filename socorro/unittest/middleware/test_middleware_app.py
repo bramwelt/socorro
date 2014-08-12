@@ -17,14 +17,14 @@ from configman import (
     environment
 )
 
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 from socorro.external import (
     MissingArgumentError,
     BadArgumentError,
     ResourceNotFound,
     ResourceUnavailable
 )
-from socorro.lib import datetimeutil
+from socorro_lib import datetimeutil
 from socorro.middleware import middleware_app
 from socorro.unittest.config.commonconfig import (
     databaseHost,

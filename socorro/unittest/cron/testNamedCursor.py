@@ -19,10 +19,10 @@ import psycopg2
 import time
 from nose.tools import *
 
-import socorro.lib.ConfigurationManager as configurationManager
+import socorro_lib.ConfigurationManager as configurationManager
 import socorro.database.database as sdatabase
 
-from socorro.lib.datetimeutil import UTC
+from socorro_lib.datetimeutil import UTC
 
 from   socorro.unittest.testlib.testDB import TestDB
 import socorro.unittest.testlib.dbtestutil as dbtestutil

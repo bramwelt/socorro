@@ -4,9 +4,9 @@
 
 import datetime as dt
 
-import socorro.lib.JsonDumpStorage as jds
-import socorro.lib.util
-from socorro.lib.datetimeutil import utc_now
+import socorro_lib.JsonDumpStorage as jds
+import socorro_lib.util
+from socorro_lib.datetimeutil import utc_now
 
 def deferredJobStorageCleanup (config, logger):
   """
@@ -21,7 +21,7 @@ def deferredJobStorageCleanup (config, logger):
   except (KeyboardInterrupt, SystemExit):
     logger.debug("got quit message")
   except:
-    socorro.lib.util.reportExceptionAndContinue(logger)
+    socorro_lib.util.reportExceptionAndContinue(logger)
   logger.info("deferredJobCleanupLoop done.")
 
 

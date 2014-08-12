@@ -20,7 +20,7 @@ from socorro.app import generic_app
 from socorro.external.elasticsearch.crashstorage import (
     ElasticSearchCrashStorage
 )
-from socorro.lib.datetimeutil import string_to_datetime
+from socorro_lib.datetimeutil import string_to_datetime
 
 
 class IntegrationTestElasticsearchStorageApp(generic_app.App):

@@ -9,7 +9,7 @@ from crontabber.mixins import (
     as_backfill_cron_app,
     with_postgres_transactions
 )
-from socorro.lib import buildutil
+from socorro_lib import buildutil
 import os
 
 """
@@ -639,7 +639,7 @@ class FTPScraperCronAppRunner(FTPScraperCronApp):  # pragma: no cover
         'date',
         default=datetime.datetime.utcnow(),
         doc='Date to run for',
-        from_string_converter='socorro.lib.datetimeutil.string_to_datetime'
+        from_string_converter='socorro_lib.datetimeutil.string_to_datetime'
     )
 
     def __init__(self, config):

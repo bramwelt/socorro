@@ -9,10 +9,10 @@ import json
 import os
 import signal
 
-import socorro.lib.util as sutil
-import socorro.lib.iteratorWorkerFramework as iwf
+import socorro_lib.util as sutil
+import socorro_lib.iteratorWorkerFramework as iwf
 import socorro.external.filesystem.filesystem as sfs
-import socorro.lib.stats as stats
+import socorro_lib.stats as stats
 
 import poster
 import urllib2
@@ -221,7 +221,7 @@ if __name__ == '__main__':
       except Exception, x:
         errorReporter(x)
 
-  import socorro.lib.ConfigurationManager
+  import socorro_lib.ConfigurationManager
 
   import os.path
   import traceback
@@ -240,7 +240,7 @@ if __name__ == '__main__':
     ('i',  'uniqueHangId', False, None, 'coche and uniquify hangids'),
     ]
 
-  config = socorro.lib.ConfigurationManager.newConfiguration(configurationOptionsList=commandLineOptions)
+  config = socorro_lib.ConfigurationManager.newConfiguration(configurationOptionsList=commandLineOptions)
 
   uniqueHang = 'uniqueHangId' in config
 

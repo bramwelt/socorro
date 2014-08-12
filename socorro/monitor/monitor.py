@@ -14,14 +14,14 @@ import logging
 
 logger = logging.getLogger("monitor")
 
-import socorro.lib.util
+import socorro_lib.util
 import socorro.external.filesystem.filesystem
-import socorro.lib.psycopghelper as psy
+import socorro_lib.psycopghelper as psy
 import socorro.database.database as sdb
 import socorro.storage.crashstorage as cstore
 import socorro.external.hbase.hbase_client as hbc
 
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 
 #=================================================================================================================
 class UuidNotFoundException(Exception):
@@ -101,7 +101,7 @@ class Monitor (object):
     except self.sdb.CannotConnectToDatabase:
       self.quit = True
       self.databaseConnectionPool.cleanup()
-      socorro.lib.util.reportExceptionAndAbort(logger) # can't continue without a database connection
+      socorro_lib.util.reportExceptionAndAbort(logger) # can't continue without a database connection
 
   #-----------------------------------------------------------------------------------------------------------------
   def cleanUpCompletedAndFailedJobs (self):
@@ -124,7 +124,7 @@ class Monitor (object):
     except Exception, x:
       logger.debug("it died: %s", x)
       databaseConnection.rollback()
-      socorro.lib.util.reportExceptionAndContinue(logger)
+      socorro_lib.util.reportExceptionAndContinue(logger)
 
   #-----------------------------------------------------------------------------------------------------------------
   def cleanUpDeadProcessors (self, aCursor):
@@ -199,9 +199,9 @@ class Monitor (object):
             aCursor.connection.rollback()
     except Monitor.NoProcessorsRegisteredException:
       self.quit = True
-      socorro.lib.util.reportExceptionAndAbort(logger, showTraceback=False)
+      socorro_lib.util.reportExceptionAndAbort(logger, showTraceback=False)
     except:
-      socorro.lib.util.reportExceptionAndContinue(logger)
+      socorro_lib.util.reportExceptionAndContinue(logger)
 
   #-----------------------------------------------------------------------------------------------------------------
   @staticmethod
@@ -242,7 +242,7 @@ class Monitor (object):
           logger.debug("sql failed for the 2nd time - quit")
           self.quit = True
           aCursor.connection.rollback()
-          socorro.lib.util.reportExceptionAndAbort(logger)
+          socorro_lib.util.reportExceptionAndAbort(logger)
       listOfProcessorIds = [[aRow[0], aRow[1]] for aRow in aCursor.fetchall()]  #processorId, numberOfAssignedJobs
       logger.debug("listOfProcessorIds: %s", str(listOfProcessorIds))
       if not listOfProcessorIds:
@@ -256,7 +256,7 @@ class Monitor (object):
         yield listOfProcessorIds[0][0]
     except Monitor.NoProcessorsRegisteredException:
       self.quit = True
-      socorro.lib.util.reportExceptionAndAbort(logger)
+      socorro_lib.util.reportExceptionAndAbort(logger)
 
   #-----------------------------------------------------------------------------------------------------------------
   def unbalancedJobSchedulerIter(self, aCursor):
@@ -274,7 +274,7 @@ class Monitor (object):
           yield aProcessorId
     except Monitor.NoProcessorsRegisteredException:
       self.quit = True
-      socorro.lib.util.reportExceptionAndAbort(logger)
+      socorro_lib.util.reportExceptionAndAbort(logger)
 
   #-----------------------------------------------------------------------------------------------------------------
   def queueJob (self, databaseCursor, uuid, processorIdSequenceGenerator, priority=0):
@@ -309,10 +309,10 @@ class Monitor (object):
     except hbc.NoConnectionException:
       self.quit = True
       logger.critical("hbase is gone! hbase is gone!")
-      socorro.lib.util.reportExceptionAndAbort(logger)
+      socorro_lib.util.reportExceptionAndAbort(logger)
     except Exception:
       self.quit = True
-      socorro.lib.util.reportExceptionAndContinue(logger)
+      socorro_lib.util.reportExceptionAndContinue(logger)
       raise
     try:
       try:
@@ -337,18 +337,18 @@ class Monitor (object):
                 self.quit = True
                 raise
               except:
-                socorro.lib.util.reportExceptionAndContinue(logger)
+                socorro_lib.util.reportExceptionAndContinue(logger)
             logger.debug("ended destructiveDateWalk")
           except hbc.FatalException:
             raise
           except:
-            socorro.lib.util.reportExceptionAndContinue(logger, loggingLevel=logging.CRITICAL)
+            socorro_lib.util.reportExceptionAndContinue(logger, loggingLevel=logging.CRITICAL)
           logger.debug("end of loop - about to sleep")
           self.quitCheck()
           self.responsiveSleep(self.standardLoopDelay)
       except hbc.FatalException, x:
         logger.debug("somethings gone horribly wrong with HBase")
-        socorro.lib.util.reportExceptionAndContinue(logger, loggingLevel=logging.CRITICAL)
+        socorro_lib.util.reportExceptionAndContinue(logger, loggingLevel=logging.CRITICAL)
         if databaseConnection is not None:
           databaseConnection.rollback()
         self.quit = True
@@ -450,13 +450,13 @@ class Monitor (object):
           except:
             if databaseConnection is not None:
               databaseConnection.rollback()
-            socorro.lib.util.reportExceptionAndContinue(logger)
+            socorro_lib.util.reportExceptionAndContinue(logger)
           self.quitCheck()
           logger.debug("sleeping")
           self.responsiveSleep(self.priorityLoopDelay)
       except hbc.FatalException, x:
         logger.debug("somethings gone horribly wrong with HBase")
-        socorro.lib.util.reportExceptionAndContinue(logger, loggingLevel=logging.CRITICAL)
+        socorro_lib.util.reportExceptionAndContinue(logger, loggingLevel=logging.CRITICAL)
         if databaseConnection is not None:
           databaseConnection.rollback()
         self.quit = True
@@ -483,7 +483,7 @@ class Monitor (object):
         logger.debug("got quit message")
         self.quit = True
       except:
-        socorro.lib.util.reportExceptionAndContinue(logger)
+        socorro_lib.util.reportExceptionAndContinue(logger)
     finally:
       logger.info("jobCleanupLoop done.")
 

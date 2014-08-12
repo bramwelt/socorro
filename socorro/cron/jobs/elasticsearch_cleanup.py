@@ -10,7 +10,7 @@ from configman import Namespace
 from configman.converters import class_converter
 from crontabber.base import BaseCronApp
 
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 
 
 class ElasticsearchCleanupCronApp(BaseCronApp):

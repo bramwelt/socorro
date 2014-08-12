@@ -10,7 +10,7 @@ import mock
 from nose.plugins.attrib import attr
 from nose.tools import eq_, ok_, assert_raises
 from crontabber.app import CronTabber
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 from socorro.cron.jobs import ftpscraper
 from crontabber.tests.base import TestCaseBase
 from socorro.unittest.cron.jobs.base import IntegrationTestBase

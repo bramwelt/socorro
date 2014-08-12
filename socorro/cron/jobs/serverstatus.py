@@ -26,7 +26,7 @@ import datetime
 
 from configman import Namespace
 
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 from crontabber.base import BaseCronApp
 from crontabber.mixins import (
     with_postgres_transactions,

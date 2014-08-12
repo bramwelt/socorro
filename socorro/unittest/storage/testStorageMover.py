@@ -3,7 +3,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 import socorro.storage.storageMover as smover
-import socorro.lib.util as sutil
+import socorro_lib.util as sutil
 import socorro.storage.crashstorage as cstore
 import time
 

@@ -15,7 +15,7 @@ from configman.converters import class_converter
 from socorro.app.fetch_transform_save_app import FetchTransformSaveApp, main
 from socorro.external.crashstorage_base import CrashStorageBase
 from socorro.external.filesystem.filesystem import findFileGenerator
-from socorro.lib.util import DotDict
+from socorro_lib.util import DotDict
 from socorro.external.postgresql.dbapi2_util import execute_query_iter
 
 

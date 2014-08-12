@@ -6,7 +6,7 @@ import json
 import logging
 import web
 
-import socorro.lib.util as util
+import socorro_lib.util as util
 import socorro.database.database as db
 import socorro.storage.crashstorage as cs
 from socorro.external import (

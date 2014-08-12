@@ -10,8 +10,8 @@ except ImportError:
 import signal
 
 import socorro.storage.crashstorage as cstore
-import socorro.lib.util as sutil
-import socorro.lib.iteratorWorkerFramework as iwf
+import socorro_lib.util as sutil
+import socorro_lib.iteratorWorkerFramework as iwf
 
 
 #-------------------------------------------------------------------------------

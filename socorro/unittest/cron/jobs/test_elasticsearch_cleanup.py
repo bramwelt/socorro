@@ -17,7 +17,7 @@ from socorro.unittest.cron.jobs.base import IntegrationTestBase
 
 from socorro.external.elasticsearch.crashstorage import \
     ElasticSearchCrashStorage
-from socorro.lib.datetimeutil import utc_now
+from socorro_lib.datetimeutil import utc_now
 from socorro.unittest.cron.setup_configman import (
     get_config_manager_for_crontabber,
 )
