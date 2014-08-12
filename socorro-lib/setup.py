@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="socorro-lib",
@@ -8,7 +8,7 @@ setup(
     license="MPL",
     version="0.1.0",
     url="http://github.com/mozilla/socorro",
-    packages=['socorro_lib'],
+    packages=find_packages(),
     test_suite='nose.collector',
     install_requires=[
         'configman',
