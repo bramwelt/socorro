@@ -59,10 +59,10 @@ DEFAULT_JOBS = '''
 # the moment, it's easier for us to maintain python we're doing it here.
 CronTabber.required_config.crontabber.jobs.default = DEFAULT_JOBS
 CronTabber.required_config.crontabber.database_class.default = (
-    'socorro.external.postgresql.connection_context.ConnectionContext'
+    'socorro_lib.external.postgresql.connection_context.ConnectionContext'
 )
 CronTabber.required_config.crontabber.job_state_db_class.default.required_config.database_class.default = (
-    'socorro.external.postgresql.connection_context.ConnectionContext'
+    'socorro_lib.external.postgresql.connection_context.ConnectionContext'
 )
 
 

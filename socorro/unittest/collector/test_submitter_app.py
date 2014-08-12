@@ -14,8 +14,8 @@ from socorro.collector.submitter_app import (
     DBSamplingCrashSource
 )
 from configman.dotdict import DotDict
-from socorro.external.postgresql import dbapi2_util
-from socorro.external.crashstorage_base import Redactor
+from socorro_lib.external.postgresql import dbapi2_util
+from socorro_lib.external.crashstorage_base import Redactor
 from socorro.unittest.testbase import TestCase
 
 

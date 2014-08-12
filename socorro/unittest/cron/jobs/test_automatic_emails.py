@@ -11,10 +11,10 @@ from nose.tools import eq_, ok_
 from configman import ConfigurationManager
 from crontabber.app import CronTabber
 from socorro.cron.jobs import automatic_emails
-from socorro.external.exacttarget import exacttarget
-from socorro.external.elasticsearch.crashstorage import \
+from socorro_lib.external.exacttarget import exacttarget
+from socorro_lib.external.elasticsearch.crashstorage import \
     ElasticSearchCrashStorage
-from socorro.external.elasticsearch.supersearch import SuperS
+from socorro_lib.external.elasticsearch.supersearch import SuperS
 from socorro_lib.datetimeutil import string_to_datetime, utc_now
 from crontabber.tests.base import TestCaseBase
 
@@ -480,7 +480,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
             #argv_source=[]
         #)
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_cron_job(self, exacttarget_mock):
         config_manager = self._setup_config_manager()
         et_mock = exacttarget_mock.return_value
@@ -537,7 +537,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
                 eq_(date.month, now.month)
                 eq_(date.day, now.day)
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_run(self, exacttarget_mock):
         config_manager = self._setup_simple_config()
         with config_manager.context() as config:
@@ -547,7 +547,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
             et_mock = exacttarget_mock.return_value
             eq_(et_mock.trigger_send.call_count, 4)
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_run_no_generic_email(self, exacttarget_mock):
         config_manager = self._setup_simple_config(email_template='')
         with config_manager.context() as config:
@@ -572,7 +572,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
             # email and are thus not processed. The call count stays the same.
             eq_(et_mock.trigger_send.call_count, 1)
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_run_with_classifications(self, exacttarget_mock):
         # Verify that classifications work.
         def mocked_trigger_send(email_template, fields):
@@ -592,7 +592,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
             et_mock = exacttarget_mock.return_value
             eq_(et_mock.trigger_send.call_count, 4)
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_send_email(self, exacttarget_mock):
         list_service_mock = exacttarget_mock.return_value.list.return_value
         list_service_mock.get_subscriber.return_value = {
@@ -619,7 +619,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
                 fields
             )
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_send_email_test_mode(self, exacttarget_mock):
         list_service_mock = exacttarget_mock.return_value.list.return_value
         list_service_mock.get_subscriber.return_value = {
@@ -646,7 +646,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
                 fields
             )
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_error_in_send_email(self, exacttarget_mock):
         list_service_mock = exacttarget_mock.return_value.list.return_value
         list_service_mock.get_subscriber.return_value = {
@@ -718,7 +718,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
                 exc_info=True
             )
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_error_in_send_email_with_easy_correction(self, exacttarget_mock):
         attempted_emails = []
 
@@ -746,7 +746,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
         # note that this means only one attempt was made
         eq_(attempted_emails, ['fake@example.com'])
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_error_in_send_email_with_clever_recovery(self, exacttarget_mock):
         attempted_emails = []
 
@@ -779,7 +779,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
             ['fake@exampl.com', 'fake@example.com']
         )
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_error_in_send_email_recovery_failing(self, exacttarget_mock):
         attempted_emails = []
 
@@ -814,7 +814,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
             ['fake@exampl.com', 'fake@example.com']
         )
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_error_in_send_email_with_ambiguous_domain(self, exacttarget_mock):
         """try to send to a mail.com but let it fail.
         Because `mail.com` easily is spell corrected to `gmail.com` but
@@ -894,7 +894,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
             eq_(len(res), 1)
             eq_(res[0][0], now)
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_email_cannot_be_sent_twice(self, exacttarget_mock):
         config_manager = self._setup_config_manager(
             restrict_products=['NightlyTrain']
@@ -985,7 +985,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
                 'e@example.org'
             ])
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_email_after_delay(self, exacttarget_mock):
         """Test that a user will receive an email if he or she sends us a new
         crash report after the delay is passed (but not before). """
@@ -1084,7 +1084,7 @@ class IntegrationTestAutomaticEmails(IntegrationTestBase):
             # A new email was sent
             eq_(trigger_send_mock.call_count, 2)
 
-    @mock.patch('socorro.external.exacttarget.exacttarget.ExactTarget')
+    @mock.patch('socorro_lib.external.exacttarget.exacttarget.ExactTarget')
     def test_sending_many_emails(self, exacttarget_mock):
         """Test that we can send emails to a lot of users in the same run. """
 

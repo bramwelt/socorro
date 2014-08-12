@@ -18,7 +18,7 @@ from configman import (
 )
 
 from socorro_lib.util import DotDict
-from socorro.external import (
+from socorro_lib.external import (
     MissingArgumentError,
     BadArgumentError,
     ResourceNotFound,
@@ -1071,7 +1071,7 @@ class IntegrationTestMiddlewareApp(TestCase):
         breakpad_revision = '1.0'
         socorro_revision = '19.5'
 
-        from socorro.external.postgresql import server_status
+        from socorro_lib.external.postgresql import server_status
 
         # Create fake revision files
         self.basedir = os.path.dirname(server_status.__file__)

@@ -9,7 +9,7 @@ from crontabber.mixins import (
     with_single_postgres_transaction,
     with_transactional_resource
 )
-from socorro.external.postgresql.dbapi2_util import execute_query_iter
+from socorro_lib.external.postgresql.dbapi2_util import execute_query_iter
 
 _reprocessing_sql = """ DELETE FROM reprocessing_jobs RETURNING crash_id """
 
@@ -17,7 +17,7 @@ _reprocessing_sql = """ DELETE FROM reprocessing_jobs RETURNING crash_id """
 @with_postgres_transactions()
 @with_single_postgres_transaction()
 @with_transactional_resource(
-    'socorro.external.rabbitmq.crashstorage.ReprocessingRabbitMQCrashStore',
+    'socorro_lib.external.rabbitmq.crashstorage.ReprocessingRabbitMQCrashStore',
     'queuing'
 )
 class ReprocessingJobsApp(BaseCronApp):

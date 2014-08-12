@@ -4,7 +4,7 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 """This app tests that inserting a crash report into elasticsearch works.
-It simply uses socorro.external.elasticsearch.crashstorage to send a report
+It simply uses socorro_lib.external.elasticsearch.crashstorage to send a report
 and verifies that it was correctly inserted. """
 
 # This app can be invoked like this:
@@ -17,7 +17,7 @@ import json
 from configman import Namespace
 
 from socorro.app import generic_app
-from socorro.external.elasticsearch.crashstorage import (
+from socorro_lib.external.elasticsearch.crashstorage import (
     ElasticSearchCrashStorage
 )
 from socorro_lib.datetimeutil import string_to_datetime

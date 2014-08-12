@@ -13,9 +13,9 @@ from configman.converters import class_converter, list_converter
 from crontabber.mixins import as_backfill_cron_app
 from crontabber.base import BaseCronApp
 from socorro_lib.transform_rules import TransformRuleSystem
-from socorro.external.elasticsearch.base import ElasticSearchBase
-from socorro.external.elasticsearch.supersearch import SuperS
-from socorro.external.exacttarget import exacttarget
+from socorro_lib.external.elasticsearch.base import ElasticSearchBase
+from socorro_lib.external.elasticsearch.supersearch import SuperS
+from socorro_lib.external.exacttarget import exacttarget
 
 
 class EditDistance(object):
@@ -147,13 +147,13 @@ class AutomaticEmailsCronApp(BaseCronApp, ElasticSearchBase):
     required_config.namespace('elasticsearch')
     required_config.elasticsearch.add_option(
         'elasticsearch_class',
-        default='socorro.external.elasticsearch.connection_context.'
+        default='socorro_lib.external.elasticsearch.connection_context.'
                 'ConnectionContext',
         from_string_converter=class_converter
     )
     required_config.elasticsearch.add_option(
         'index_creator_class',
-        default='socorro.external.elasticsearch.crashstorage.'
+        default='socorro_lib.external.elasticsearch.crashstorage.'
                 'ElasticSearchCrashStorage',
         from_string_converter=class_converter
     )

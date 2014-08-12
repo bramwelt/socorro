@@ -15,7 +15,7 @@ import json
 import re
 import web
 from socorro.app.generic_app import App, main
-from socorro.external import (
+from socorro_lib.external import (
     MissingArgumentError,
     BadArgumentError,
     ResourceNotFound,
@@ -134,12 +134,12 @@ class MiddlewareApp(App):
     required_config.implementations.add_option(
         'implementation_list',
         doc='list of packages for service implementations',
-        default='psql:socorro.external.postgresql, '
-                'hbase:socorro.external.hb, '
-                'es:socorro.external.elasticsearch, '
-                'fs:socorro.external.fs, '
-                'http:socorro.external.http, '
-                'rabbitmq:socorro.external.rabbitmq',
+        default='psql:socorro_lib.external.postgresql, '
+                'hbase:socorro_lib.external.hb, '
+                'es:socorro_lib.external.elasticsearch, '
+                'fs:socorro_lib.external.fs, '
+                'http:socorro_lib.external.http, '
+                'rabbitmq:socorro_lib.external.rabbitmq',
         from_string_converter=items_list_decode,
         to_string_converter=items_list_encode
     )
@@ -164,7 +164,7 @@ class MiddlewareApp(App):
     required_config.namespace('database')
     required_config.database.add_option(
         'database_class',
-        default='socorro.external.postgresql.connection_context.'
+        default='socorro_lib.external.postgresql.connection_context.'
                 'ConnectionContext',
         from_string_converter=class_converter
     )
@@ -176,7 +176,7 @@ class MiddlewareApp(App):
     required_config.namespace('hbase')
     required_config.hbase.add_option(
         'hbase_class',
-        default='socorro.external.hb.crashstorage.HBaseCrashStorage',
+        default='socorro_lib.external.hb.crashstorage.HBaseCrashStorage',
         from_string_converter=class_converter
     )
 
@@ -187,7 +187,7 @@ class MiddlewareApp(App):
     required_config.namespace('filesystem')
     required_config.filesystem.add_option(
         'filesystem_class',
-        default='socorro.external.fs.crashstorage.FSLegacyRadixTreeStorage',
+        default='socorro_lib.external.fs.crashstorage.FSLegacyRadixTreeStorage',
         from_string_converter=class_converter
     )
 
@@ -198,7 +198,7 @@ class MiddlewareApp(App):
     required_config.namespace('rabbitmq')
     required_config.rabbitmq.add_option(
         'rabbitmq_class',
-        default='socorro.external.rabbitmq.connection_context.'
+        default='socorro_lib.external.rabbitmq.connection_context.'
                 'ConnectionContext',
         from_string_converter=class_converter
     )

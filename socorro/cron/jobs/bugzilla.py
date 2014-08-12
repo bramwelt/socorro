@@ -10,7 +10,7 @@ from dateutil import tz
 from configman import Namespace
 from crontabber.base import BaseCronApp
 from crontabber.mixins import with_postgres_transactions
-from socorro.external.postgresql.dbapi2_util import (
+from socorro_lib.external.postgresql.dbapi2_util import (
     single_row_sql,
     execute_query_fetchall,
     execute_no_results,

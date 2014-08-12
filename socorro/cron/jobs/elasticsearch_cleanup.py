@@ -29,7 +29,7 @@ class ElasticsearchCleanupCronApp(BaseCronApp):
     required_config.namespace('elasticsearch')
     required_config.elasticsearch.add_option(
         'elasticsearch_class',
-        default='socorro.external.elasticsearch.connection_context.'
+        default='socorro_lib.external.elasticsearch.connection_context.'
                 'ConnectionContext',
         from_string_converter=class_converter,
         reference_value_from='resource.elasticsearch',

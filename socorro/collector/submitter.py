@@ -11,7 +11,7 @@ import signal
 
 import socorro_lib.util as sutil
 import socorro_lib.iteratorWorkerFramework as iwf
-import socorro.external.filesystem.filesystem as sfs
+import socorro_lib.external.filesystem.filesystem as sfs
 import socorro_lib.stats as stats
 
 import poster
@@ -181,7 +181,7 @@ if __name__ == '__main__':
     import simplejson as json
   import sys
   import uuid
-  import socorro.external.filesystem.filesystem
+  import socorro_lib.external.filesystem.filesystem
 
   existingHangIdCache = {}
   poster.streaminghttp.register_openers()
@@ -212,7 +212,7 @@ if __name__ == '__main__':
     print >>sys.stderr, x
 
   def walkFileSystemSubmittingReports (fileSystemRoot, serverURL, errorReporter=reportErrorToStderr, uniqueHang=False):
-    for aPath, aFileName, aJsonPathName in socorro.external.filesystem.filesystem.findFileGenerator(fileSystemRoot, lambda x: x[2].endswith("json")):
+    for aPath, aFileName, aJsonPathName in socorro_lib.external.filesystem.filesystem.findFileGenerator(fileSystemRoot, lambda x: x[2].endswith("json")):
       try:
         dumpfilePathName = os.path.join(aPath, "%s%s" % (aFileName[:-5], ".dump"))
         submitCrashReport(aJsonPathName, dumpfilePathName, serverURL, uniqueHang)

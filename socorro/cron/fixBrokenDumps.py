@@ -14,7 +14,7 @@ import psycopg2
 import psycopg2.extras
 
 import socorro_lib.util
-import socorro.external.hbase.hbase_client as hbaseClient
+import socorro_lib.external.hbase.hbase_client as hbaseClient
 
 from datetime import datetime, timedelta
 

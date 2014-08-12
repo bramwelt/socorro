@@ -18,7 +18,7 @@ from crontabber.mixins import (
 #    class MyClass ...
 with_hbase_transactions = partial(
     with_transactional_resource,
-    'socorro.external.hb.connection_context.ConnectionContext',
+    'socorro_lib.external.hb.connection_context.ConnectionContext',
     'long_term_storage'
 )
 #------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ with_single_hb_transaction = partial(
 #    class MyClass ...
 with_rabbitmq_transactions = partial(
     with_transactional_resource,
-    'socorro.external.rabbitmq.connection_context.ConnectionContext',
+    'socorro_lib.external.rabbitmq.connection_context.ConnectionContext',
     'queuing'
 )
 #------------------------------------------------------------------------------

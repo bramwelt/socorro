@@ -15,7 +15,7 @@ from configman.converters import class_converter, timedelta_converter
 from socorro.app.generic_app import App, main
 from socorro_lib.datetimeutil import utc_now
 
-from socorro.external.postgresql.dbapi2_util import (
+from socorro_lib.external.postgresql.dbapi2_util import (
   single_value_sql,
   single_row_sql,
   execute_query_fetchall,
@@ -74,7 +74,7 @@ class MonitorApp(App):
     required_config.registrar.add_option(
       'database_class',
       doc="the class of the registrar's database",
-      default='socorro.external.postgresql.connection_context.'
+      default='socorro_lib.external.postgresql.connection_context.'
               'ConnectionContext',
       from_string_converter=class_converter
     )
@@ -133,7 +133,7 @@ class MonitorApp(App):
     required_config.job_manager.add_option(
       'database_class',
       doc="the class of the job_manager's database",
-      default='socorro.external.postgresql.connection_context.'
+      default='socorro_lib.external.postgresql.connection_context.'
               'ConnectionContext',
       from_string_converter=class_converter
     )

@@ -15,11 +15,11 @@ import logging
 logger = logging.getLogger("monitor")
 
 import socorro_lib.util
-import socorro.external.filesystem.filesystem
+import socorro_lib.external.filesystem.filesystem
 import socorro_lib.psycopghelper as psy
 import socorro.database.database as sdb
 import socorro.storage.crashstorage as cstore
-import socorro.external.hbase.hbase_client as hbc
+import socorro_lib.external.hbase.hbase_client as hbc
 
 from socorro_lib.datetimeutil import utc_now
 

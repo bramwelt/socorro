@@ -10,13 +10,13 @@ import threading
 
 import socorro_lib.ver_tools as vtl
 
-from socorro.external.crashstorage_base import (
+from socorro_lib.external.crashstorage_base import (
     FallbackCrashStorage,
     CrashStorageBase,
 )
-from socorro.external.filesystem.crashstorage import FileSystemRawCrashStorage
-from socorro.external.hbase.crashstorage import HBaseCrashStorage
-from socorro.external.hbase.connection_context import \
+from socorro_lib.external.filesystem.crashstorage import FileSystemRawCrashStorage
+from socorro_lib.external.hbase.crashstorage import HBaseCrashStorage
+from socorro_lib.external.hbase.connection_context import \
      HBaseConnectionContextPooled
 from socorro.database.transaction_executor import \
      TransactionExecutorWithLimitedBackoff

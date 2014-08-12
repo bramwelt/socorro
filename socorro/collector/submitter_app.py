@@ -13,10 +13,10 @@ from configman import Namespace, RequiredConfig
 from configman.converters import class_converter
 
 from socorro.app.fetch_transform_save_app import FetchTransformSaveApp, main
-from socorro.external.crashstorage_base import CrashStorageBase
-from socorro.external.filesystem.filesystem import findFileGenerator
+from socorro_lib.external.crashstorage_base import CrashStorageBase
+from socorro_lib.external.filesystem.filesystem import findFileGenerator
 from socorro_lib.util import DotDict
-from socorro.external.postgresql.dbapi2_util import execute_query_iter
+from socorro_lib.external.postgresql.dbapi2_util import execute_query_iter
 
 
 
@@ -128,13 +128,13 @@ class DBSamplingCrashSource(RequiredConfig):
     required_config = Namespace()
     required_config.add_option(
         'source_implementation',
-        default='socorro.external.hbase.crashstorage.HBaseCrashStorage',
+        default='socorro_lib.external.hbase.crashstorage.HBaseCrashStorage',
         doc='a class for a source of raw crashes',
         from_string_converter=class_converter
     )
     required_config.add_option(
         'database_class',
-        default='socorro.external.postgresql.connection_context'
+        default='socorro_lib.external.postgresql.connection_context'
                 '.ConnectionContext',
         doc='the class that connects to the database',
         from_string_converter=class_converter

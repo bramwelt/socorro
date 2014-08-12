@@ -14,7 +14,7 @@ class CrashStorageNewCrashSource(RequiredConfig):
     required_config.add_option(
         'crashstorage_class',
         doc="the class of the crashstorage system",
-        default='socorro.external.filesystem.crashstorage.'
+        default='socorro_lib.external.filesystem.crashstorage.'
                 'FileSystemRawCrashStorage',
         from_string_converter=class_converter
     )
