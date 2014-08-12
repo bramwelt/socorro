@@ -8,7 +8,7 @@ from nose.tools import eq_, ok_
 import socorro_processor.signature_utilities as sig
 import socorro_lib.util as sutil
 
-from socorro.database.transaction_executor import TransactionExecutor
+from socorro_lib.database.transaction_executor import TransactionExecutor
 from socorro_lib.util import DotDict
 from socorro_processor.signature_utilities import JavaSignatureTool
 from socorro_lib.unittest.testbase import TestCase
