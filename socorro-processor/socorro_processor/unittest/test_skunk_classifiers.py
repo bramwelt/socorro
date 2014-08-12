@@ -17,7 +17,7 @@ from socorro_processor.skunk_classifiers import (
     Bug812318,
 )
 from socorro_processor.signature_utilities import CSignatureTool
-from socorro_lib.unittest.processor.test_breakpad_pipe_to_json import (
+from socorro_processor.unittest.test_breakpad_pipe_to_json import (
     cannonical_json_dump
 )
 from socorro_lib.unittest.testbase import TestCase

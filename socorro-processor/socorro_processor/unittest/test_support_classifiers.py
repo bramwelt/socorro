@@ -16,7 +16,7 @@ from socorro_processor.support_classifiers import (
 )
 
 from socorro_processor.signature_utilities import CSignatureTool
-from socorro_lib.unittest.processor.test_breakpad_pipe_to_json import (
+from socorro_processor.unittest.test_breakpad_pipe_to_json import (
     cannonical_json_dump,
 )
 from socorro_lib.unittest.testbase import TestCase
