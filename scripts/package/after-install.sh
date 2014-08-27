@@ -8,6 +8,9 @@ chown socorro /var/lock/socorro
 # them.
 chmod 644 /etc/cron.d/socorro
 
+# Rerun virtualenv in order to fix hardcoded paths
+virtualenv /data/socorro/socorro-virtualenv
+
 # create DB if it does not exist
 # TODO handle DB not on local device - could use setupdb for this
 psql -U postgres -h localhost -l | grep breakpad > /dev/null
