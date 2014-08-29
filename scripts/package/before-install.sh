@@ -1,7 +1,7 @@
 #! /bin/bash -e
 
 # Create a new socorro user
-useradd socorro 2> /dev/null
+useradd -m -s /bin/bash socorro
 
 chmod o+x /home/socorro
 
@@ -9,7 +9,7 @@ mkdir -p /home/socorro/primaryCrashStore \
     /home/socorro/fallback \
     /home/socorro/persistent
 
-chown apache:socorro /home/socorro/primaryCrashStore /home/socorro/fallback
+chown www-data:socorro /home/socorro/primaryCrashStore /home/socorro/fallback
 
 chmod 2775 /home/socorro/primaryCrashStore /home/socorro/fallback
 

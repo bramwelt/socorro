@@ -46,20 +46,11 @@ su socorro -c "PYTHONPATH=. /data/socorro/socorro-virtualenv/bin/python \
 popd > /dev/null
 
 # TODO optional support for crashmover
-for service in processor
-do
-  chkconfig --add socorro-${service}
-  chkconfig socorro-${service} on
-done
-
-# TODO optional support for crashmover
 for service in socorro-processor
 do
-  if [ -f /etc/init.d/${service} ]
-  then
-    /sbin/service ${service} start
-  fi
+  update-rc.d ${service} defaults
+  service ${service} start
 done
 
 # Restart Apache
-/sbin/service httpd restart
+service apache2 restart
