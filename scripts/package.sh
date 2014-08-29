@@ -6,7 +6,7 @@
 #  2: Type of package to build
 ##
 VERSION=${1:-$(git describe --tags | cut -d'-' -f1)}
-TYPE=${2:-"rpm"}
+TYPE=${2:-"deb"}
 DESC="A distributed system for collecting, processing,
  and displaying crash reports from clients using Breakpad"
 

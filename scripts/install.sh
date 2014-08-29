@@ -31,7 +31,14 @@ cp webapp-django/crashstats/settings/local.py $BUILD_DIR/etc/socorro/local.py
 cp config/apache.conf-dist $BUILD_DIR/etc/httpd/conf.d/socorro.conf
 
 # copy to install directory
-rsync -a ${VIRTUAL_ENV} $SOCORRO_DIR/
+cp -a ${VIRTUAL_ENV} $SOCORRO_DIR/
+
+# Replace symlinks with real files.
+pushd $SOCORRO_DIR/socorro-virtualenv/bin
+cp --remove-destination python2.6 python2
+cp --remove-destination python2.6 python
+popd
+
 rsync -a socorro $SOCORRO_DIR/application
 rsync -a scripts $SOCORRO_DIR/application
 rsync -a tools $SOCORRO_DIR/application
