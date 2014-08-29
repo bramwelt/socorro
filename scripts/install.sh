@@ -1,7 +1,5 @@
 #! /bin/bash -ex
 
-export BUILD_DIR=${BUILD_DIR:-builds/socorro}
-export SOCORRO_DIR=${BUILD_DIR}/data/socorro
 
 # create base directories
 mkdir -p $BUILD_DIR/etc/init.d
