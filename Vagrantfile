@@ -1,8 +1,15 @@
 is_jenkins = ENV['USER'] == 'jenkins'
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "CentOS 6.4 x86_64 Minimal"
-  config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box"
+  config.vm.define "centos", primary: true do |centos|
+    centos.vm.box = "CentOS 6.4 x86_64 Minimal"
+    centos.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box"
+  end
+
+  config.vm.define "ubuntu", autostart: false do |ubuntu|
+    ubuntu.vm.box = "hashicorp/precise64"
+    ubuntu.vm.box_url = "https://vagrantcloud.com/hashicorp/boxes/precise64/versions/2/providers/virtualbox.box"
+  end
 
   config.vm.provider "virtualbox" do |v|
     v.name = "socorro-vm"
