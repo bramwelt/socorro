@@ -2,7 +2,7 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-.PHONY: all test bootstrap install lint clean breakpad json_enhancements_pg_extension package
+.PHONY: all test bootstrap install lint clean breakpad json_enhancements_pg_extension package upload-package
 
 all: test
 
@@ -17,6 +17,9 @@ install: bootstrap
 
 package: install
 	./scripts/package.sh
+
+upload-package:
+	./scripts/upload-package.sh
 
 lint:
 	./scripts/lint.sh
