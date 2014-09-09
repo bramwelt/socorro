@@ -1,4 +1,7 @@
 {
+  "variables": {
+    "build_version": "{{env `BUILD_VERSION`}}"
+  },
   "builders": [
     {
       "boot_command": [
@@ -12,7 +15,7 @@
       "iso_checksum": "0d9dc37b5dd4befa1c440d2174e88a87",
       "iso_checksum_type": "md5",
       "iso_url": "http://mirror.rackspace.com/CentOS/6.5/isos/x86_64/CentOS-6.5-x86_64-minimal.iso",
-      "name": "CentOS-6.5-x86_64-{{timestamp}}",
+      "name": "centos-6.5-x86_64",
       "headless": true,
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "ssh_password": "vagrant",
@@ -34,13 +37,13 @@
           "1"
         ]
       ],
-      "vm_name": "centos-6.5-x86_64"
+      "vm_name": "socorro-centos-{{ user `build_version` }}"
     }
   ],
   "description": "Socorro - A distributed system for collecting, processing, and analyzing crash reports",
   "post-processors": [
     {
-      "output": "../build/packer/{{.BuildName}}.box",
+      "output": "../build/packer/{{ .BuildName }}-{{ user `build_version` }}.box",
       "type": "vagrant"
     }
   ],
