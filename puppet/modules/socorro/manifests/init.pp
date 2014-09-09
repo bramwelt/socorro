@@ -6,11 +6,6 @@ class socorro::vagrant {
       ensure => stopped,
       enable => false;
 
-    'httpd':
-      ensure  => running,
-      enable  => true,
-      require => Package['httpd'];
-
     'memcached':
       ensure  => running,
       enable  => true,
@@ -103,7 +98,6 @@ class socorro::vagrant {
       'java-1.7.0-openjdk',
       'java-1.7.0-openjdk-devel',
       'yum-plugin-fastestmirror',
-      'httpd',
       'mod_wsgi',
       'memcached',
       'daemonize',
