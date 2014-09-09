@@ -35,5 +35,6 @@ before_script:
     - psql -c 'create database socorro_migration_test;' -U postgres
 
 script:
+  - source scripts/defaults
   - make package
-  - BUILD_VERSION=100 curl -T "socorro-$BUILD_VERSION-1.x86_64.rpm" -ubramwelt:"$BINTRAY_API_KEY" "https://api.bintray.com/content/bramwelt/rpm/socorro/$BUILD_VERSION/socorro-$BUILD_VERSION.x86_64.rpm"
+  - curl -T socorro-${BUILD_VERSION}-1.x86_64.rpm -ubramwelt:${BINTRAY_API_KEY} https://api.bintray.com/content/bramwelt/rpm/socorro/${BUILD_VERSION}/socorro-${BUILD_VERSION}.x86_64.rpm
