@@ -2,6 +2,10 @@ language: python
 python:
   - "2.6"
 
+env:
+  - secure: "3Gk7fQEwGx6rZZFWQWh8WnQ0qvm8oDtapZvqBtQgMCozPw3X6cTKkjEOj/v/AAZ6EpEOepJ7gxs6+n6zSbybrO5qcredshoxeEhduSiDr7Fa3qUiA6RF7qPDn3BU4EqSHDJlrvekm8AR2jh/bJK1hJNkHDSDp8ul868GIKIkk44="
+  - BUILD_VERSION=100
+
 addons:
   postgresql: "9.3"
 
@@ -19,6 +23,8 @@ before_install:
   - npm install -g less
   - sudo ln -s /usr/local/lib/node_modules/less/bin/lessc /usr/local/bin
   - sed -i 's:jenkins-pg92:localhost:' config/alembic.ini-dist
+  - sudo apt-get install ruby-dev gcc
+  - sudo gem install fpm
 
 install: true
 
@@ -30,3 +36,9 @@ before_script:
 
 script:
   - ./scripts/build.sh
+  - BUILD_TYPE=rpm
+  - ./scripts/install.sh
+  - ./scripts/package.sh
+
+after_script:
+  - curl -T socorro-${BUILD_VERSION}-1.x86_64.rpm -ubramwelt:${BINTRAY_API_KEY} https://api.bintray.com/content/bramwelt/rpm/socorro/${BUILD_VERSION}/socorro-${BUILD_VERSION}.x86_64.rpm
