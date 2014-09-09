@@ -23,7 +23,7 @@ before_install:
   - npm install -g less
   - sudo ln -s /usr/local/lib/node_modules/less/bin/lessc /usr/local/bin
   - sed -i 's:jenkins-pg92:localhost:' config/alembic.ini-dist
-  - sudo apt-get install ruby-dev gcc
+  - sudo apt-get install rubygems ruby-dev gcc
   - sudo gem install fpm
 
 install: true
