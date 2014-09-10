@@ -3,7 +3,7 @@ python:
   - "2.6"
 
 env:
-  - BUILD_TYPE="rpm" BUILD_NUMBER="100" secure: "3Gk7fQEwGx6rZZFWQWh8WnQ0qvm8oDtapZvqBtQgMCozPw3X6cTKkjEOj/v/AAZ6EpEOepJ7gxs6+n6zSbybrO5qcredshoxeEhduSiDr7Fa3qUiA6RF7qPDn3BU4EqSHDJlrvekm8AR2jh/bJK1hJNkHDSDp8ul868GIKIkk44="
+  - secure: "3Gk7fQEwGx6rZZFWQWh8WnQ0qvm8oDtapZvqBtQgMCozPw3X6cTKkjEOj/v/AAZ6EpEOepJ7gxs6+n6zSbybrO5qcredshoxeEhduSiDr7Fa3qUiA6RF7qPDn3BU4EqSHDJlrvekm8AR2jh/bJK1hJNkHDSDp8ul868GIKIkk44="
 
 addons:
   postgresql: "9.3"
@@ -35,5 +35,7 @@ before_script:
     - psql -c 'create database socorro_migration_test;' -U postgres
 
 script:
+  - export BUILD_TYPE="rpm"
+  - export BUILD_NUMBER="100" 
   - make package
   - make upload-package
