@@ -1,0 +1,6 @@
+2013-11-25 Release 3.0.4
+- Added conf_hash option
+2013-11-20 Release 3.0.3
+- Removed Mac Spurious chars
+2013-11-18 Release 3.0.2
+- Basic module created from stdmod/puppet-skeleton-standard 0.0.3

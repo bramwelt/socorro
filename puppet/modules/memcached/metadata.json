@@ -1,0 +1,44 @@
+{
+  "name": "example42-memcached",
+  "version": "3.0.4",
+  "source": "https://github.com/example42/puppet-memcached",
+  "author": "Alessandro Franceschi",
+  "license": "Apache License, Version 2.0",
+  "summary": "Puppet module for memcached",
+  "description": "This module installs and manages memcached. Is based on stdmod 0.9.0",
+  "project_page": "http://www.example42.com",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib"
+    },
+    {
+      "name": "example42/stdmod"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "CHANGELOG": "e9c402ff4078227f0c6605807be2d410",
+    "CONTRIBUTORS": "3d8f1f46dc33b2edcb6d152152dd967c",
+    "Gemfile": "d83f92a5d91df406292be9a4a2434fab",
+    "LICENSE": "47bbee59c4c1cb14cc3667035a227be0",
+    "Modulefile": "907bb4fe2f753e6d1ffe811c1e1876fd",
+    "README.markdown": "8b42aa8a704062abc8b0c0a1b4b26e7c",
+    "README.md": "36063c1ac699ef7e8a66637214ebd204",
+    "Rakefile": "e3b5ba225ce876a187cca861d68044ad",
+    "data/common.yaml": "9cbd430f2eb797011982696a44581c62",
+    "data/osfamily/RedHat.yaml": "ff0c24cf303b8f0c957546fb3ba3883f",
+    "files/spec.conf": "384a5806f20dd26c67c603598991fe7f",
+    "hiera.yaml": "248806c053a351652ecfc838927cbeb1",
+    "manifests/conf.pp": "c0876ce44ffba39da93804c3a1022e0a",
+    "manifests/init.pp": "83c034f7662228cdc58e90ef20d6bf8c",
+    "manifests/params.pp": "222fbec0fa77fe7edf0c56f7d6657b8b",
+    "spec/classes/init_spec.rb": "56b006af652bedd33a70b7834f4e71c3",
+    "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+    "spec/spec_helper_system.rb": "c7ea96224dd903c623392a24dd886b24",
+    "spec/system/basic_spec.rb": "0f9847fa9d81e4cd99e3ccc8fbd87187",
+    "templates/spec.conf": "cc222fe002365a992c9cd3c536e25611",
+    "tests/init.pp": "c1230c6234487b0611a801116a9bc2cb"
+  }
+}
