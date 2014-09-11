@@ -6,33 +6,13 @@ class socorro::vagrant {
       ensure => stopped,
       enable => false;
 
-    'postgresql-9.3':
-      ensure  => running,
-      enable  => true,
-      require => [
-          Package['postgresql93-server'],
-          Exec['postgres-initdb'],
-          File['pg_hba.conf'],
-        ];
-
     'elasticsearch':
       ensure  => running,
       enable  => true,
       require => Package['elasticsearch'];
   }
 
-  exec {
-    'postgres-initdb':
-      command => '/sbin/service postgresql-9.3 initdb'
-  }
-
   yumrepo {
-    'PGDG':
-      baseurl  => 'http://yum.postgresql.org/9.3/redhat/rhel-$releasever-$basearch',
-      descr    => 'PGDG',
-      enabled  => 1,
-      gpgcheck => 0;
-
     'EPEL':
       baseurl  => 'http://dl.fedoraproject.org/pub/epel/$releasever/$basearch',
       descr    => 'EPEL',
@@ -95,17 +75,6 @@ class socorro::vagrant {
     ensure => latest
   }
 
-  package {
-    [
-      'postgresql93-server',
-      'postgresql93-plperl',
-      'postgresql93-contrib',
-      'postgresql93-devel',
-    ]:
-    ensure  => latest,
-    require => [ Yumrepo['PGDG'], Package['yum-plugin-fastestmirror']]
-  }
-
   exec {
     'postgres-test-role':
       path => '/usr/bin:/bin',
@@ -114,9 +83,6 @@ class socorro::vagrant {
       unless => 'sudo -u postgres psql postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname=\'test\'" | grep -q 1',
       require => [
         Package['postgresql93-server'],
-        Exec['postgres-initdb'],
-        File['pg_hba.conf'],
-        Service['postgresql-9.3']
       ];
   }
 
@@ -146,18 +112,6 @@ class socorro::vagrant {
   file {
     '/etc/socorro':
       ensure => directory;
-
-    'pg_hba.conf':
-      path    => '/var/lib/pgsql/9.3/data/pg_hba.conf',
-      source  => 'puppet:///modules/socorro/var_lib_pgsql_9.3_data/pg_hba.conf',
-      owner   => 'postgres',
-      group   => 'postgres',
-      ensure  => file,
-      require => [
-        Package['postgresql93-server'],
-        Exec['postgres-initdb'],
-      ],
-      notify  => Service['postgresql-9.3'];
 
     'pgsql.sh':
       path   => '/etc/profile.d/pgsql.sh',
