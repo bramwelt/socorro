@@ -4,6 +4,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "centos", primary: true do |centos|
     centos.vm.box = "CentOS 6.4 x86_64 Minimal"
     centos.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box"
+    centos.vm.provision :shell, inline: "if [ ! $(grep single-request-reopen /etc/sysconfig/network) ]; then echo RES_OPTIONS=single-request-reopen >> /etc/sysconfig/network && service network restart; fi"
   end
 
   config.vm.define "ubuntu", autostart: false do |ubuntu|
@@ -24,8 +25,6 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder ".", "/home/vagrant/socorro"
-
-  config.vm.provision :shell, inline: "if [ ! $(grep single-request-reopen /etc/sysconfig/network) ]; then echo RES_OPTIONS=single-request-reopen >> /etc/sysconfig/network && service network restart; fi"
 
   config.vm.provision :puppet do |puppet|
     puppet.module_path = "puppet/modules"
