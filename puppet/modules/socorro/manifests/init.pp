@@ -11,10 +11,6 @@ class socorro::vagrant {
       enable  => true,
       require => Package['memcached'];
 
-    'rabbitmq-server':
-      ensure  => running,
-      enable  => true,
-      require => Package['rabbitmq-server'];
 
     'postgresql-9.3':
       ensure  => running,
@@ -135,7 +131,6 @@ class socorro::vagrant {
     [
       'python-virtualenv',
       'supervisor',
-      'rabbitmq-server',
       'python-pip',
       'nodejs-less',
     ]:

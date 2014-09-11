@@ -5,4 +5,5 @@ Exec {
 node default {
   include socorro::vagrant
   class { 'apache': }
+  class { 'rabbitmq': }
 }
