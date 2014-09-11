@@ -15,6 +15,7 @@ node default {
   class { 'postgresql::server':
     #needs_initdb => true,
   }
+  class { 'postgresql::server::contrib': }
 
   postgresql::server::pg_hba_rule { 'trust local socket connections':
     description => 'local is for Unix domain socket connections only',
