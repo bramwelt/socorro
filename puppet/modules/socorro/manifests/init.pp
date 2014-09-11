@@ -1,8 +1,19 @@
 # Set up basic Socorro requirements.
 class socorro::vagrant {
 
-  service {
-    'iptables':
+  case $operatingsystem {
+    centos, redhat: {
+      $firewall = 'iptables'
+    }
+    debian, ubuntu: {
+      $firewall = 'ufw'
+    }
+    default: {
+      fail("Unsupported Operating System")
+    }
+  }
+
+  service { $firewall:
       ensure => stopped,
       enable => false;
   }
