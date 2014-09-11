@@ -6,12 +6,6 @@ class socorro::vagrant {
       ensure => stopped,
       enable => false;
 
-    'memcached':
-      ensure  => running,
-      enable  => true,
-      require => Package['memcached'];
-
-
     'postgresql-9.3':
       ensure  => running,
       enable  => true,
@@ -95,7 +89,6 @@ class socorro::vagrant {
       'java-1.7.0-openjdk-devel',
       'yum-plugin-fastestmirror',
       'mod_wsgi',
-      'memcached',
       'daemonize',
       'unzip',
     ]:
