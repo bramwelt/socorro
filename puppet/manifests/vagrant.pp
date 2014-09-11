@@ -8,6 +8,11 @@ node default {
   class { 'memcached': }
   class { 'rabbitmq': }
 
+  class { 'elasticsearch':
+    manage_repo => true,
+    repo_version => '0.90',
+  }
+
   class { 'postgresql::globals':
     manage_package_repo => true,
     version             => '9.3',

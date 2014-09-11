@@ -5,11 +5,6 @@ class socorro::vagrant {
     'iptables':
       ensure => stopped,
       enable => false;
-
-    'elasticsearch':
-      ensure  => running,
-      enable  => true,
-      require => Package['elasticsearch'];
   }
 
   yumrepo {
@@ -22,11 +17,6 @@ class socorro::vagrant {
 
     'devtools':
       baseurl  => 'http://people.centos.org/tru/devtools-1.1/$releasever/$basearch/RPMS',
-      enabled  => 1,
-      gpgcheck => 0;
-
-    'elasticsearch':
-      baseurl  => 'http://packages.elasticsearch.org/elasticsearch/0.90/centos',
       enabled  => 1,
       gpgcheck => 0;
 
@@ -91,12 +81,6 @@ class socorro::vagrant {
     ]:
     ensure  => latest,
     require => [ Yumrepo['EPEL'], Package['yum-plugin-fastestmirror']]
-  }
-
-  package {
-    'elasticsearch':
-      ensure  => latest,
-      require => [ Yumrepo['elasticsearch'], Package['java-1.7.0-openjdk'] ]
   }
 
   package {
