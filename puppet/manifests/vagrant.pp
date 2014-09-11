@@ -7,6 +7,7 @@ node default {
   class { 'apache': }
   class { 'memcached': }
   class { 'rabbitmq': }
+  class { 'java': }
 
   class { 'elasticsearch':
     manage_repo => true,

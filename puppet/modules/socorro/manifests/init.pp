@@ -55,8 +55,6 @@ class socorro::vagrant {
       'libxml2-devel',
       'libxslt-devel',
       'openldap-devel',
-      'java-1.7.0-openjdk',
-      'java-1.7.0-openjdk-devel',
       'yum-plugin-fastestmirror',
       'mod_wsgi',
       'daemonize',
